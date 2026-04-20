@@ -1,0 +1,97 @@
+// =========================================================
+// Shared section primitives — heading block + large CTA pill
+// =========================================================
+@use "variables" as *;
+
+.section{
+  padding: 70px 0;
+}
+
+.sec-head{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sec-ico{
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+  background: var(--teal);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+  transform: rotate(-5deg);
+  font-weight: 900;
+}
+
+.sec-label{
+  font-family: var(--display);
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 6px;
+
+  &::before,
+  &::after{
+    content: "";
+    width: 110px;
+    height: 1px;
+    background: var(--ink);
+  }
+}
+
+.sec-jp{
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+// ----- Large CTA pill shared across sections -----
+.btn-lg{
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 14px 14px 28px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 14px;
+  min-width: 250px;
+  transition: transform .15s, box-shadow .15s;
+
+  &:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .15);
+  }
+
+  .arr{
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 16px;
+    font-size: 12px;
+  }
+}
+
+.btn-ghost{
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  background: #fff;
+
+  .arr{ background: var(--ink); color: #fff; }
+}
+
+.btn-primary{
+  background: var(--pink);
+  color: #fff;
+
+  .arr{ background: #fff; color: var(--pink); }
+}

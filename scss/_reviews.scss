@@ -1,0 +1,69 @@
+// =========================================================
+// Customer reviews
+// =========================================================
+@use "variables" as *;
+
+.reviews{
+  background: #f8fbfc;
+  padding: 70px 0;
+}
+
+.reviews-grid{
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.review{
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .04);
+
+  .v{
+    display: inline-block;
+    background: var(--pink);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+  }
+
+  .who{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .av{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: repeating-linear-gradient(
+      45deg,
+      #ccc, #ccc 4px,
+      #aaa 4px, #aaa 8px
+    );
+  }
+
+  .name{ font-size: 14px; font-weight: 900; }
+  .tags{ font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+  h5{
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  p{
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+}

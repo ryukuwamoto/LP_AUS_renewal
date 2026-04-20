@@ -1,0 +1,56 @@
+// =========================================================
+// Design tokens — colors / typography
+// =========================================================
+
+// Brand
+$teal:        #00A3AD;
+$yellow:      #FFD700;
+$yellow-soft: #FFEF99;
+$pink:        #FF0064;
+$green:       #06C755;
+
+// Neutrals
+$ink:       #000;
+$ink-soft:      #EFEFEF;
+$footer:     #EFF0F1;
+
+// Typography stacks
+$font-path: 'https://gigaplus.makeshop.jp/yemoba4818/YM-articlesaite/font/';
+
+@mixin font-face($weight, $file) {
+    @font-face {
+        font-family: 'GenJyuuGothic';
+        src: url('#{$font-path}#{$file}.ttf') format('truetype');
+        font-weight: $weight;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+@include font-face(bold, 'GenJyuuGothic-Bold');
+@include font-face(500, 'GenJyuuGothic-Medium');
+@include font-face(normal, 'GenJyuuGothic-P-Normal');
+@include font-face(300, 'GenJyuuGothic-Light');
+
+@mixin font-gen($weight: normal, $style: normal) {
+    font-family: 'GenJyuuGothic', sans-serif;
+    font-weight: $weight;
+    font-style: $style;
+}
+
+@mixin font-sofia($weight: 400, $style: normal) {
+    font-family: "sofia-pro-soft", sans-serif;
+    font-weight: $weight;
+    font-style: $style;
+}
+
+// CSS custom-property mirror — lets runtime Tweaks override without recompile
+:root{
+  --teal:#{$teal};
+  --yellow:#{$yellow};
+  --yellow-soft:#{$yellow-soft};
+  --pink:#{$pink};
+  --green:#{$green};
+  --ink:#{$ink};
+  --ink-soft:#{$ink-soft};
+  --footer:#{$footer};
+}

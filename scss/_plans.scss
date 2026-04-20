@@ -1,0 +1,142 @@
+// =========================================================
+// Recommended plan — comparison grid / table
+// =========================================================
+@use "variables" as *;
+
+.plan-wrap{
+  max-width: 900px;
+  margin: 0 auto;
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.plan-grid{
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr 1fr;
+}
+
+// ----- Column headers -----
+.plan-head{
+  padding: 22px 12px;
+  text-align: center;
+  border-bottom: 2px solid var(--ink);
+  position: relative;
+
+  &:not(:last-child){ border-right: 1px solid #ddd; }
+
+  .crown{
+    display: inline-block;
+    font-size: 26px;
+    filter: drop-shadow(2px 2px 0 #d4a900);
+    margin-bottom: 4px;
+  }
+
+  .tier{
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--ink);
+    padding: 3px 14px;
+    display: inline-block;
+    position: relative;
+
+    &::before,
+    &::after{
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 7px;
+      height: 2px;
+      background: var(--ink);
+    }
+    &::before{ left: -10px; transform: rotate(60deg) translateY(-50%); }
+    &::after { right: -10px; transform: rotate(-60deg) translateY(-50%); }
+  }
+
+  .big{
+    font-family: var(--display);
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 6px;
+
+    small{ font-size: 18px; margin-left: 2px; }
+  }
+}
+
+// ----- Body cells -----
+.plan-cell{
+  padding: 16px 12px;
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+
+  &:not(:last-child){ border-right: 1px solid #e5e5e5; }
+
+  &.label{
+    background: var(--yellow-soft);
+    font-weight: 800;
+  }
+  &.amount{
+    font-family: var(--display);
+    font-size: 26px;
+    font-weight: 700;
+
+    small{
+      font-size: 13px;
+      margin-left: 2px;
+      font-family: var(--sans);
+    }
+  }
+
+  .tag-mini{
+    display: inline-block;
+    background: var(--teal);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-bottom: 3px;
+  }
+  .sub-mini{
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+}
+
+// ----- "国際通話/SMS" plan column band -----
+.plan-grid > .plan-cell{
+  &:nth-child(8n+5),
+  &:nth-child(8n+6),
+  &:nth-child(8n+7),
+  &:nth-child(8n+8){ background: #fcfbf0; }
+}
+
+// Strip the bottom border from the last row (which is the 国際通話/SMS row)
+.plan-grid > .plan-cell:last-child,
+.plan-grid > .plan-cell:nth-last-child(2),
+.plan-grid > .plan-cell:nth-last-child(3),
+.plan-grid > .plan-cell:nth-last-child(4){
+  border-bottom: none;
+}
+
+.plan-note{
+  max-width: 900px;
+  margin: 20px auto 0;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.plan-cta{
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 26px;
+}
