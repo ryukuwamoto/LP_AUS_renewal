@@ -10,7 +10,7 @@
 }
 
 html, body{
-  @include font-gen(bold);
+  @include font-mix(500);
   margin: 0;
   padding: 0;
   background: #fff;

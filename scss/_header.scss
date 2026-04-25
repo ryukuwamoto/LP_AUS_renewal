@@ -92,13 +92,180 @@
   max-width: 700px;
   margin: 0 auto;
   padding: 40px 0;
-  display: flex;
-  gap: 40px;
-  
-  .menu-text { flex: 1; }
-  .menu-image { width: 300px; img { width: 100%; border-radius: 8px; } }
+
+  .box {
+    border: 1px solid var(--yellow);
+    border-radius: 5px;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      border-style: solid;
+      border-width: 0 0 15px 15px;
+      border-color: transparent transparent var(--yellow);
+      border-radius: 2px;
+    }
+
+    &.fill-box::after {
+      border-bottom-color: #fff;
+    }
+  }
+
+  .fill-box {
+    border: none;
+    background-color: var(--yellow);
+  }
 }
 
+.menu-service {
+  .content-box1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+
+    .content-box2 {
+      display: flex;
+      gap: 20px;
+      height: 220px;
+      width: 100%;
+
+      a,div {
+        flex: 1;
+      }
+
+      .content-box3 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        height: 100%;
+
+        .box {
+          flex: none;
+          width: calc(50% - 10px);
+          height: calc(50% - 10px);
+        }
+      }
+    }
+
+    > .box {
+      height: 50px;
+      width: 100%;
+    }
+  }
+}
+
+.menu-process {
+  .content-box1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+
+    .content-box2 {
+      display: flex;
+      gap: 20px;
+      height: 100px;
+      width: 100%;
+
+      a {
+        flex: 1;
+        height: 100%;
+      }
+    }
+
+    .content-box3 {
+      display: flex;
+      gap: 20px;
+      height: 100px;
+      width: 100%;
+
+      a {
+        flex: 1;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.menu-payment {
+  .content-box1 {
+    display: flex;
+    gap: 20px;
+    height: 100px;
+    width: 100%;
+
+    a,.content-box2 {
+      flex: 1;
+      height: 100%;
+    }
+
+    .content-box2 {
+      display: flex;
+      gap: 20px;
+
+      a {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.menu-saport {
+  .content-box1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+
+    .content-box2 {
+      display: flex;
+      gap: 20px;
+      height: 100px;
+      width: 100%;
+
+      a {
+        flex: 1;
+        height: 100%;
+      }
+    }
+
+    .content-box3 {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: 190px;
+      width: 100%;
+
+      a,.content-box4 {
+      flex: 1;
+      width: 100%;
+      }
+
+      .content-box4 {
+        display: flex;
+        gap: 20px;
+
+        a {
+          width: auto;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+// contact
 .header-cta{
   display: flex;
   flex: 1;
@@ -136,7 +303,7 @@
     &:hover {
       background-color: #fff;
       color: var(--green);
-      border: 1.5px solid var(--green);
+      border: 1px solid var(--green);
       
       .ico {
         &:nth-of-type(1) {
@@ -167,7 +334,7 @@
     &:hover {
       background-color: #fff;
       color: var(--pink);
-      border: 1.5px solid var(--pink);
+      border: 1px solid var(--pink);
 
       .ico {
         &:nth-of-type(1) {

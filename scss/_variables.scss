@@ -43,6 +43,11 @@ $font-path: 'https://gigaplus.makeshop.jp/yemoba4818/YM-articlesaite/font/';
     font-style: $style;
 }
 
+@mixin font-mix($weight: 400) {
+  font-family: "sofia-pro-soft", "GenJyuuGothic", sans-serif;
+  font-weight: $weight;
+}
+
 // CSS custom-property mirror — lets runtime Tweaks override without recompile
 :root{
   --teal:#{$teal};
