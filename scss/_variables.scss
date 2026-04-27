@@ -31,8 +31,26 @@ $font-path: 'https://gigaplus.makeshop.jp/yemoba4818/YM-articlesaite/font/';
 @include font-face(normal, 'GenJyuuGothic-P-Normal');
 @include font-face(300, 'GenJyuuGothic-Light');
 
+@mixin font-face-mobo($weight, $file) {
+    @font-face {
+        font-family: 'MOBO';
+        src: url('#{$font-path}#{$file}.otf') format('opentype');
+        font-weight: $weight;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+@include font-face-mobo(700, 'MOBO-Bold');
+@include font-face-mobo(600, 'MOBO-SemiBold');
+
 @mixin font-gen($weight: normal, $style: normal) {
     font-family: 'GenJyuuGothic', sans-serif;
+    font-weight: $weight;
+    font-style: $style;
+}
+
+@mixin font-mobo($weight: 600, $style: normal) {
+    font-family: 'MOBO', sans-serif;
     font-weight: $weight;
     font-style: $style;
 }
