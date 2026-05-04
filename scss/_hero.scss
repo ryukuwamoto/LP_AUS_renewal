@@ -4,233 +4,105 @@
 @use "variables" as *;
 
 .hero{
-  background: var(--teal);
+  background-image: url("../img/hero/back.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 425px;
   position: relative;
   overflow: hidden;
   padding: 0;
   height: 425px;
-  text-align: left;
-
-  &::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(rgba(255, 255, 255, .06) 1.5px, transparent 1.5px);
-    background-size: 20px 20px;
-    pointer-events: none;
-  }
-}
-
-.hero-inner{
-  position: relative;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 24px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-// ----- Clouds -----------------------------------------------------
-.cloud{
-  position: absolute;
-  background: #fff;
-  border-radius: 50%;
-  pointer-events: none;
-
-  &::before,
-  &::after{
-    content: "";
-    position: absolute;
-    background: #fff;
-    border-radius: 50%;
-  }
-}
-
-.c1{
-  width: 80px; height: 60px; top: 40px; left: 10%;
-  &::before{ width: 60px; height: 50px; top: -20px; left: 10px; }
-  &::after { width: 50px; height: 40px; top:  10px; right: -20px; }
-}
-.c2{
-  width: 100px; height: 70px; top: 60px; right: 12%;
-  &::before{ width: 70px; height: 55px; top: -25px; left: 20px; }
-  &::after { width: 60px; height: 45px; top:  15px; right: -25px; }
-}
-.c3{
-  width: 70px; height: 50px; bottom: 60px; left: 18%;
-  &::before{ width: 55px; height: 40px; top: -18px; left: 15px; }
-}
-.c4{
-  width: 60px; height: 45px; bottom: 100px; right: 20%;
-  &::before{ width: 45px; height: 35px; top: -15px; left: 12px; }
-}
-
-// ----- Stars -----------------------------------------------------
-.hero-star{
-  position: absolute;
-  color: var(--yellow);
-  font-size: 22px;
-  pointer-events: none;
-}
-.s1{ top: 15%; left: 12%; font-size: 28px; }
-.s2{ top: 25%; right: 22%; color: #fff; font-size: 18px; }
-.s3{ bottom: 25%; right: 28%; font-size: 24px; }
-.s4{ bottom: 40%; left: 28%; color: #fff; font-size: 16px; }
-
-// ----- Floating placeholder items -----------------------------------------------------
-.float-item{
-  position: absolute;
-  background: repeating-linear-gradient(-45deg, #fff, #fff 6px, #f0f0f0 6px, #f0f0f0 12px);
-  border: 2px solid #fff;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: ui-monospace, monospace;
-  font-size: 10px;
-  color: #888;
   text-align: center;
-  padding: 6px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, .1);
-  line-height: 1.3;
 }
 
-.f-passport { width: 95px;  height: 115px; top: 18%;    left: 10%; transform: rotate(-10deg); }
-.f-ticket   { width: 130px; height: 80px;  bottom: 15%; left: 5%;  transform: rotate(-5deg); }
-.f-phone    { width: 80px;  height: 135px; top: 30%;    right: 8%; transform: rotate(14deg); }
-
-.f-boomerang{
-  width: 115px; height: 115px; top: 8%; right: 16%;
-  transform: rotate(-15deg);
-  border-radius: 50%;
-  background: repeating-linear-gradient(-45deg, #e8cfa8, #e8cfa8 6px, #d4b58a 6px, #d4b58a 12px);
+.hero-anime{
   position: relative;
 
-  &::after{
-    content: "";
-    position: absolute;
-    inset: 28%;
-    background: var(--teal);
-    border-radius: 50%;
-    border: 2px solid #fff;
-  }
-}
-
-// ----- Burst shape -----------------------------------------------------
-.burst{
-  position: relative;
-  z-index: 3;
-  background: #fff;
-  padding: 55px 75px;
-  text-align: center;
-  filter: drop-shadow(0 15px 40px rgba(0, 0, 0, .15));
-  clip-path: polygon(
-    50% 0%,   55% 6%,  62% 2%,  67% 10%, 75% 5%,  78% 14%, 88% 10%, 86% 20%,
-    96% 22%,  92% 32%, 100% 38%, 94% 48%, 100% 55%, 92% 62%, 97% 72%, 88% 74%,
-    88% 84%,  78% 82%, 75% 92%, 67% 88%, 62% 96%, 55% 92%, 50% 100%, 45% 92%,
-    38% 96%,  33% 88%, 25% 92%, 22% 82%, 12% 84%, 12% 74%, 3% 72%,  8% 62%,
-    0% 55%,   6% 48%,  0% 38%,  8% 32%,  4% 22%,  14% 20%, 12% 10%, 22% 14%,
-    25% 5%,   33% 10%, 38% 2%,  45% 6%
-  );
-}
-
-.hero-eyebrow{
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--ink);
-}
-
-.hero-brand{
-  display: inline-block;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 28px;
-  color: var(--ink);
-  line-height: 1;
-  margin-bottom: 8px;
-
-  .y{ background: var(--yellow); padding: 2px 8px; border-radius: 4px; }
-  .aus{
-    background: var(--teal);
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 16px;
-    vertical-align: top;
-    margin-left: 4px;
-  }
-}
-
-.hero-title{
-  font-family: var(--display);
-  font-size: 60px;
-  font-weight: 700;
-  line-height: .95;
-  color: var(--teal);
-  margin: 12px 0 6px;
-  font-style: italic;
-  letter-spacing: -1px;
-}
-
-.hero-sub{
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-top: 10px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.flag-au{
-  display: inline-block;
-  width: 26px;
-  height: 15px;
-  background: #012169;
-  position: relative;
-  border-radius: 2px;
-  overflow: hidden;
-
-  &::before{
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 10px; height: 7px;
-    background:
-      linear-gradient( 45deg, transparent 40%, #fff 40%, #fff 60%, transparent 60%),
-      linear-gradient(-45deg, transparent 40%, #fff 40%, #fff 60%, transparent 60%);
-    background-color: #012169;
-  }
-  &::after{
-    content: "★";
-    position: absolute;
-    right: 3px;
-    top: 1px;
-    color: #fff;
-    font-size: 9px;
-  }
-}
-
-.mascot-ph{
+  .character {
   position: absolute;
-  bottom: -5px;
+  top: 277px;
   left: 50%;
+  margin-left: 14px;
+  width: 125px;
+  height: 109px;
+  background-image: url("../img/hero/character.png");
+  background-size: contain;
+  background-repeat: no-repeat;
   transform: translateX(-50%);
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
-  background: repeating-linear-gradient(45deg, #a0a0a0, #a0a0a0 5px, #888 5px, #888 10px);
-  border: 3px solid #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: ui-monospace, monospace;
-  font-size: 9px;
-  color: #fff;
-  text-align: center;
-  line-height: 1.2;
-  z-index: 4;
+  animation: sway-pause 5s ease-in-out infinite;
+  z-index: 10;
+  }
+}
+
+@keyframes sway-pause {
+  0%, 12.5%, 25% { transform: translateX(-50%) rotate(0deg); }
+  3.125%  { transform: translateX(-52%) rotate(-3deg); }
+  9.375%  { transform: translateX(-48%) rotate(3deg); }
+  15.625% { transform: translateX(-52%) rotate(-3deg); }
+  21.875% { transform: translateX(-48%) rotate(3deg); }
+  25.001%, 100% { transform: translateX(-50%) rotate(0deg); }
+}
+
+.item {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.item-passport {
+  background-image: url("../img/hero/passport.png");
+  animation: fly-left-top 5s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards;
+  width: 89px;
+  height: 100px;
+}
+
+.item-ticket {
+  background-image: url("../img/hero/ticket.png");
+  animation: fly-left-bottom 5s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.4s;
+  width: 130px;
+  height: 128px;
+}
+
+.item-phone {
+  background-image: url("../img/hero/phone.png");
+  animation: fly-right-top 5s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.2s;
+  width: 109px;
+  height: 132px;
+}
+
+.item-boomerang {
+  background-image: url("../img/hero/boomerang.png");
+  animation: fly-right-bottom 5s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.7s;
+  width: 124px;
+  height: 119px;
+}
+
+/* 1. 斜め左下(画面外) → 左上 */
+@keyframes fly-left-top {
+  0%   { left: -100px; top: 450px; opacity: 0; transform: rotate(0deg); }
+  20%  { left: 50%;   top: 50%;   margin-left: -377px;   margin-top: 7px;    opacity: 1; transform: rotate(15deg); }
+  100% { left: 50%;   top: 50%;   margin-left: -387px;   margin-top: 17px;    opacity: 1; }
+}
+
+/* 2. 右下(画面外) → 右上 */
+@keyframes fly-right-top {
+  0%   { right: -100px; top: 550px; opacity: 0; transform: rotate(0deg); }
+  20%  { right: 50%;   top: 50%;   margin-right: -380px;   margin-top: 234px;     opacity: 1; transform: rotate(-15deg); }
+  100% { right: 50%;   top: 50%;   margin-right: -390px;   margin-top: 244px;     opacity: 1; }
+}
+
+/* 3. 斜め左下(画面外) → 左下 */
+@keyframes fly-left-bottom {
+  0%   { left: -100px; top: 550px; opacity: 0; transform: rotate(0deg); }
+  20%  { left: 50%;   top: 50%;   margin-left: -610px;   margin-top: 230px;   opacity: 1; transform: rotate(-10deg); }
+  100% { left: 50%;   top: 50%;   margin-left: -620px;   margin-top: 240px;   opacity: 1; }
+}
+
+/* 4. 右下(画面外) → 右下(画面内) */
+@keyframes fly-right-bottom {
+  0%   { right: -100px; top: 200px; opacity: 0; transform: rotate(0deg); }
+  20%  { right: 50%;   top: 50%;   margin-right: -690px;   margin-top: 130px;    opacity: 1; transform: rotate(10deg); }
+  100% { right: 50%;   top: 50%;   margin-right: -700px;   margin-top: 140px;    opacity: 1; }
 }
