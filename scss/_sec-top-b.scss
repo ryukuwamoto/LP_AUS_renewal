@@ -1,0 +1,115 @@
+@use "variables" as *;
+
+.sec-top-b{
+  background: #fff;
+  padding: 60px 0 80px;
+  overflow: hidden;
+
+  @media (max-width: 768px){
+    padding: 40px 0 60px;
+  }
+}
+
+.sec-top-b-inner{
+  position: relative;
+}
+
+.campaign-slider{
+  // slick 初期化前は中身を隠してチラつき防止
+  visibility: hidden;
+
+  &.slick-initialized{
+    visibility: visible;
+  }
+
+  .slide{
+    width: 310px;
+    margin: 0 8px;       // 左右 8px = スライド間隔 16px
+    outline: none;
+
+    img{
+      width: 310px;
+      height: 145px;
+      display: block;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+  }
+
+  // ----- slick-track / list -----
+  .slick-list{
+    overflow: visible;   // 中央以外のスライドも見えるように
+  }
+
+  .slick-track{
+    display: flex;
+    align-items: center;
+  }
+
+  // ----- ドット（ページネーション） -----
+  .slick-dots{
+    position: relative;
+    bottom: 0;
+    margin-top: 28px;
+    padding: 0;
+    text-align: center;
+    line-height: 0;
+
+    li{
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 4px;
+      vertical-align: middle;
+
+      button{
+        width: 12px;
+        height: 12px;
+        padding: 0;
+
+        &::before{
+          content: '';
+          width: 12px;
+          height: 12px;
+          background: #d9d9d9;
+          border-radius: 50%;
+          opacity: 1;
+          top: 0;
+          left: 0;
+          transition: background-color .3s ease;
+        }
+      }
+
+      &.slick-active button::before{
+        background: var(--ink);
+        opacity: 1;
+      }
+    }
+  }
+
+  @media (max-width: 768px){
+    .slide{
+      margin: 0 10px;    // SP は間隔 20px
+    }
+
+    .slick-dots{
+      margin-top: 20px;
+
+      li{
+        width: 10px;
+        height: 10px;
+        margin: 0 3px;
+
+        button{
+          width: 10px;
+          height: 10px;
+
+          &::before{
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+    }
+  }
+}

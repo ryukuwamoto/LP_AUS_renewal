@@ -1,55 +1,16 @@
 $(function () {
-  $(".d1-slider").slick({
+  $('.campaign-slider').slick({
+    variableWidth: true,   // 各スライドを 310px 固定幅で扱う
+    centerMode: true,      // アクティブスライドを中央に
     autoplay: true,
-    dots: false,
-    centerMode: true,
-    prevArrow: '<img src="https://gigaplus.makeshop.jp/yemoba4818/settei-suport/image/sec-top-d/side-arrow.png" class="slide-arrow prev-arrow">',
-    nextArrow: '<img src="https://gigaplus.makeshop.jp/yemoba4818/settei-suport/image/sec-top-d/side-arrow.png" class="slide-arrow next-arrow">',
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplaySpeed: 2000,
-    variableWidth: true,
-  });
-});
-
-$(function () {
-  $(".d2-slider").slick({
-    autoplay: true,
-    dots: false,
-    centerMode: true,
-    prevArrow: '<img src="https://gigaplus.makeshop.jp/yemoba4818/settei-suport/image/sec-top-d/side-arrow.png" class="slide-arrow prev-arrow">',
-    nextArrow: '<img src="https://gigaplus.makeshop.jp/yemoba4818/settei-suport/image/sec-top-d/side-arrow.png" class="slide-arrow next-arrow">',
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    autoplaySpeed: 2000,
-    variableWidth: true,
-  });
-});
-
-$(function () {
-  $(".f-slider").slick({
-    autoplay: true,
+    autoplaySpeed: 3000,
+    speed: 600,
+    arrows: false,
     dots: true,
-    variableWidth: true,
-    prevArrow: '<img src="https://gigaplus.makeshop.jp/yemoba4818/settei-suport/image/sec-top-f/f-arrow.png" class="slide-arrow prev-arrow">',
-    nextArrow: '<img src="https://gigaplus.makeshop.jp/yemoba4818/settei-suport/image/sec-top-f/f-arrow.png" class="slide-arrow next-arrow">',
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-    {
-      breakpoint: 1100,
-      settings: {
-        slidesToShow: 2,
-      }
-    },
-    {
-      breakpoint: 748,
-      settings: {
-        slidesToShow: 1,
-      }
-    }
-  ],
-    autoplaySpeed: 2000,
-    dotsClass: "f-slide-dots",
+    infinite: true,
+    swipe: true,
+    swipeToSlide: true,
+    pauseOnHover: false,
+    pauseOnFocus: false
   });
 });

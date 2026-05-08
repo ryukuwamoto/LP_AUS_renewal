@@ -1,0 +1,351 @@
+@use "variables" as *;
+
+.sec-top-c{
+  background: #fff;
+  padding: 60px 20px 80px;     // PC: 左右最低 20px の隙間
+  overflow: hidden;
+
+  @media (max-width: 768px){
+    padding: 40px 0 60px;       // SP: テーブルが横スクロールするため左右 0
+  }
+}
+
+// ---------- 見出し ----------
+.sec-head{
+  text-align: center;
+  margin-bottom: 32px;
+
+  .sec-ico{
+    width: 40px;
+    height: auto;
+    margin: 0 auto 8px;
+    display: block;
+  }
+
+  .sec-en{
+    @include font-sofia(500);
+    font-style: italic;
+    font-size: 36px;
+    color: var(--ink);
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    .line-l, .line-r{
+      display: inline-block;
+      width: 217px;
+      height: 1px;
+      background: var(--ink);
+    }
+
+    @media (max-width: 768px){
+      font-size: 25px;
+      gap: 12px;
+
+      .line-l, .line-r{ width: 35px; }
+    }
+  }
+
+  .sec-jp{
+    margin-top: 8px;
+    @include font-gen(bold);
+    font-size: 21px;
+    color: var(--ink);
+
+    @media (max-width: 768px){
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 768px){
+    margin-bottom: 24px;
+    padding: 0 20px;
+  }
+}
+
+// ---------- 横スクロールラッパー（SP用） ----------
+.plan-table-scroll{
+  max-width: 700px;
+  margin: 0 auto;
+
+  @media (max-width: 768px){
+    max-width: none;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 20px;            // 左右に 20px 余白を入れて終端を見やすく
+  }
+}
+
+// ---------- プラン表 ----------
+.plan-table{
+  width: 700px;                 // PC/SP 共通の固定幅
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--ink);
+  table-layout: fixed;
+
+  th, td{
+    border: 1px solid var(--ink);
+    padding: 0 8px;
+    text-align: center;
+    vertical-align: middle;
+    height: 60px;
+    color: var(--ink);
+  }
+
+  // 列幅: ラベル 178 / 各プラン 174
+  col, th, td{
+    &:first-child{ width: 178px; }
+  }
+
+  // ラベル列（左端）
+  th[scope="row"], thead th.label-cell{
+    @include font-gen(bold);
+    font-size: 16px;
+    background: #fff;
+
+    .en{
+      @include font-sofia(700);
+      font-size: 16px;
+    }
+  }
+
+  // データセル
+  td{
+    @include font-gen(500);
+    font-size: 16px;
+
+    .num{
+      @include font-sofia(700);
+      font-size: 34px;
+      vertical-align: baseline;
+    }
+
+    .unit{
+      @include font-sofia(700);
+      font-size: 20px;
+      margin-left: 2px;
+      vertical-align: baseline;
+    }
+
+    .unit-jp{
+      @include font-gen(bold);
+      font-size: 17px;
+      margin-left: 4px;
+      vertical-align: baseline;
+    }
+
+    .standard{
+      display: block;
+      @include font-sofia(500);
+      font-size: 19px;
+      line-height: 1.2;
+    }
+
+    .standard-sub{
+      display: block;
+      @include font-sofia(700);
+      color: #959595;
+      font-size: 11px;
+      line-height: 1.2;
+    }
+
+    .en{
+      @include font-sofia(700);
+    }
+  }
+
+  // 黄色背景行
+  .row-yellow{
+    th, td{
+      background: var(--yellow-soft);  // #FFEF99
+    }
+  }
+
+  // 国際通話 / SMS 行（最終行は少し低め）
+  .row-international{
+    th, td{ height: 50px; }
+
+    .intl-row{
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .intl-target{
+      @include font-gen(bold);
+      color: #959595;
+      font-size: 10px;
+      line-height: 1;
+
+      .num-sm{
+        @include font-sofia(700);
+        font-size: 13px;
+        margin: 0 1px;
+      }
+    }
+
+    .intl-main{
+      @include font-gen(500);
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    .intl-note{
+      display: block;
+      @include font-gen(bold);
+      color: #959595;
+      font-size: 10px;
+      margin-top: 2px;
+    }
+  }
+
+  // ヘッダー行のバッジセル
+  .plan-table-head{
+    th{ height: 60px; vertical-align: middle; }
+
+    .plan-badge{
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      line-height: 1;
+      position: relative;
+    }
+
+    .badge-ico{
+      display: block;
+      margin: 0 auto 2px;
+    }
+
+    .badge-jp{
+      @include font-gen(bold);
+      font-size: 11px;
+      color: var(--ink);
+    }
+
+    .badge-en{
+      @include font-gen(bold);
+      font-size: 23px;
+      color: var(--yellow);
+      line-height: 1.2;
+      margin-top: -2px;
+    }
+
+    .badge-text{
+      @include font-gen(bold);
+      font-size: 12px;
+      color: var(--ink);
+      margin-top: 2px;
+
+      .hl{
+        @include font-gen(bold);
+        font-size: 17px;
+        color: var(--yellow);
+      }
+    }
+  }
+}
+
+// ---------- 注意書き ----------
+.plan-note{
+  max-width: 700px;
+  margin: 24px auto 0;
+  @include font-gen(300);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ink);
+
+  @media (max-width: 768px){
+    padding: 0 20px;
+    margin-top: 20px;
+  }
+}
+
+// ---------- アクションボタン ----------
+.plan-actions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 36px;
+
+  @media (max-width: 768px){
+    flex-direction: column-reverse;  // SP: お申込みを上に
+    gap: 16px;
+    padding: 0 20px;
+    margin-top: 28px;
+  }
+
+  .btn-detail{
+    width: 279px;
+    height: 51px;
+    border: 1px solid var(--pink);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ink);
+    @include font-gen(bold);
+    font-size: 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    transition: background-color .3s ease, color .3s ease;
+
+    .btn-arrow{
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 14px;
+    }
+
+    &:hover{
+      background: var(--pink);
+      color: #fff;
+    }
+  }
+
+  .btn-apply{
+    width: 285px;
+    height: 51px;
+    background: var(--pink);
+    color: #fff;
+    border-radius: 999px;
+    border: 1px solid var(--pink);
+    @include font-gen(bold);
+    font-size: 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    position: relative;
+    transition: background-color .3s ease, color .3s ease;
+
+    .btn-apply-icon{
+      width: 22px;
+      height: auto;
+    }
+
+    .btn-arrow{
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 14px;
+    }
+
+    &:hover{
+      background: #fff;
+      color: var(--pink);
+    }
+  }
+}
