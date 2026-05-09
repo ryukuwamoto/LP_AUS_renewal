@@ -1788,7 +1788,7 @@ ul {
 
 .sec-top-b {
   background: #fff;
-  padding: 60px 0 80px;
+  padding: 120px 0 30px;
   overflow: hidden;
 }
 @media (max-width: 768px) {
@@ -1906,13 +1906,14 @@ ul {
 
 .sec-head {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 35px;
 }
 .sec-head .sec-ico {
-  width: 40px;
-  height: auto;
+  width: auto;
+  height: 50px;
   margin: 0 auto 8px;
   display: block;
+  padding-left: 320px;
 }
 .sec-head .sec-en {
   font-family: "sofia-pro-soft", sans-serif;
@@ -1921,7 +1922,6 @@ ul {
   font-style: italic;
   font-size: 36px;
   color: var(--ink);
-  line-height: 1.2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1974,7 +1974,7 @@ ul {
     max-width: none;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 0 20px;
+    padding: 2px 20px;
   }
 }
 
@@ -1982,16 +1982,26 @@ ul {
   width: 700px;
   border-collapse: collapse;
   background: #fff;
-  border: 1px solid var(--ink);
+  border: none;
+  -webkit-box-shadow: 0 0 0 2px black;
+          box-shadow: 0 0 0 2px black;
+  border-radius: 10px;
   table-layout: fixed;
+  overflow: hidden;
 }
 .plan-table th, .plan-table td {
-  border: 1px solid var(--ink);
   padding: 0 8px;
   text-align: center;
   vertical-align: middle;
   height: 60px;
   color: var(--ink);
+  border-top: none;
+  border-bottom: none;
+  border-left: 2px solid var(--yellow);
+  border-right: none;
+}
+.plan-table th:first-child, .plan-table td:first-child {
+  border-left: none;
 }
 .plan-table col:first-child, .plan-table th:first-child, .plan-table td:first-child {
   width: 178px;
@@ -2064,7 +2074,7 @@ ul {
   background: var(--yellow-soft);
 }
 .plan-table .row-international th, .plan-table .row-international td {
-  height: 50px;
+  height: 60px;
 }
 .plan-table .row-international .intl-row {
   display: -webkit-inline-box;
@@ -2073,7 +2083,7 @@ ul {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
-  gap: 6px;
+  gap: 2px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -2082,15 +2092,15 @@ ul {
   font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
   font-style: normal;
-  color: #959595;
-  font-size: 10px;
+  color: var(--ink);
+  font-size: 13px;
   line-height: 1;
 }
 .plan-table .row-international .intl-target .num-sm {
   font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 13px;
+  font-size: 14px;
   margin: 0 1px;
 }
 .plan-table .row-international .intl-main {
@@ -2203,89 +2213,167 @@ ul {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
-    gap: 16px;
+    gap: 25px;
     padding: 0 20px;
     margin-top: 28px;
   }
 }
-.plan-actions .btn-detail {
-  width: 279px;
-  height: 51px;
-  border: 1px solid var(--pink);
-  border-radius: 999px;
+
+.sec-top-d {
   background: #fff;
-  color: var(--ink);
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 17px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-decoration: none;
   position: relative;
-  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+  padding-top: 60px;
 }
-.plan-actions .btn-detail .btn-arrow {
-  position: absolute;
-  right: 22px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 8px;
-  height: 14px;
+@media (max-width: 768px) {
+  .sec-top-d {
+    padding-top: 32px;
+  }
 }
-.plan-actions .btn-detail:hover {
-  background: var(--pink);
-  color: #fff;
-}
-.plan-actions .btn-apply {
-  width: 285px;
-  height: 51px;
-  background: var(--pink);
-  color: #fff;
-  border-radius: 999px;
-  border: 1px solid var(--pink);
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 17px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 10px;
-  text-decoration: none;
+
+.select-visual {
   position: relative;
-  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  height: 817px;
+  margin-top: 40px;
+  background-image: url("../img/select/scene.png");
+  background-size: 1920px 817px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.plan-actions .btn-apply .btn-apply-icon {
-  width: 22px;
+
+.visual-teal {
+  background-color: var(--teal);
+  margin-top: -1px;
+  height: 268px;
+}
+
+.d-content-wrap {
+  padding-top: 340px;
+}
+
+.visual-logo {
+  display: block;
+  margin: 0 auto 35px;
+  width: 220px;
   height: auto;
+  position: relative;
+  z-index: 3;
 }
-.plan-actions .btn-apply .btn-arrow {
-  position: absolute;
-  right: 22px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 8px;
-  height: 14px;
+@media (max-width: 768px) {
+  .visual-logo {
+    width: 156px;
+    margin-bottom: 20px;
+  }
 }
-.plan-actions .btn-apply:hover {
-  background: #fff;
-  color: var(--pink);
+
+.feature-cards-d {
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
+  gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  z-index: 3;
+}
+@media (max-width: 768px) {
+  .feature-cards-d {
+    grid-template-columns: repeat(2, 166px);
+    gap: 8px;
+    padding: 0 12px;
+  }
+}
+
+.feature-card-d {
+  background: #fffadc;
+  border-radius: 10px;
+  width: 220px;
+  height: 88px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  line-height: 1.3;
+}
+.feature-card-d .card-top {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 29px;
+}
+.feature-card-d .card-top .en {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+}
+.feature-card-d .card-bottom {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: var(--teal);
+  font-size: 21px;
+  line-height: 29px;
+}
+.feature-card-d .card-bottom .en-lg {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 23px;
+  margin-left: 2px;
+}
+@media (max-width: 768px) {
+  .feature-card-d {
+    width: 166px;
+    height: 71px;
+    border-radius: 5px;
+  }
+  .feature-card-d .card-top {
+    font-size: 13px;
+    line-height: 21px;
+  }
+  .feature-card-d .card-top .en {
+    font-size: 15px;
+  }
+  .feature-card-d .card-bottom {
+    font-size: 17px;
+    line-height: 21px;
+  }
+  .feature-card-d .card-bottom .en-lg {
+    font-size: 19px;
+  }
+}
+
+.visual-msg {
+  margin-top: 50px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #f5f5f5;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.5;
+  position: relative;
+  z-index: 3;
+}
+@media (max-width: 768px) {
+  .visual-msg {
+    margin-top: 20px;
+    font-size: 16px;
+  }
 }/*# sourceMappingURL=style.css.map */
