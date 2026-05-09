@@ -48,3 +48,98 @@ section {
 ul {
     list-style: none;
 }
+
+@mixin btn-color($main, $shadow) {
+  background-color: $main;
+  &::before {
+    background-color: $shadow;
+  }
+}
+
+.common_btn {
+  display: flex;
+  position: relative;
+  transform-style: preserve-3d;
+  max-width: 276px;
+  width: 100%;
+  height: 47px;
+  border: 1.5px solid black;
+  border-radius: 9999px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
+  transition: .3s;
+  @include btn-color(#1B85FB, #1567C3);
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: calc(100% + 3px);
+    height: calc(100% + 3px);
+    border: 1.5px solid black;
+    border-radius: 9999px;
+    transform: translate(1px, 2px) translateZ(-1px);
+    transition: .3s;
+  }
+
+  &:hover {
+    transform: translate(3px, 3px);
+    &::before {
+      transform: translate(-1.5px, -1.5px) translateZ(-1px);
+    }
+  }
+
+  .icon-circle {
+    position: absolute;
+    left: 10px;
+    width: 29px;
+    height: 29px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+      width: 60%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    right: 20px;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    transform: rotate(45deg);
+  }
+
+  &.is-whitepink {
+    @include btn-color(#fff, #FF0064);
+  }
+
+  &.is-witegreen {
+    @include btn-color(#fff, #06C755);
+  }
+
+  &.is-pinkwhite {
+    @include btn-color(#ff0064, #fff);
+    color: #fff;
+  }
+}
+
+.wide-wrap {
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+
