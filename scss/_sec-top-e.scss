@@ -1,0 +1,465 @@
+@use "variables" as *;
+
+.sec-top-e{
+  background: var(--yellow);
+  padding: 60px 20px 80px;
+  margin-top: -0.5px;
+  overflow: hidden;
+
+  @media (max-width: 768px){
+    padding: 32px 16px 48px;
+  }
+}
+
+.sec-top-e-inner{
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+// ---------- セクション見出し ----------
+.sec-top-e-title{
+  text-align: center;
+  margin-bottom: 45px;
+  @include font-gen(bold);
+  color: var(--ink);
+
+  .title-sm{
+    display: block;
+    font-size: 33px;
+
+    .en{
+      @include font-sofia(700);
+      font-size: 35px;
+    }
+  }
+
+  .title-lg{
+    display: block;
+    font-size: 45px;
+    margin-top: -10px;
+    font-weight: 900;
+
+    .num{
+      @include font-sofia(700);
+      font-size: 69px;
+      color: var(--ink);
+      margin-right: 2px;
+    }
+  }
+
+  @media (max-width: 768px){
+    margin-bottom: 24px;
+
+    .title-sm{ font-size: 13px; .en{ font-size: 14px; } }
+    .title-lg{ font-size: 19px; .num{ font-size: 23px; } }
+  }
+}
+
+// ---------- 3つの白カード共通 ----------
+.point-card{
+  background: #fff;
+  border-radius: 12px;
+  padding: 50px 20px;
+  margin: 0 auto 32px;
+  max-width: 1030px;
+  position: relative;
+  z-index: 1;
+  transform-style: preserve-3d;
+
+  &:last-child{ padding-bottom: 86px; text-align: center;}
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    // 右下にずらす
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    
+    // 斑点模様の影
+    background-image: radial-gradient(circle, #494949 40%, transparent 40%);
+    background-size: 5px 5px;
+    
+    // 3D的な重なりを安定させる（以前のテクニック）
+    transform: translateZ(-1px);
+  }
+
+  @media (max-width: 768px){
+    padding: 24px 16px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+}
+
+.point-head{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  .point-num{
+    width: 40px;
+    height: auto;
+    flex-shrink: 0;
+
+    @media (max-width: 768px){ width: 28px; }
+  }
+
+  .point-title{
+    @include font-gen(900);
+    font-size: 24px;
+    color: var(--ink);
+    padding-bottom: 8px;
+
+    @media (max-width: 768px){ font-size: 16px; }
+  }
+}
+
+.point-desc{
+  @include font-gen(500);
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--ink);
+  text-align: center;
+
+  &.desc1 {
+    margin: 30px 0;
+  }
+
+  &.desc2 {
+    margin: 40px 0;
+  }
+
+  .en{
+    @include font-sofia(700);
+    font-size: 15px;
+  }
+
+  .hl-yellow{
+    @include font-gen(900);
+    color: var(--teal);
+  }
+
+  @media (max-width: 768px){
+    font-size: 12px;
+    text-align: left;
+  }
+}
+
+// マスコットキャラ
+.point-mascot{
+  position: absolute;
+  height: auto;
+  pointer-events: none;
+
+  &.mascot-01{ width: 102px; right: 35px;  bottom: 34px; }
+  &.mascot-02{ width: 94px; right: calc(50% - 290px);  bottom: 34px; }
+  &.mascot-03{ left: 16px;   top: 220px; }
+
+  @media (max-width: 768px){
+    width: 64px;
+    &.mascot-01{ right: 8px;  bottom: 12px; }
+    &.mascot-02{ right: 8px;  bottom: 12px; }
+    &.mascot-03{ left: 4px;   top: 180px; }
+  }
+}
+
+// ============================================
+// 01 通信キャリアで選ぶ
+// ============================================
+.carrier-grid{
+  display: flex;
+  align-items: end;             // PC: 下端揃え（中央が上に飛び出す）
+  gap: 20px;
+  max-width: 799px;
+  margin: 0 auto;
+
+  @media (max-width: 768px){
+    align-items: stretch;
+    gap: 8px;
+    display: flex;              // SP: order を効かせるため flex に
+    flex-direction: column;
+  }
+}
+
+.carrier-item{
+    flex: 1;
+  background: #fff;
+  border: var(--teal) solid 2px;
+  border-radius: 10px;
+  text-align: center;
+
+  .carrier-feature{
+      @include font-gen(bold);
+      font-size: 16px;
+      margin: 20px 0;
+      background: linear-gradient(transparent 65%, #98DADE 65%);
+      display: inline-block;
+      padding: 0 5px;
+
+      .en{ @include font-sofia(700); }
+    }
+
+  .carrier-name{
+    @include font-sofia(700);
+    font-size: 22px;
+    color: #fff;
+    background-color: var(--teal);
+    padding: 5px 0 6px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .carrier-detail{
+    @include font-gen(bold);
+    font-size: 14px;
+    color: var(--ink);
+    text-align: left;
+    line-height: 1.6;
+    padding: 0 0 20px 6%;
+  }
+
+  &.carrier-item-active{
+
+    position: relative;
+    border: var(--yellow) solid 2px;
+    z-index: 1;
+
+    .carrier-name {
+        color: var(--ink);
+        background-color: var(--yellow);
+    }
+
+    @media (max-width: 768px){
+      padding-top: 16px;          // SP: 通常パディング
+      padding-bottom: 12px;
+      order: -1;                  // SP: 一番上に
+    }
+
+    .carrier-tag{
+      @include font-gen(bold);
+      font-size: 14px;
+      color: #fff;
+      padding: 4px 0;
+    }
+
+    &::before {
+    content: "";
+    position: absolute;
+    top: 36.5px;
+    left: -2px;
+    z-index: -1;
+    background-color: var(--ink);
+    pointer-events: none;
+    width: calc(100% + 4px);
+    height: 24px
+  }
+
+  .carrier-feature{
+      background: linear-gradient(transparent 65%, var(--yellow) 65%);
+    }
+
+    img {
+        position: absolute;
+        width: 77px;
+        height: auto;
+        bottom: 16px;
+        right: 22px;
+    }
+  }
+
+  @media (max-width: 768px){
+    padding: 12px 10px;
+
+    .carrier-name{ font-size: 18px; }
+  }
+}
+
+// ============================================
+// 02 電話番号付きで選ぶ
+// ============================================
+.phone-need-title{
+  text-align: center;
+  @include font-gen(bold);
+  font-size: 21px;
+  color: var(--ink);
+  margin: 0 auto;
+  position: relative;
+
+  p {
+    display: inline-block;
+    border-bottom: 3px dotted var(--teal);
+    padding-bottom: 1px;
+  }
+  
+  @media (max-width: 768px){
+    font-size: 13px;
+    &::before, &::after{ width: 30px; margin: 0 6px; }
+  }
+}
+
+.phone-need-list{
+  display: flex;
+  gap: 20px 30px;
+  list-style: none;
+  padding: 0;
+  max-width: 799px;
+  margin: 35px auto;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @media (max-width: 768px){
+    gap: 10px;
+  }
+}
+
+.phone-need-item{
+  display: flex;
+  border-radius: 10px;
+  width: calc((100% / 2) - 15px);
+  height: 74px;
+  font-weight: bold;
+
+  .head {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--yellow);
+    border-radius: 10px 0 0 10px;
+    background-color: var(--yellow);
+    width: 150px;
+    height: 100%;
+    font-size: 19px;
+
+    img {
+      width: 22px;
+      height: auto;
+    }
+    
+    .small {
+      font-size: 15px;
+    }
+  }
+
+  .body {
+    display: flex;
+    border: 2px solid var(--yellow);
+    border-radius: 0 10px 10px 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    line-height: 22px;
+    padding-left: 6%;
+  } 
+}
+
+.phone-unlimited{
+  padding: 33px 0 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  padding-right: 90px;
+
+  .boxs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 9px;
+    height: 100%;
+
+    .box {
+      display: flex;
+      align-items: center;
+      background-color: var(--teal);
+      border-radius: 5px;
+      padding: 6px 10px;
+      gap: 4px;
+
+      img {
+        width: 18px;
+        height: auto;
+      }
+
+      p {
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .text {
+    text-align: center;
+    padding: 0 23px 0 40px;
+
+    .phone-unlimited-tag{
+      @include font-gen(bold);
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    .phone-unlimited-text{
+      @include font-gen(bold);
+      font-size: 66px;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+  }
+
+  .phone-infinity{
+    width: 84px;
+    height: auto;
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  @media (max-width: 768px){
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 12px;
+
+    .phone-unlimited-right .phone-unlimited-text{ font-size: 26px; }
+    .phone-infinity{ width: 40px; grid-column: 2; }
+  }
+}
+
+// ============================================
+// 03 サービスで選ぶ
+// ============================================
+.service-tagline{
+  justify-content: center;
+  @include font-gen(900);
+  font-size: 16px;
+  color: var(--teal);
+  padding: 48px 0 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  .cross{
+    @include font-sofia(400);
+    font-size: 1.8rem;
+    padding-bottom: 6px;
+  }
+
+  @media (max-width: 768px){ font-size: 11px; }
+}
+
+// 比較表
+.service-table-scroll{
+  max-width: 700px;
+  margin: 0 auto;
+
+  @media (max-width: 768px){
+    max-width: none;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

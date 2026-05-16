@@ -11,61 +11,8 @@
 }
 
 // ---------- 見出し ----------
-.c-wrap {
-  max-width: 920px;
-}
-
-.sec-head{
-  text-align: center;
-  margin-bottom: 35px;
-
-  .sec-ico{
-    width: auto;
-    height: 50px;
-    margin: 0 auto 8px;
-    display: block;
-    padding-left: 320px;
-  }
-
-  .sec-en{
-    @include font-sofia(500);
-    font-style: italic;
-    font-size: 36px;
-    color: var(--ink);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 39px;
-
-    .line-l, .line-r{
-      display: inline-block;
-      width: 100%;
-      height: 2px;
-      background: var(--ink);
-    }
-
-    @media (max-width: 768px){
-      font-size: 25px;
-      gap: 12px;
-
-    }
-  }
-
-  .sec-jp{
-    margin-top: 13px;
-    @include font-gen(bold);
-    font-size: 21px;
-    color: var(--ink);
-
-    @media (max-width: 768px){
-      font-size: 15px;
-    }
-  }
-
-  @media (max-width: 768px){
-    margin-bottom: 24px;
-    padding: 0 20px;
-  }
+.c-head {
+  padding: 0 0 35px;
 }
 
 // ---------- 横スクロールラッパー（SP用） ----------
@@ -218,47 +165,28 @@
 
   // ヘッダー行のバッジセル
   .plan-table-head{
-    th{ height: 60px; vertical-align: middle; }
-
-    .plan-badge{
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-      line-height: 1;
-      position: relative;
+    
+    th:nth-of-type(2) {
+      img {
+        width: 92px;
+        height: auto;
+        margin: 20px 0 0 32px;
+      }
     }
 
-    .badge-ico{
-      display: block;
-      margin: 0 auto 2px;
+    th:nth-of-type(3) {
+      img {
+        width: 72px;
+        height: auto;
+        margin: 25px 0 0 38px;
+      }
     }
 
-    .badge-jp{
-      @include font-gen(bold);
-      font-size: 11px;
-      color: var(--ink);
-    }
-
-    .badge-en{
-      @include font-gen(bold);
-      font-size: 23px;
-      color: var(--yellow);
-      line-height: 1.2;
-      margin-top: -2px;
-    }
-
-    .badge-text{
-      @include font-gen(bold);
-      font-size: 12px;
-      color: var(--ink);
-      margin-top: 2px;
-
-      .hl{
-        @include font-gen(bold);
-        font-size: 17px;
-        color: var(--yellow);
+    th:nth-of-type(4) {
+      img {
+        width: 72px;
+        height: auto;
+        margin: 25px 0 0 38px;
       }
     }
   }

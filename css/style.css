@@ -1,6 +1,13 @@
 @charset "UTF-8";
 @font-face {
   font-family: "GenJyuuGothic";
+  src: url("https://gigaplus.makeshop.jp/yemoba4818/YM-articlesaite/font/GenJyuuGothic-Heavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GenJyuuGothic";
   src: url("https://gigaplus.makeshop.jp/yemoba4818/YM-articlesaite/font/GenJyuuGothic-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
@@ -207,9 +214,69 @@ ul {
   color: #fff;
 }
 
-.wide-wrap {
+.head-wrap {
   padding: 0 20px;
   margin: 0 auto;
+  max-width: 920px;
+}
+.head-wrap .sec-head {
+  text-align: center;
+}
+.head-wrap .sec-head .sec-ico {
+  width: auto;
+  height: 50px;
+  margin: 0 auto 8px;
+  display: block;
+  padding-left: 320px;
+}
+.head-wrap .sec-head .sec-en {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-style: italic;
+  font-size: 36px;
+  color: var(--ink);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 39px;
+}
+.head-wrap .sec-head .sec-en .line-l, .head-wrap .sec-head .sec-en .line-r {
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background: var(--ink);
+}
+@media (max-width: 768px) {
+  .head-wrap .sec-head .sec-en {
+    font-size: 25px;
+    gap: 12px;
+  }
+}
+.head-wrap .sec-head .sec-jp {
+  margin-top: 13px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 21px;
+  color: var(--ink);
+}
+@media (max-width: 768px) {
+  .head-wrap .sec-head .sec-jp {
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .head-wrap .sec-head {
+    margin-bottom: 24px;
+    padding: 0 20px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1900,69 +1967,8 @@ ul {
   }
 }
 
-.c-wrap {
-  max-width: 920px;
-}
-
-.sec-head {
-  text-align: center;
-  margin-bottom: 35px;
-}
-.sec-head .sec-ico {
-  width: auto;
-  height: 50px;
-  margin: 0 auto 8px;
-  display: block;
-  padding-left: 320px;
-}
-.sec-head .sec-en {
-  font-family: "sofia-pro-soft", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-style: italic;
-  font-size: 36px;
-  color: var(--ink);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 39px;
-}
-.sec-head .sec-en .line-l, .sec-head .sec-en .line-r {
-  display: inline-block;
-  width: 100%;
-  height: 2px;
-  background: var(--ink);
-}
-@media (max-width: 768px) {
-  .sec-head .sec-en {
-    font-size: 25px;
-    gap: 12px;
-  }
-}
-.sec-head .sec-jp {
-  margin-top: 13px;
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 21px;
-  color: var(--ink);
-}
-@media (max-width: 768px) {
-  .sec-head .sec-jp {
-    font-size: 15px;
-  }
-}
-@media (max-width: 768px) {
-  .sec-head {
-    margin-bottom: 24px;
-    padding: 0 20px;
-  }
+.c-head {
+  padding: 0 0 35px;
 }
 
 .plan-table-scroll {
@@ -2119,62 +2125,20 @@ ul {
   font-size: 10px;
   margin-top: 2px;
 }
-.plan-table .plan-table-head th {
-  height: 60px;
-  vertical-align: middle;
+.plan-table .plan-table-head th:nth-of-type(2) img {
+  width: 92px;
+  height: auto;
+  margin: 20px 0 0 32px;
 }
-.plan-table .plan-table-head .plan-badge {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 0;
-  line-height: 1;
-  position: relative;
+.plan-table .plan-table-head th:nth-of-type(3) img {
+  width: 72px;
+  height: auto;
+  margin: 25px 0 0 38px;
 }
-.plan-table .plan-table-head .badge-ico {
-  display: block;
-  margin: 0 auto 2px;
-}
-.plan-table .plan-table-head .badge-jp {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 11px;
-  color: var(--ink);
-}
-.plan-table .plan-table-head .badge-en {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 23px;
-  color: var(--yellow);
-  line-height: 1.2;
-  margin-top: -2px;
-}
-.plan-table .plan-table-head .badge-text {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 12px;
-  color: var(--ink);
-  margin-top: 2px;
-}
-.plan-table .plan-table-head .badge-text .hl {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 17px;
-  color: var(--yellow);
+.plan-table .plan-table-head th:nth-of-type(4) img {
+  width: 72px;
+  height: auto;
+  margin: 25px 0 0 38px;
 }
 
 .plan-note {
@@ -2376,4 +2340,1331 @@ ul {
     margin-top: 20px;
     font-size: 16px;
   }
+}
+
+.sec-top-e {
+  background: var(--yellow);
+  padding: 60px 20px 80px;
+  margin-top: -0.5px;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .sec-top-e {
+    padding: 32px 16px 48px;
+  }
+}
+
+.sec-top-e-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.sec-top-e-title {
+  text-align: center;
+  margin-bottom: 45px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: var(--ink);
+}
+.sec-top-e-title .title-sm {
+  display: block;
+  font-size: 33px;
+}
+.sec-top-e-title .title-sm .en {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 35px;
+}
+.sec-top-e-title .title-lg {
+  display: block;
+  font-size: 45px;
+  margin-top: -10px;
+  font-weight: 900;
+}
+.sec-top-e-title .title-lg .num {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 69px;
+  color: var(--ink);
+  margin-right: 2px;
+}
+@media (max-width: 768px) {
+  .sec-top-e-title {
+    margin-bottom: 24px;
+  }
+  .sec-top-e-title .title-sm {
+    font-size: 13px;
+  }
+  .sec-top-e-title .title-sm .en {
+    font-size: 14px;
+  }
+  .sec-top-e-title .title-lg {
+    font-size: 19px;
+  }
+  .sec-top-e-title .title-lg .num {
+    font-size: 23px;
+  }
+}
+
+.point-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 50px 20px;
+  margin: 0 auto 32px;
+  max-width: 1030px;
+  position: relative;
+  z-index: 1;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.point-card:last-child {
+  padding-bottom: 86px;
+  text-align: center;
+}
+.point-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 10px;
+  left: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-image: radial-gradient(circle, #494949 40%, transparent 40%);
+  background-size: 5px 5px;
+  -webkit-transform: translateZ(-1px);
+          transform: translateZ(-1px);
+}
+@media (max-width: 768px) {
+  .point-card {
+    padding: 24px 16px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+}
+
+.point-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+.point-head .point-num {
+  width: 40px;
+  height: auto;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .point-head .point-num {
+    width: 28px;
+  }
+}
+.point-head .point-title {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 24px;
+  color: var(--ink);
+  padding-bottom: 8px;
+}
+@media (max-width: 768px) {
+  .point-head .point-title {
+    font-size: 16px;
+  }
+}
+
+.point-desc {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--ink);
+  text-align: center;
+}
+.point-desc.desc1 {
+  margin: 30px 0;
+}
+.point-desc.desc2 {
+  margin: 40px 0;
+}
+.point-desc .en {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 15px;
+}
+.point-desc .hl-yellow {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: var(--teal);
+}
+@media (max-width: 768px) {
+  .point-desc {
+    font-size: 12px;
+    text-align: left;
+  }
+}
+
+.point-mascot {
+  position: absolute;
+  height: auto;
+  pointer-events: none;
+}
+.point-mascot.mascot-01 {
+  width: 102px;
+  right: 35px;
+  bottom: 34px;
+}
+.point-mascot.mascot-02 {
+  width: 94px;
+  right: calc(50% - 290px);
+  bottom: 34px;
+}
+.point-mascot.mascot-03 {
+  left: 16px;
+  top: 220px;
+}
+@media (max-width: 768px) {
+  .point-mascot {
+    width: 64px;
+  }
+  .point-mascot.mascot-01 {
+    right: 8px;
+    bottom: 12px;
+  }
+  .point-mascot.mascot-02 {
+    right: 8px;
+    bottom: 12px;
+  }
+  .point-mascot.mascot-03 {
+    left: 4px;
+    top: 180px;
+  }
+}
+
+.carrier-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  gap: 20px;
+  max-width: 799px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .carrier-grid {
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    gap: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.carrier-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background: #fff;
+  border: var(--teal) solid 2px;
+  border-radius: 10px;
+  text-align: center;
+}
+.carrier-item .carrier-feature {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 16px;
+  margin: 20px 0;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(65%, transparent), color-stop(65%, #98DADE));
+  background: linear-gradient(transparent 65%, #98DADE 65%);
+  display: inline-block;
+  padding: 0 5px;
+}
+.carrier-item .carrier-feature .en {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.carrier-item .carrier-name {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 22px;
+  color: #fff;
+  background-color: var(--teal);
+  padding: 5px 0 6px;
+  border-radius: 8px 8px 0 0;
+}
+.carrier-item .carrier-detail {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 14px;
+  color: var(--ink);
+  text-align: left;
+  line-height: 1.6;
+  padding: 0 0 20px 6%;
+}
+.carrier-item.carrier-item-active {
+  position: relative;
+  border: var(--yellow) solid 2px;
+  z-index: 1;
+}
+.carrier-item.carrier-item-active .carrier-name {
+  color: var(--ink);
+  background-color: var(--yellow);
+}
+@media (max-width: 768px) {
+  .carrier-item.carrier-item-active {
+    padding-top: 16px;
+    padding-bottom: 12px;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
+.carrier-item.carrier-item-active .carrier-tag {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 14px;
+  color: #fff;
+  padding: 4px 0;
+}
+.carrier-item.carrier-item-active::before {
+  content: "";
+  position: absolute;
+  top: 36.5px;
+  left: -2px;
+  z-index: -1;
+  background-color: var(--ink);
+  pointer-events: none;
+  width: calc(100% + 4px);
+  height: 24px;
+}
+.carrier-item.carrier-item-active .carrier-feature {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(65%, transparent), color-stop(65%, var(--yellow)));
+  background: linear-gradient(transparent 65%, var(--yellow) 65%);
+}
+.carrier-item.carrier-item-active img {
+  position: absolute;
+  width: 77px;
+  height: auto;
+  bottom: 16px;
+  right: 22px;
+}
+@media (max-width: 768px) {
+  .carrier-item {
+    padding: 12px 10px;
+  }
+  .carrier-item .carrier-name {
+    font-size: 18px;
+  }
+}
+
+.phone-need-title {
+  text-align: center;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 21px;
+  color: var(--ink);
+  margin: 0 auto;
+  position: relative;
+}
+.phone-need-title p {
+  display: inline-block;
+  border-bottom: 3px dotted var(--teal);
+  padding-bottom: 1px;
+}
+@media (max-width: 768px) {
+  .phone-need-title {
+    font-size: 13px;
+  }
+  .phone-need-title::before, .phone-need-title::after {
+    width: 30px;
+    margin: 0 6px;
+  }
+}
+
+.phone-need-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px 30px;
+  list-style: none;
+  padding: 0;
+  max-width: 799px;
+  margin: 35px auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .phone-need-list {
+    gap: 10px;
+  }
+}
+
+.phone-need-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+  width: calc(50% - 15px);
+  height: 74px;
+  font-weight: bold;
+}
+.phone-need-item .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 2px solid var(--yellow);
+  border-radius: 10px 0 0 10px;
+  background-color: var(--yellow);
+  width: 150px;
+  height: 100%;
+  font-size: 19px;
+}
+.phone-need-item .head img {
+  width: 22px;
+  height: auto;
+}
+.phone-need-item .head .small {
+  font-size: 15px;
+}
+.phone-need-item .body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 2px solid var(--yellow);
+  border-radius: 0 10px 10px 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 22px;
+  padding-left: 6%;
+}
+
+.phone-unlimited {
+  padding: 33px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-right: 90px;
+}
+.phone-unlimited .boxs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 9px;
+  height: 100%;
+}
+.phone-unlimited .boxs .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--teal);
+  border-radius: 5px;
+  padding: 6px 10px;
+  gap: 4px;
+}
+.phone-unlimited .boxs .box img {
+  width: 18px;
+  height: auto;
+}
+.phone-unlimited .boxs .box p {
+  color: #fff;
+  font-weight: bold;
+}
+.phone-unlimited .text {
+  text-align: center;
+  padding: 0 23px 0 40px;
+}
+.phone-unlimited .text .phone-unlimited-tag {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 16px;
+  color: var(--ink);
+}
+.phone-unlimited .text .phone-unlimited-text {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 66px;
+  color: var(--ink);
+  line-height: 1.1;
+}
+.phone-unlimited .phone-infinity {
+  width: 84px;
+  height: auto;
+  grid-column: 3;
+  justify-self: end;
+}
+@media (max-width: 768px) {
+  .phone-unlimited {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 12px;
+  }
+  .phone-unlimited .phone-unlimited-right .phone-unlimited-text {
+    font-size: 26px;
+  }
+  .phone-unlimited .phone-infinity {
+    width: 40px;
+    grid-column: 2;
+  }
+}
+
+.service-tagline {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 16px;
+  color: var(--teal);
+  padding: 48px 0 10px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+}
+.service-tagline .cross {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.8rem;
+  padding-bottom: 6px;
+}
+@media (max-width: 768px) {
+  .service-tagline {
+    font-size: 11px;
+  }
+}
+
+.service-table-scroll {
+  max-width: 700px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .service-table-scroll {
+    max-width: none;
+  }
+}
+.service-table-scroll img {
+  width: 100%;
+  height: auto;
+}
+
+.sec-top-f {
+  background: var(--teal);
+  position: relative;
+  padding: 0;
+}
+
+.sec-top-f-wave-top,
+.sec-top-f-wave-bottom {
+  height: 75px;
+}
+
+.sec-top-f-wave-top {
+  background: url("../img/sec-top-f/wave-top.png");
+  background-size: 1920px 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sec-top-f-wave-bottom {
+  background: url("../img/sec-top-f/wave.png");
+  background-size: 1920px 75px;
+  -webkit-transform: scaleY(-1);
+          transform: scaleY(-1);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sec-top-f-inner {
+  max-width: 1070px;
+  margin: 0 auto;
+  padding: 0 20px 30px;
+}
+@media (max-width: 768px) {
+  .sec-top-f-inner {
+    padding: 40px 16px 32px;
+  }
+}
+
+.f-head {
+  padding: 30px 0 50px;
+}
+.f-head .sec-head .sec-en, .f-head .sec-head .sec-jp {
+  color: #fff;
+}
+.f-head .sec-head .sec-en .line-l, .f-head .sec-head .sec-en .line-r, .f-head .sec-head .sec-jp .line-l, .f-head .sec-head .sec-jp .line-r {
+  background: #fff;
+}
+
+.sec-head-on-teal {
+  text-align: center;
+  margin-bottom: 36px;
+  color: #fff;
+}
+.sec-head-on-teal .sec-ico {
+  width: 40px;
+  height: auto;
+  margin: 0 auto 8px;
+  display: block;
+}
+.sec-head-on-teal .sec-en {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-style: italic;
+  font-size: 32px;
+  color: #fff;
+  line-height: 1.2;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 24px;
+}
+.sec-head-on-teal .sec-en .line-l, .sec-head-on-teal .sec-en .line-r {
+  display: inline-block;
+  width: 240px;
+  height: 1px;
+  background: #fff;
+}
+@media (max-width: 768px) {
+  .sec-head-on-teal .sec-en {
+    font-size: 22px;
+    gap: 10px;
+  }
+  .sec-head-on-teal .sec-en .line-l, .sec-head-on-teal .sec-en .line-r {
+    width: 50px;
+  }
+}
+.sec-head-on-teal .sec-jp {
+  margin-top: 6px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 15px;
+  color: #fff;
+}
+.sec-head-on-teal .sec-jp .en {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 15px;
+}
+@media (max-width: 768px) {
+  .sec-head-on-teal .sec-jp {
+    font-size: 12px;
+  }
+  .sec-head-on-teal .sec-jp .en {
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .sec-head-on-teal {
+    margin-bottom: 20px;
+  }
+}
+
+.good-point-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+}
+@media (max-width: 768px) {
+  .good-point-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.good-point-card {
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid var(--ink);
+  padding: 16px 30px 16px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+  position: relative;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  min-height: 100px;
+}
+@media (max-width: 768px) {
+  .good-point-card {
+    padding: 14px 14px 14px 12px;
+    gap: 10px;
+    min-height: 84px;
+  }
+}
+.good-point-card:nth-of-type(1) .gp-illust {
+  width: 113px;
+  height: auto;
+  margin-right: 20px;
+}
+.good-point-card:nth-of-type(2) .gp-illust {
+  width: 158px;
+  height: auto;
+}
+.good-point-card:nth-of-type(3) .gp-illust {
+  width: 110px;
+  height: auto;
+  margin-right: 30px;
+}
+.good-point-card:nth-of-type(4) .gp-illust {
+  width: 111px;
+  height: auto;
+  margin-right: 20px;
+}
+.good-point-card:nth-of-type(5) .gp-illust {
+  width: 125px;
+  height: auto;
+  margin-right: 10px;
+}
+.good-point-card:nth-of-type(6) .gp-illust {
+  width: 72px;
+  height: auto;
+  margin-right: 47px;
+}
+
+.gp-num {
+  position: absolute;
+  top: -10px;
+  left: 18px;
+  height: 53px;
+  width: 44px;
+  background-image: url("../img/sec-top-f/flag.png");
+  background-size: 100% auto;
+  padding-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+.gp-num .gp-num-label {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+}
+.gp-num .gp-num-value {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 0.8;
+}
+@media (max-width: 768px) {
+  .gp-num {
+    padding: 3px 8px 3px 6px;
+  }
+  .gp-num .gp-num-label {
+    font-size: 8px;
+  }
+  .gp-num .gp-num-value {
+    font-size: 12px;
+  }
+}
+
+.gp-text {
+  display: inline-block;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 220px;
+}
+.gp-text .gp-text-sub {
+  font-size: 19px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.gp-text .gp-text-sub .en {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 21px;
+}
+.gp-text .gp-text-sub sup {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  vertical-align: super;
+  margin-left: 1px;
+}
+.gp-text .gp-text-hl {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: var(--teal);
+  font-size: 22px;
+  line-height: 1.3;
+}
+.gp-text .gp-text-hl .en {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 23px;
+}
+.gp-text .gp-text-hl sup {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  color: var(--ink);
+  vertical-align: super;
+  margin-left: 1px;
+}
+.gp-text .gp-text-hl.gp-text-hl-inline {
+  display: inline;
+  font-size: 21px;
+  line-height: inherit;
+}
+.gp-text .gp-text-hl.gp-text-hl-inline .en {
+  font-size: 23px;
+}
+@media (max-width: 768px) {
+  .gp-text {
+    font-size: 12px;
+  }
+  .gp-text .gp-text-sub {
+    font-size: 12px;
+  }
+  .gp-text .gp-text-sub .en {
+    font-size: 13px;
+  }
+  .gp-text .gp-text-hl {
+    font-size: 16px;
+  }
+  .gp-text .gp-text-hl .en {
+    font-size: 18px;
+  }
+  .gp-text .gp-text-hl.gp-text-hl-inline {
+    font-size: 14px;
+  }
+  .gp-text .gp-text-hl.gp-text-hl-inline .en {
+    font-size: 16px;
+  }
+}
+
+.gp-notes {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.gp-notes li {
+  margin: 0;
+}
+.gp-notes .note-num {
+  display: inline-block;
+}
+.gp-notes .note-link {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+}
+.gp-notes .note-link:hover {
+  opacity: 0.6;
+}
+@media (max-width: 768px) {
+  .gp-notes {
+    font-size: 11px;
+    margin-top: 16px;
+  }
+}
+
+.sec-top-g {
+  background: #fff;
+  padding: 60px 20px 80px;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .sec-top-g {
+    padding: 40px 20px 60px;
+  }
+}
+
+.sec-head {
+  text-align: center;
+  margin-bottom: 42px;
+}
+.sec-head .sec-ico {
+  width: 40px;
+  height: auto;
+  margin: 0 auto 8px;
+  display: block;
+}
+.sec-head .sec-en {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-style: italic;
+  font-size: 36px;
+  color: var(--ink);
+  line-height: 1.2;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 38px;
+}
+.sec-head .sec-en .line-l, .sec-head .sec-en .line-r {
+  display: inline-block;
+  width: 297px;
+  height: 1px;
+  background: var(--ink);
+}
+.sec-head .sec-jp {
+  margin-top: 8px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 21px;
+  color: var(--ink);
+}
+
+.g-wrap {
+  max-width: 1030px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.g-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  gap: 30px;
+  padding-left: 144px;
+  position: relative;
+  z-index: 2;
+}
+
+.g-tab {
+  width: 356px;
+  height: 50px;
+  border: none;
+  background: #fff3d3;
+  color: #959595;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 28px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 6px;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease, height 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, height 0.3s ease;
+  padding: 0;
+}
+.g-tab .en {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+}
+.g-tab .jp {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 28px;
+}
+.g-tab.is-active {
+  height: 70px;
+  background: var(--yellow);
+  color: var(--ink);
+  margin-bottom: -1px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.g-tab.is-active .en {
+  font-size: 40px;
+}
+.g-tab.is-active .jp {
+  font-size: 38px;
+}
+
+.g-panel-wrap {
+  background: var(--yellow);
+  border-radius: 10px;
+  padding: 80px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.g-panel {
+  display: none;
+}
+.g-panel.is-active {
+  display: block;
+}
+
+.g-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 35px;
+}
+
+.g-step {
+  width: 700px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 26px;
+}
+
+.g-step-head {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 14px;
+}
+
+.g-step-ico {
+  width: 36px;
+  height: auto;
+  display: block;
+}
+
+.g-step-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: var(--teal);
+}
+
+.g-step-label {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  gap: 6px;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+.g-step-label .step-num {
+  font-size: 28px;
+}
+
+.g-step-name {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 21px;
+  line-height: 1.4;
+  color: var(--teal);
+}
+.g-step-name .en {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 23px;
+}
+
+.g-step-desc {
+  width: 572px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  text-align: left;
+}
+.g-step-desc .link {
+  color: #46c9f4;
+  text-decoration: underline;
+}
+
+.g-callout {
+  width: 430px;
+  background: #fff;
+  border: 2px solid var(--yellow);
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 18px;
+  position: relative;
+}
+
+.g-callout-illust {
+  width: 94px;
+  height: auto;
+  display: block;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.g-callout-body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+}
+
+.g-callout-pill {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 30px;
+  padding: 0 16px;
+  background: var(--yellow);
+  border-radius: 999px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 14px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.g-callout-pill .en {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.g-callout-text {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink);
+  text-align: center;
+}
+.g-callout-text .underline {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.g-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 42px;
+}
+
+.btn-apply {
+  width: 285px;
+  height: 51px;
+  background: var(--pink);
+  color: #fff;
+  border-radius: 999px;
+  border: 1px solid var(--pink);
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 17px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  position: relative;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn-apply .btn-apply-icon {
+  width: 22px;
+  height: auto;
+}
+.btn-apply .btn-arrow {
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 8px;
+  height: 14px;
+}
+.btn-apply:hover {
+  background: #fff;
+  color: var(--pink);
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,316 @@
+@use "variables" as *;
+
+.sec-top-g{
+  background: #fff;
+  padding: 60px 20px 80px;
+  overflow: hidden;
+
+  @media (max-width: 768px){
+    padding: 40px 20px 60px;  // SP は仮値（後日デザイン入稿時に調整）
+  }
+}
+
+// ---------- 見出し ----------
+.sec-head{
+  text-align: center;
+  margin-bottom: 42px;
+
+  .sec-ico{
+    width: 40px;
+    height: auto;
+    margin: 0 auto 8px;
+    display: block;
+  }
+
+  .sec-en{
+    @include font-sofia(500);
+    font-style: italic;
+    font-size: 36px;
+    color: var(--ink);
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 38px;
+
+    .line-l, .line-r{
+      display: inline-block;
+      width: 297px;
+      height: 1px;
+      background: var(--ink);
+    }
+  }
+
+  .sec-jp{
+    margin-top: 8px;
+    @include font-gen(bold);
+    font-size: 21px;
+    color: var(--ink);
+  }
+}
+
+// ---------- ラッパー（タブ + パネル） ----------
+.g-wrap{
+  max-width: 1030px;
+  margin: 0 auto;
+  position: relative;
+}
+
+// ---------- タブ ----------
+.g-tabs{
+  display: flex;
+  align-items: end;
+  gap: 30px;
+  padding-left: 144px;        // eSIM タブの左位置（デザイン準拠）
+  position: relative;
+  z-index: 2;
+}
+
+.g-tab{
+  width: 356px;
+  height: 50px;
+  border: none;
+  background: #fff3d3;        // 非アクティブ背景（淡黄色）
+  color: #959595;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  @include font-gen(bold);
+  font-size: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background-color .3s ease, color .3s ease, height .3s ease;
+  padding: 0;
+
+  .en{
+    @include font-sofia(700);
+    font-size: 30px;
+  }
+
+  .jp{
+    @include font-gen(bold);
+    font-size: 28px;
+  }
+
+  &.is-active{
+    height: 70px;
+    background: var(--yellow);
+    color: var(--ink);
+    margin-bottom: -1px;      // パネルとシームレスに繋ぐ
+    align-items: center;
+
+    .en{
+      font-size: 40px;
+    }
+
+    .jp{
+      font-size: 38px;
+    }
+  }
+}
+
+// ---------- 黄色パネル ----------
+.g-panel-wrap{
+  background: var(--yellow);
+  border-radius: 10px;
+  padding: 80px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.g-panel{
+  display: none;
+
+  &.is-active{
+    display: block;
+  }
+}
+
+// ---------- STEP リスト ----------
+.g-steps{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.g-step{
+  width: 700px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+}
+
+.g-step-head{
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.g-step-ico{
+  width: 36px;
+  height: auto;
+  display: block;
+}
+
+.g-step-title{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--teal);
+}
+
+.g-step-label{
+  @include font-sofia(700);
+  font-size: 18px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  order: -1;          // STEP.X を「お申込み」より上に表示
+
+  .step-num{
+    font-size: 28px;
+  }
+}
+
+.g-step-name{
+  @include font-gen(bold);
+  font-weight: 900;
+  font-size: 21px;
+  line-height: 1.4;
+  color: var(--teal);
+
+  .en{
+    @include font-sofia(700);
+    font-size: 23px;
+  }
+}
+
+.g-step-desc{
+  width: 572px;
+  @include font-gen(500);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  text-align: left;
+
+  .link{
+    color: #46c9f4;
+    text-decoration: underline;
+  }
+}
+
+// ---------- コールアウト（黄色枠 + ピル + イラスト） ----------
+.g-callout{
+  width: 430px;
+  background: #fff;
+  border: 2px solid var(--yellow);
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+}
+
+.g-callout-illust{
+  width: 94px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.g-callout-body{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.g-callout-pill{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 16px;
+  background: var(--yellow);
+  border-radius: 999px;
+  @include font-gen(bold);
+  font-size: 14px;
+  color: var(--ink);
+  white-space: nowrap;
+
+  .en{
+    @include font-sofia(700);
+    font-size: 16px;
+  }
+}
+
+.g-callout-text{
+  @include font-gen(500);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink);
+  text-align: center;
+
+  .underline{
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
+
+// ---------- 申込ボタン ----------
+.g-actions{
+  display: flex;
+  justify-content: center;
+  margin-top: 42px;
+}
+
+.btn-apply{
+  width: 285px;
+  height: 51px;
+  background: var(--pink);
+  color: #fff;
+  border-radius: 999px;
+  border: 1px solid var(--pink);
+  @include font-gen(bold);
+  font-size: 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  position: relative;
+  transition: background-color .3s ease, color .3s ease;
+
+  .btn-apply-icon{
+    width: 22px;
+    height: auto;
+  }
+
+  .btn-arrow{
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 14px;
+  }
+
+  &:hover{
+    background: #fff;
+    color: var(--pink);
+
+    // 矢印・アイコンを色反転で見せたい場合は別アセットを差し替え
+  }
+}

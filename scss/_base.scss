@@ -137,9 +137,59 @@ ul {
   }
 }
 
-.wide-wrap {
+.head-wrap {
   padding: 0 20px;
   margin: 0 auto;
+  max-width: 920px;
+
+  .sec-head{
+  text-align: center;
+  .sec-ico{
+    width: auto;
+    height: 50px;
+    margin: 0 auto 8px;
+    display: block;
+    padding-left: 320px;
+  }
+
+  .sec-en{
+    @include font-sofia(500);
+    font-style: italic;
+    font-size: 36px;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 39px;
+
+    .line-l, .line-r{
+      display: inline-block;
+      width: 100%;
+      height: 2px;
+      background: var(--ink);
+    }
+
+    @media (max-width: 768px){
+      font-size: 25px;
+      gap: 12px;
+
+    }
+  }
+
+  .sec-jp{
+    margin-top: 13px;
+    @include font-gen(bold);
+    font-size: 21px;
+    color: var(--ink);
+
+    @media (max-width: 768px){
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 768px){
+    margin-bottom: 24px;
+    padding: 0 20px;
+  }
 }
-
-
+}

@@ -26,6 +26,7 @@ $font-path: 'https://gigaplus.makeshop.jp/yemoba4818/YM-articlesaite/font/';
         font-display: swap;
     }
 }
+@include font-face(900, 'GenJyuuGothic-Heavy');
 @include font-face(bold, 'GenJyuuGothic-Bold');
 @include font-face(500, 'GenJyuuGothic-Medium');
 @include font-face(normal, 'GenJyuuGothic-P-Normal');
