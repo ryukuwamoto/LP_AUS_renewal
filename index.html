@@ -171,30 +171,30 @@
                 <div class="section-box">
                   <p class="section-title">最新記事</p>
                   <a class="article" href="#">
-                    <img src="img/header/最新情報/サムネ.png">
+                    <img class="thumnail" src="img/header/最新情報/サムネ.png">
                     <div>
                       <p>2025/11/12</p>
-                      <p>【オーストラリア渡航者必見】「サクッとSIM 【AUS】」が値段そのままでデータ増量！さらに今なら「ギガっと2倍キャンペーン」で開通から6ヶ月間ギガ倍増中！</p>
+                      <p>【オーストラリア渡航者必見】「サクッとSIM 【AUS】」が値段そのままでデータ増量！さらに今なら「ギガっと2倍キャンペーン」で開通から6ヶ月間ギガ倍増中！<img src="img/footer/linkicon.png" class="inline-icon"></p>
                     </div>
                   </a>
                 </div>
                 <div class="section-box">
                   <p class="section-title">人気記事</p>
                   <a class="article" href="#">
-                    <img src="img/header/最新情報/サムネ.png">
+                    <img class="thumnail" src="img/header/最新情報/サムネ.png">
                     <div>
                       <p>2025/11/12</p>
-                      <p>【オーストラリア渡航者必見】「サクッとSIM 【AUS】」が値段そのままでデータ増量！さらに今なら「ギガっと2倍キャンペーン」で開通から6ヶ月間ギガ倍増中！</p>
+                      <p>【オーストラリア渡航者必見】「サクッとSIM 【AUS】」が値段そのままでデータ増量！さらに今なら「ギガっと2倍キャンペーン」で開通から6ヶ月間ギガ倍増中！<img src="img/footer/linkicon.png" class="inline-icon"></p>
                     </div>
                   </a>
                 </div>
                 <div class="section-box">
                   <p class="section-title">プレスリリース</p>
                   <a class="article" href="#">
-                    <img src="img/header/最新情報/サムネ.png">
+                    <img class="thumnail" src="img/header/最新情報/サムネ.png">
                     <div>
                       <p>2025/11/12</p>
-                      <p>【オーストラリア渡航者必見】「サクッとSIM 【AUS】」が値段そのままでデータ増量！さらに今なら「ギガっと2倍キャンペーン」で開通から6ヶ月間ギガ倍増中！</p>
+                      <p>【オーストラリア渡航者必見】「サクッとSIM 【AUS】」が値段そのままでデータ増量！さらに今なら「ギガっと2倍キャンペーン」で開通から6ヶ月間ギガ倍増中！<img src="img/footer/linkicon.png" class="inline-icon"></p>
                     </div>
                   </a>
                 </div>
@@ -280,7 +280,8 @@
 </header>
 
 <!-- HERO -->
-<section class="hero" data-screen-label="Hero">
+<section class="hero" data-screen-label="Hero" id="pagetop">
+  <div class="target-line"></div>
   <div class="hero-anime">
     <!-- メインキャラクター -->
   <div class="character"></div>
@@ -429,21 +430,21 @@
           <th scope="row">国際通話/<span class="en">SMS</span></th>
           <td>
             <span class="intl-row">
-              <span class="intl-target">国内<span class="num-sm">SMS</span></span>
+              <span class="intl-target">対象<span class="num-sm">15</span>カ国</span>
               <span class="intl-main">無制限</span>
             </span>
             <span class="intl-note">日本宛不可</span>
           </td>
           <td>
             <span class="intl-row">
-              <span class="intl-target">国内<span class="num-sm">SMS</span></span>
+              <span class="intl-target">対象<span class="num-sm">15</span>カ国</span>
               <span class="intl-main">無制限</span>
             </span>
             <span class="intl-note">日本宛不可</span>
           </td>
           <td>
             <span class="intl-row">
-              <span class="intl-target">国内<span class="num-sm">SMS</span></span>
+              <span class="intl-target">対象<span class="num-sm">15</span>カ国</span>
               <span class="intl-main">無制限</span>
             </span>
             <span class="intl-note">日本宛不可</span>
@@ -773,7 +774,7 @@
     </ul>
 
     <ul class="gp-notes">
-      <li><span class="note-num">*1</span>　<span class="en">SIM</span>カードの場合は定休日を除く<span class="en">14</span>時までの注文で当日発送いたします。配送方法と送料に関しては<a href="#" class="note-link">こちら</a>↗︎</li>
+      <li><span class="note-num">*1</span>　<span class="en">SIM</span>カードの場合は定休日を除く<span class="en">14</span>時までの注文で当日発送いたします。配送方法と送料に関しては<a href="#" class="note-link">こちら</a><img src="img/sec-top-f/linkicon.png" class="inline-icon"></li>
       <li><span class="note-num">*2</span>　下のプランに変更した場合、繰越データは全て失われます。</li>
       <li><span class="note-num">*3</span>　電話または、お問い合わせフォームから解約可能です。ご家族様からのご連絡でも問題ございません。</li>
       <li><span class="note-num">*4</span>　日本に一時帰国する際は、月額<span class="en">$14+Tax</span>で最長<span class="en">3</span>ヵ月電話番号を保管できます。</li>
@@ -809,26 +810,28 @@
 
       <!-- ▼ eSIM ▼ -->
       <div class="g-panel is-active" id="g-panel-esim" role="tabpanel" aria-labelledby="tab-esim">
-        <ol class="g-steps">
+        <ul class="g-steps tab-esim">
 
           <li class="g-step">
+            <div class="window-shape"></div>
             <div class="g-step-head">
-              <img class="g-step-ico" src="img/sec-top-g/step1-icon.png" alt="" width="36" height="54">
-              <div class="g-step-title">
+              <img src="img/sec-top-g/step1.png">
+              <div>
                 <p class="g-step-name">お申込み</p>
                 <p class="g-step-label"><span class="step-en">STEP.</span><span class="step-num">1</span></p>
               </div>
             </div>
             <p class="g-step-desc">
-              ご購入前に、サービスエリア・対応機種・お支払い方法などの各項目をご確認いただき、ご利用可能か必ずご確認ください。チェック項目は<a href="#" class="link">こちら</a><br>
+              ご購入前に、サービスエリア・対応機種・お支払い方法などの各項目をご確認いただき、ご利用可能か必ずご確認ください。チェック項目は<a href="#" class="link">こちら</a><img src="img/sec-top-g/linkicon.png" class="inline-icon"><br>
               ご購入30分以内にお申込みのご案内メールが届きます。
             </p>
           </li>
 
           <li class="g-step">
+            <div class="window-shape"></div>
             <div class="g-step-head">
-              <img class="g-step-ico" src="img/sec-top-g/step2-icon.png" alt="" width="36" height="54">
-              <div class="g-step-title">
+              <img src="img/sec-top-g/step2.png">
+              <div>
                 <p class="g-step-name">開通手続き</p>
                 <p class="g-step-label"><span class="step-en">STEP.</span><span class="step-num">2</span></p>
               </div>
@@ -837,21 +840,22 @@
               メールを受信しましたらご利用ガイドの手順に沿ってマイアカウントの作成と開通申込みを行なってください。
             </p>
             <div class="g-callout">
-              <img class="g-callout-illust" src="img/sec-top-g/illust-calendar.png" alt="" width="94" height="97">
+              <img class="g-callout-illust1" src="img/sec-top-g/calender.png">
               <div class="g-callout-body">
                 <span class="g-callout-pill">ご渡航前に設定を完了したい方</span>
                 <p class="g-callout-text">
                   開通希望日は、<br>
-                  ご渡航日前の設定を推奨しています。
+                  <span class="underline">ご渡航日前の設定</span>を推奨しています。
                 </p>
               </div>
             </div>
           </li>
 
           <li class="g-step">
+            <div class="window-shape"></div>
             <div class="g-step-head">
-              <img class="g-step-ico" src="img/sec-top-g/step3-icon.png" alt="" width="36" height="54">
-              <div class="g-step-title">
+              <img src="img/sec-top-g/step3esim.png">
+              <div>
                 <p class="g-step-name">日本で事前設定</p>
                 <p class="g-step-label"><span class="step-en">STEP.</span><span class="step-num">3</span></p>
               </div>
@@ -860,7 +864,7 @@
               開通希望日の16時までに、メールにて電話番号とeSIMが届きます。ご利用のスマートフォンでeSIMを読み込み、設定を完了してください。
             </p>
             <div class="g-callout">
-              <img class="g-callout-illust" src="img/sec-top-g/illust-person.png" alt="" width="103" height="97">
+              <img class="g-callout-illust2" src="img/sec-top-g/call.png">
               <div class="g-callout-body">
                 <span class="g-callout-pill"><span class="en">SIM</span>設定にご不安な方</span>
                 <p class="g-callout-text">
@@ -872,9 +876,10 @@
           </li>
 
           <li class="g-step">
+            <div class="window-shape"></div>
             <div class="g-step-head">
-              <img class="g-step-ico" src="img/sec-top-g/step4-icon.png" alt="" width="36" height="54">
-              <div class="g-step-title">
+              <img src="img/sec-top-g/step4.png">
+              <div>
                 <p class="g-step-name">現地でご利用開始</p>
                 <p class="g-step-label"><span class="step-en">STEP.</span><span class="step-num">4</span></p>
               </div>
@@ -887,8 +892,8 @@
 
           <li class="g-step">
             <div class="g-step-head">
-              <img class="g-step-ico" src="img/sec-top-g/step5-icon.png" alt="" width="36" height="54">
-              <div class="g-step-title">
+              <img src="img/sec-top-g/step5.png">
+              <div>
                 <p class="g-step-name">ご解約</p>
                 <p class="g-step-label"><span class="step-en">STEP.</span><span class="step-num">5</span></p>
               </div>
@@ -899,31 +904,33 @@
             </p>
           </li>
 
-        </ol>
+        </ul>
       </div>
       <!-- ▲ eSIM ▲ -->
 
       <!-- ▼ SIMカード ▼ -->
       <div class="g-panel" id="g-panel-sim" role="tabpanel" aria-labelledby="tab-sim" hidden>
-        <ol class="g-steps">
+        <ul class="g-steps tab-sim">
 
           <li class="g-step">
+            <div class="window-shape"></div>
             <div class="g-step-head">
-              <img class="g-step-ico" src="img/sec-top-g/step1-icon.png" alt="" width="36" height="54">
+              <img class="g-step-ico" src="img/sec-top-g/step1.png" alt="" width="36" height="54">
               <div class="g-step-title">
                 <p class="g-step-name">お申込み</p>
                 <p class="g-step-label"><span class="step-en">STEP.</span><span class="step-num">1</span></p>
               </div>
             </div>
             <p class="g-step-desc">
-              ご購入前に、サービスエリア・対応機種・お支払い方法などの各項目をご確認いただき、ご利用可能か必ずご確認ください。チェック項目は<a href="#" class="link">こちら</a><br>
+              ご購入前に、サービスエリア・対応機種・お支払い方法などの各項目をご確認いただき、ご利用可能か必ずご確認ください。チェック項目は<a href="#" class="link">こちら</a><img src="img/sec-top-g/linkicon.png" class="inline-icon"><br>
               定休日を除く14時までのお申込みで、当日発送いたします。
             </p>
           </li>
 
           <li class="g-step">
+            <div class="window-shape"></div>
             <div class="g-step-head">
-              <img class="g-step-ico" src="img/sec-top-g/step2-icon.png" alt="" width="36" height="54">
+              <img class="g-step-ico" src="img/sec-top-g/step2.png" alt="" width="36" height="54">
               <div class="g-step-title">
                 <p class="g-step-name">開通手続き</p>
                 <p class="g-step-label"><span class="step-en">STEP.</span><span class="step-num">2</span></p>
@@ -933,7 +940,7 @@
               商品が到着しましたら、同封されているご利用ガイドに沿って、SIMカード装着テストを行なってください。問題なければ、マイアカウントの作成と開通申込みを行なってください。
             </p>
             <div class="g-callout">
-              <img class="g-callout-illust" src="img/sec-top-g/illust-calendar.png" alt="" width="94" height="97">
+              <img class="g-callout-illust" src="img/sec-top-g/calender.png" alt="" width="94" height="97">
               <div class="g-callout-body">
                 <span class="g-callout-pill">ご渡航前に電話番号が必要な方</span>
                 <p class="g-callout-text">
@@ -946,8 +953,9 @@
           </li>
 
           <li class="g-step">
+            <div class="window-shape"></div>
             <div class="g-step-head">
-              <img class="g-step-ico" src="img/sec-top-g/sim-card-icon.png" alt="" width="36" height="55">
+              <img class="g-step-ico" src="img/sec-top-g/step3esim.png" alt="" width="36" height="55">
               <div class="g-step-title">
                 <p class="g-step-name"><span class="en">SIM</span>カードの装着/交換</p>
                 <p class="g-step-label"><span class="step-en">STEP.</span><span class="step-num">3</span></p>
@@ -959,8 +967,9 @@
           </li>
 
           <li class="g-step">
+            <div class="window-shape"></div>
             <div class="g-step-head">
-              <img class="g-step-ico" src="img/sec-top-g/step4-icon.png" alt="" width="36" height="54">
+              <img class="g-step-ico" src="img/sec-top-g/step4.png" alt="" width="36" height="54">
               <div class="g-step-title">
                 <p class="g-step-name">現地でご利用開始</p>
                 <p class="g-step-label"><span class="step-en">STEP.</span><span class="step-num">4</span></p>
@@ -974,7 +983,7 @@
 
           <li class="g-step">
             <div class="g-step-head">
-              <img class="g-step-ico" src="img/sec-top-g/step5-icon.png" alt="" width="36" height="54">
+              <img class="g-step-ico" src="img/sec-top-g/step5.png" alt="" width="36" height="54">
               <div class="g-step-title">
                 <p class="g-step-name">ご解約</p>
                 <p class="g-step-label"><span class="step-en">STEP.</span><span class="step-num">5</span></p>
@@ -986,25 +995,465 @@
             </p>
           </li>
 
-        </ol>
+        </ul>
       </div>
       <!-- ▲ SIMカード ▲ -->
 
     </div>
 
     <div class="g-actions">
-      <a class="btn-apply" href="#">
-        <img class="btn-apply-icon" src="img/sec-top-g/apply-icon.png" alt="" width="22" height="24">
-        <span class="btn-label">お申込みはこちら</span>
-        <img class="btn-arrow" src="img/sec-top-g/arrow-white.png" alt="" width="8" height="14">
-      </a>
+      <a class="common_btn is-whitepink" href="#">
+        <span class="icon-circle">
+          <img src="../img/icon.png">
+        </span>
+        <span class="text">VIEW MORE</span>
+        <span class="arrow"></span>
+    </a>
     </div>
 
   </div>
 </section>
-<section class="sec-top-h"></section>
-<section class="sec-top-i"></section>
-<section class="sec-top-j"></section>
-<section class="sec-top-k"></section>
+<section class="sec-top-h">
+  <div class="sec-top-h-wave-top" aria-hidden="true"></div>
+  <!-- ===================== Study & Work Guide ===================== -->
+  <div class="h-block-guide">
+
+    <div class="sec-head">
+      <img class="sec-ico" src="img/sec-top-h/top-ico-01.png" alt="" width="40" height="51">
+      <h2 class="sec-en"><span class="line-l"></span>Study &amp; Work Guide<span class="line-r"></span></h2>
+      <p class="sec-jp">留学・ワーホリのための<span class="en">SIM</span>選び</p>
+    </div>
+
+    <div class="h-handbook">
+
+      <!-- 左：目次 -->
+      <ol class="h-toc">
+        <li class="h-toc-item is-active" data-target="h-page-00">
+          <span class="h-toc-num">00</span>
+          <span class="h-toc-text">トップページ</span>
+        </li>
+        <li class="h-toc-item" data-target="h-page-01">
+          <span class="h-toc-num">01</span>
+          <span class="h-toc-text">生活の多くの場面で<br>電話番号が必須</span>
+        </li>
+        <li class="h-toc-item" data-target="h-page-02">
+          <span class="h-toc-num">02</span>
+          <span class="h-toc-text"><span class="en">Telstra</span>正規回線は<br>郊外でもつながりやすい</span>
+        </li>
+        <li class="h-toc-item" data-target="h-page-03">
+          <span class="h-toc-num">03</span>
+          <span class="h-toc-text">現地トラブルの多くは<br><span class="en">SIM</span>選びで防げる!</span>
+        </li>
+        <li class="h-toc-item" data-target="h-page-04">
+          <span class="h-toc-num">04</span>
+          <span class="h-toc-text">サクッと<span class="en">SIM AUS</span>が<br>選ばれる安心ポイント</span>
+        </li>
+        <li class="h-toc-item" data-target="h-page-05">
+          <span class="h-toc-num">05</span>
+          <span class="h-toc-text">データ容量別<br>使用アプリの目安</span>
+        </li>
+        <li class="h-toc-item" data-target="h-page-06">
+          <span class="h-toc-num">06</span>
+          <span class="h-toc-text">留学やワーホリに<br>おすすめのプラン</span>
+        </li>
+      </ol>
+
+      <!-- 中央：ページビューワー -->
+      <div class="h-pages">
+
+        <!-- === 00 表紙 === -->
+        <article class="h-page h-page-cover is-active" id="h-page-00" data-index="0">
+          <div class="h-cover-ribbon">
+            <p class="ribbon-sub">はじめての留学やワーホリに</p>
+            <p class="ribbon-main">オーストラリア<span class="en">SIM</span>の選び方ガイド</p>
+          </div>
+          <div class="h-cover-illust">
+            <img src="img/sec-top-h/cover-illust.png" alt="" width="260" height="220">
+          </div>
+          <a class="h-cover-cta" href="#h-page-01" data-target="h-page-01">
+            <span>ガイドを読む</span>
+            <img class="cta-arrow" src="img/sec-top-h/arrow-white.svg" alt="" width="16" height="16">
+          </a>
+        </article>
+
+        <!-- === 01 === -->
+        <article class="h-page" id="h-page-01" data-index="1" hidden>
+          <header class="h-page-head">
+            <span class="h-page-num">01</span>
+            <h3 class="h-page-title">生活の多くの場面で<br>電話番号が必須</h3>
+          </header>
+          <div class="h-page-illust">
+            <img src="img/sec-top-h/page-01-illust.png" alt="" width="200" height="120">
+          </div>
+          <p class="h-page-lead">
+            海外生活では<span class="hl">通話・<span class="en">SMS</span>が必須</span>!
+          </p>
+          <p class="h-page-body">
+            バイト応募、シェアハウスの連絡、銀行・e-transfer認証、学校の緊急連絡まで、ほとんどが通話・<span class="en">SMS</span>で行なわれます。
+          </p>
+          <div class="h-checkpoint">
+            <p class="h-checkpoint-label"><span class="en">CHECK POINT</span></p>
+            <p class="h-checkpoint-text">データ専用<span class="en">SIM</span>ではライフラインの確保が難しい。</p>
+          </div>
+          <div class="h-page-nav">
+            <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
+            <button class="h-nav-down" type="button" aria-label="次のページ">▼</button>
+            <button class="h-nav-next" type="button" data-step="1">次へ&nbsp;»</button>
+          </div>
+        </article>
+
+        <!-- === 02 === -->
+        <article class="h-page" id="h-page-02" data-index="2" hidden>
+          <header class="h-page-head">
+            <span class="h-page-num">02</span>
+            <h3 class="h-page-title"><span class="en">Telstra</span>正規回線で<br>郊外でもつながりやすい</h3>
+          </header>
+          <div class="h-page-illust">
+            <img src="img/sec-top-h/page-02-illust.png" alt="" width="200" height="120">
+          </div>
+          <p class="h-page-lead">
+            留学生・ワーホリは住む場所や<br>働く場所が<span class="hl">郊外になりがち</span>!
+          </p>
+          <p class="h-page-note">〜 電波が悪くなりやすいエリア 〜</p>
+          <ul class="h-page-list">
+            <li>シェアハウス</li>
+            <li>語学学校周辺</li>
+            <li>バイト先</li>
+            <li>ビーチや観光地</li>
+          </ul>
+          <div class="h-checkpoint">
+            <p class="h-checkpoint-label"><span class="en">CHECK POINT</span></p>
+            <p class="h-checkpoint-text"><span class="en">Telstra</span>正規回線は郊外でも強く、圏外リスクを大幅に減らせます!</p>
+          </div>
+          <div class="h-page-nav">
+            <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
+            <button class="h-nav-down" type="button" aria-label="次のページ">▼</button>
+            <button class="h-nav-next" type="button" data-step="1">次へ&nbsp;»</button>
+          </div>
+        </article>
+
+        <!-- === 03 === -->
+        <article class="h-page" id="h-page-03" data-index="3" hidden>
+          <header class="h-page-head">
+            <span class="h-page-num">03</span>
+            <h3 class="h-page-title">現地トラブルの多くは<br><span class="en">SIM</span>選びで防げる!</h3>
+          </header>
+          <div class="h-page-illust">
+            <img src="img/sec-top-h/page-03-illust.png" alt="" width="200" height="120">
+          </div>
+          <ul class="h-page-list">
+            <li>電波が弱くてバイト面接の連絡ができない</li>
+            <li>緊急時の<span class="en">SMS</span>認証が届かない</li>
+            <li>利用ガイドが英語で不安</li>
+            <li>シェアハウスの問い合わせがメールではなく通話</li>
+          </ul>
+          <div class="h-checkpoint">
+            <p class="h-checkpoint-label"><span class="en">CHECK POINT</span></p>
+            <p class="h-checkpoint-text">言語や通信の不安が意外とストレス。サクッと<span class="en">SIM AUS</span>ならスムーズに新生活をスタートできます!</p>
+          </div>
+          <div class="h-page-nav">
+            <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
+            <button class="h-nav-down" type="button" aria-label="次のページ">▼</button>
+            <button class="h-nav-next" type="button" data-step="1">次へ&nbsp;»</button>
+          </div>
+        </article>
+
+        <!-- === 04 === -->
+        <article class="h-page" id="h-page-04" data-index="4" hidden>
+          <header class="h-page-head">
+            <span class="h-page-num">04</span>
+            <h3 class="h-page-title">サクッと<span class="en">SIM AUS</span>が<br>選ばれる安心ポイント</h3>
+          </header>
+          <div class="h-page-illust">
+            <img src="img/sec-top-h/page-04-illust.png" alt="" width="200" height="120">
+          </div>
+          <ul class="h-page-list h-page-list-dot">
+            <li>国内通話/<span class="en">SMS</span>無制限<br><span class="sub">生活の連絡が全対応可能</span></li>
+            <li><span class="en">Telstra</span>正規回線<br><span class="sub">郊外や自然公園でもつながる</span></li>
+            <li>連絡網も日本語サポート<br><span class="sub">設定やトラブルも日本語で即解決</span></li>
+            <li>番号品質が高い<br><span class="sub">銀行やUberなど<span class="en">SMS</span>認証が通りやすい</span></li>
+          </ul>
+          <div class="h-checkpoint">
+            <p class="h-checkpoint-label"><span class="en">CHECK POINT</span></p>
+            <p class="h-checkpoint-text">初めての海外生活でもサクッと<span class="en">SIM AUS</span>なら安心!</p>
+          </div>
+          <div class="h-page-nav">
+            <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
+            <button class="h-nav-down" type="button" aria-label="次のページ">▼</button>
+            <button class="h-nav-next" type="button" data-step="1">次へ&nbsp;»</button>
+          </div>
+        </article>
+
+        <!-- === 05 === -->
+        <article class="h-page" id="h-page-05" data-index="5" hidden>
+          <header class="h-page-head">
+            <span class="h-page-num">05</span>
+            <h3 class="h-page-title">データ容量別<br>使用アプリの目安</h3>
+          </header>
+          <div class="h-page-illust">
+            <img src="img/sec-top-h/page-05-illust.png" alt="" width="200" height="120">
+          </div>
+
+          <table class="h-data-table">
+            <thead>
+              <tr><th></th><th class="col-29">29GB</th><th class="col-100">100GB</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>YouTube（720p）</th><td>約30時間</td><td>約100時間</td></tr>
+              <tr><th>Instagram</th><td>約30〜40時間</td><td>約100〜130時間</td></tr>
+              <tr><th>音声通話</th><td>常時無制限*</td><td>常時無制限*</td></tr>
+              <tr><th>ビデオ通話</th><td>約200時間</td><td>約700時間</td></tr>
+              <tr><th>普通地図</th><td>1,400時〜2,900時</td><td>常時無制限*</td></tr>
+              <tr><th>ナビ使用</th><td>約200時間以上</td><td>常時無制限*</td></tr>
+              <tr><th>Netflix</th><td>約30時間</td><td>約100時間</td></tr>
+              <tr><th>Spotify</th><td>約200時間</td><td>約700時間</td></tr>
+            </tbody>
+          </table>
+
+          <p class="h-page-foot-note">*1ヶ月1万分以下でのご利用でお願いいたします</p>
+
+          <div class="h-page-nav">
+            <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
+            <button class="h-nav-down" type="button" aria-label="次のページ">▼</button>
+            <button class="h-nav-next" type="button" data-step="1">次へ&nbsp;»</button>
+          </div>
+        </article>
+
+        <!-- === 06 === -->
+        <article class="h-page" id="h-page-06" data-index="6" hidden>
+          <header class="h-page-head">
+            <span class="h-page-num">06</span>
+            <h3 class="h-page-title">留学やワーホリに<br>おすすめのプラン</h3>
+          </header>
+          <div class="h-page-illust">
+            <img src="img/sec-top-h/page-06-illust.png" alt="" width="200" height="120">
+          </div>
+
+          <ul class="h-plans">
+            <li class="h-plan">
+              <p class="h-plan-tag">アクティブ留学タイプ</p>
+              <p class="h-plan-note">何もかも<span class="en">SNS</span>まで<br>サクサクっぽく使う人には</p>
+              <p class="h-plan-price"><span class="en">$</span><span class="num">55</span>プラン　<span class="num">100</span><span class="en">GB</span></p>
+            </li>
+            <li class="h-plan">
+              <p class="h-plan-tag">バランス派タイプ</p>
+              <p class="h-plan-note">学校やバイト・<span class="en">SNS</span>を<br>同じくらい使う人には</p>
+              <p class="h-plan-price"><span class="en">$</span><span class="num">34</span>プラン　<span class="num">29</span><span class="en">GB</span></p>
+            </li>
+            <li class="h-plan">
+              <p class="h-plan-tag">節約タイプ</p>
+              <p class="h-plan-note">生活通話<span class="en">SMS</span>のみで<br>スマホは最低限に使いたい人には</p>
+              <p class="h-plan-price"><span class="en">$</span><span class="num">24</span>プラン　<span class="num">10</span><span class="en">GB</span></p>
+            </li>
+          </ul>
+
+          <div class="h-checkpoint">
+            <p class="h-checkpoint-label"><span class="en">CHECK POINT</span></p>
+            <p class="h-checkpoint-text">渡航直後は通信環境が分からないため、通信制限を防ぐためにも余裕のあるプランをおすすめ。現地でデータ使用量を確認後、最適なプランに変更しましょう。</p>
+          </div>
+
+          <div class="h-page-nav">
+            <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- 右：SIM AUS ロゴ -->
+      <div class="h-handbook-logo">
+        <img src="img/sec-top-h/logo-sakutto-sim.png" alt="サクッとSIM AUS for iPhone" width="200" height="180">
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ===================== Customer Reviews ===================== -->
+  <div class="h-block-reviews">
+
+    <div class="sec-head">
+      <img class="sec-ico" src="img/sec-top-h/top-ico-01.png" alt="" width="40" height="51">
+      <h2 class="sec-en"><span class="line-l"></span>Customer Reviews<span class="line-r"></span></h2>
+      <p class="sec-jp">ご利用者様のお声</p>
+    </div>
+
+    <!-- スライダー枠（中身は手動で差し替え） -->
+    <div class="h-reviews-slider">
+      <!-- ↓ スライド1枚分のテンプレート。コピーして差し替えてください -->
+      <div class="h-review-slide">
+        <article class="h-review-card">
+          <p class="h-review-head"><span class="voice-en">VOICE</span><span class="voice-num">01</span></p>
+          <div class="h-review-user">
+            <img class="h-review-avatar" src="img/sec-top-h/avatar-placeholder.png" alt="" width="50" height="50">
+            <div class="h-review-meta">
+              <p class="h-review-name">○さん</p>
+              <p class="h-review-tags">#タグ1　#タグ2</p>
+            </div>
+          </div>
+          <p class="h-review-stars">★★★★★</p>
+          <p class="h-review-title">「ここにレビューのタイトル」</p>
+          <hr class="h-review-divider">
+          <p class="h-review-text">
+            ここにレビュー本文が入ります。<br>
+            （実コンテンツは別途差し込み）
+          </p>
+        </article>
+      </div>
+      <div class="h-review-slide"><article class="h-review-card h-review-card-placeholder"></article></div>
+      <div class="h-review-slide"><article class="h-review-card h-review-card-placeholder"></article></div>
+      <div class="h-review-slide"><article class="h-review-card h-review-card-placeholder"></article></div>
+      <div class="h-review-slide"><article class="h-review-card h-review-card-placeholder"></article></div>
+    </div>
+
+  </div>
+  <div class="sec-top-h-wave-bottom" aria-hidden="true"></div>
+</section>
+<section class="sec-top-i">
+  <div class="wrap-wide">
+    <img class="line_pc" src="img/sec-top-i/line_pc.png">
+    <img class="line_sp" src="img/sec-top-i/line_sp.png">
+    <div class="button-wrap">
+      <a class="common_btn is-whitegreen" href="#">
+        <span class="icon-circle">
+        </span>
+        <span class="text">友達追加はこちら</span>
+        <span class="arrow"></span>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="footer">
+  <div class="wrap-wide">
+		<div class="footer_gotop">
+			<a href="#pagetop">
+				<img src="./img/footer/footer-ico.png" data-rjs="2" alt="" data-rjs-processed="true" width="50" height="50">
+				<span class="f_sof">Back to top </span>
+			</a>
+		</div>
+		<!-- footer_gotop -->
+
+		<div class="footer_press">
+			<div class="inner">
+        <div class="section-box">
+          <p class="section-title">最新記事</p>
+          <span></span>
+          <a class="article" href="#">
+            <img class="thumnail" src="img/header/最新情報/サムネ.png">
+            <div>
+              <p>2025/11/12</p>
+              <p>【オーストラリア渡航者必見】「サクッとSIM 【AUS】」が値段そのままでデータ増量！さらに今なら「ギガっと2倍キャンペーン」で開通から6ヶ月間ギガ倍増中！<img src="img/footer/linkicon.png" class="inline-icon"></p>
+            </div>
+          </a>
+        </div>
+        <div class="section-box">
+          <p class="section-title">最新記事</p>
+          <span></span>
+          <a class="article" href="#">
+            <img class="thumnail" src="img/header/最新情報/サムネ.png">
+            <div>
+              <p>2025/11/12</p>
+              <p>【オーストラリア渡航者必見】「サクッとSIM 【AUS】」が値段そのままでデータ増量！さらに今なら「ギガっと2倍キャンペーン」で開通から6ヶ月間ギガ倍増中！<img src="img/footer/linkicon.png" class="inline-icon"></p>
+            </div>
+          </a>
+        </div>
+        <div class="section-box">
+          <p class="section-title">最新記事</p>
+          <span></span>
+          <a class="article" href="#">
+            <img class="thumnail" src="img/header/最新情報/サムネ.png">
+            <div>
+              <p>2025/11/12</p>
+              <p>【オーストラリア渡航者必見】「サクッとSIM 【AUS】」が値段そのままでデータ増量！さらに今なら「ギガっと2倍キャンペーン」で開通から6ヶ月間ギガ倍増中！<img src="img/footer/linkicon.png" class="inline-icon"></p>
+            </div>
+          </a>
+        </div>
+			</div>
+			<!-- _inner -->
+
+		</div>
+		<!-- footer_press -->
+
+		<div class="common_sns">
+			<ul>
+				<li>
+					<a href="https://x.com/yellowmobile_jp?s=21&amp;t=GKPUDikvMJZ_JZ45LIW8ZA" target="_blank">
+						<svg width="29" height="31" viewBox="0 0 29 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M0 30.0865L11.2045 16.7243L0 0H8.53866L15.9648 11.042L25.2591 0H27.785L17.103 12.7481L28.6946 30.0865H20.1443L12.324 18.4065L2.53991 30.0865H0ZM25.2451 28.2203L7.31651 1.93791H3.44718L3.52415 2.09323L21.3408 28.2203H25.2451Z" fill="black"></path>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.instagram.com/yellow_mobile_japan/" target="_blank">
+						<svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M8.60311 0.105975C7.04045 0.18244 5.97458 0.438119 5.04165 0.813275C4.07607 1.19799 3.25742 1.71652 2.44344 2.55285C1.62946 3.39157 1.128 4.2303 0.754832 5.21956C0.393322 6.17776 0.148428 7.27216 0.0784579 8.87315C0.0108204 10.4765 -0.00550629 10.9903 0.00149069 15.074C0.00848767 19.1577 0.0271464 19.6714 0.101781 21.2772C0.176415 22.8782 0.425974 23.9702 0.79215 24.926C1.16999 25.9152 1.67377 26.7516 2.49008 27.5879C3.3064 28.4219 4.12738 28.9356 5.09529 29.3179C6.02822 29.6883 7.09643 29.9392 8.65909 30.0109C10.2241 30.0826 10.7255 30.0969 14.7115 30.0898C18.6998 30.0826 19.1989 30.0635 20.7662 29.987C22.3289 29.9105 23.3947 29.6549 24.3277 29.2797C25.2932 28.8926 26.1119 28.3765 26.9259 27.5401C27.7399 26.7038 28.2413 25.8627 28.6145 24.871C28.976 23.9152 29.2209 22.8208 29.2909 21.2198C29.3585 19.6141 29.3748 19.1027 29.3678 15.0166C29.3608 10.9329 29.3422 10.4192 29.2675 8.8158C29.1929 7.21482 28.9433 6.1228 28.5772 5.1646C28.1993 4.17534 27.6955 3.339 26.8792 2.50267C26.0629 1.66873 25.2419 1.15498 24.274 0.772653C23.3388 0.402277 22.2729 0.148987 20.7102 0.0796905C19.1429 0.0103942 18.6415 -0.00394296 14.6555 0.000836096C10.6696 0.00800467 10.1681 0.0271209 8.60311 0.103586M8.77337 27.2988C7.34133 27.2343 6.56466 26.9905 6.04688 26.7874C5.36118 26.515 4.87139 26.19 4.35595 25.6643C3.84283 25.1387 3.52331 24.6392 3.25509 23.9367C3.05451 23.4062 2.81195 22.6105 2.74431 21.1434C2.67201 19.5567 2.65568 19.0812 2.64868 15.0644C2.64169 11.0476 2.65568 10.5721 2.72332 8.98545C2.78396 7.52067 3.02419 6.72257 3.22244 6.1921C3.48832 5.48719 3.80552 4.98778 4.31863 4.45969C4.83174 3.93161 5.3192 3.60663 6.0049 3.33184C6.52268 3.12395 7.29934 2.87783 8.72906 2.80853C10.2777 2.73445 10.7419 2.71773 14.6602 2.71056C18.5808 2.70339 19.0449 2.71773 20.5936 2.78702C22.0233 2.85154 22.8023 3.09288 23.3201 3.29838C24.0058 3.57079 24.4956 3.89337 25.011 4.42146C25.5265 4.94715 25.846 5.44657 26.1119 6.14909C26.3148 6.67717 26.555 7.47527 26.6227 8.94005C26.6973 10.5267 26.7136 11.0022 26.7206 15.019C26.7276 19.0358 26.7136 19.5113 26.646 21.098C26.583 22.5651 26.3451 23.3608 26.1469 23.8937C25.881 24.5962 25.5638 25.098 25.0507 25.6261C24.5376 26.1518 24.0501 26.4792 23.3644 26.754C22.8466 26.9595 22.07 27.208 20.6403 27.2773C19.0916 27.3514 18.6275 27.3681 14.7068 27.3752C10.7862 27.3824 10.3244 27.3681 8.77571 27.2988M20.7429 7.00215C20.7429 7.99858 21.5359 8.80385 22.5085 8.80385C23.481 8.80385 24.2694 7.99141 24.267 6.99498C24.267 5.99855 23.474 5.19089 22.5015 5.19328C21.5289 5.19328 20.7405 6.00571 20.7429 7.00215ZM7.14308 15.0572C7.15007 19.3225 10.5319 22.773 14.6952 22.7659C18.8584 22.7587 22.2286 19.2939 22.2216 15.0286C22.2146 10.7633 18.8304 7.3104 14.6672 7.31995C10.504 7.32712 7.13608 10.7943 7.14308 15.0596M9.78794 15.0525C9.78327 12.283 11.971 10.0345 14.6718 10.0297C17.375 10.0249 19.5697 12.2639 19.5767 15.0333C19.5814 17.8028 17.3937 20.0514 14.6905 20.0561C11.9873 20.0609 9.7926 17.8219 9.78794 15.0525Z" fill="black"></path>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.youtube.com/channel/UC5I-WwlgJp1wxuDRsGN-QDQ" target="_blank">
+						<svg width="42" height="31" viewBox="0 0 42 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M41.035 4.70737C40.5452 2.85548 39.1668 1.41221 37.3289 0.91041C34.0823 1.13941e-07 20.9466 0 20.9466 0C20.9466 0 7.84128 1.13941e-07 4.59468 0.91041C2.78713 1.41221 1.3784 2.85548 0.858295 4.70737C-1.72382e-06 8.03359 0 15.0277 0 15.0277C0 15.0277 -1.72382e-06 22.0243 0.858295 25.3815C1.3784 27.2 2.78713 28.6767 4.59468 29.1785C7.84128 30.0889 20.9466 30.0889 20.9466 30.0889C20.9466 30.0889 34.0823 30.0889 37.3289 29.1785C39.1668 28.6767 40.5452 27.2024 41.035 25.3815C41.9236 22.0243 41.9236 15.0277 41.9236 15.0277C41.9236 15.0277 41.9236 8.0312 41.035 4.70737ZM16.7811 21.4914V8.59752L27.6521 15.0277L16.7811 21.4914Z" fill="black"></path>
+						</svg>
+
+					</a>
+				</li>
+				<li>
+					<a href="https://www.tiktok.com/@official_yellowmobile" target="_blank">
+						<svg width="26" height="31" viewBox="0 0 26 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M18.5838 0C18.6444 2.49228 19.8665 4.82206 21.9423 6.12913C23.0572 6.83165 24.3236 7.1853 25.6344 7.22115V12.3037C25.6344 12.3419 25.5178 12.416 25.4618 12.4136C23.7219 12.3132 22.0543 11.9691 20.4753 11.2093L18.5838 10.0981V21.4914C17.6811 30.4951 6.05916 33.3721 1.37351 25.5177C-2.71506 18.6622 2.90585 10.0575 10.5745 11.1495V16.4089C6.80084 15.2906 3.61721 19.4603 5.75362 22.9251C7.85505 26.3326 13.0212 25.1091 13.5203 21.1449L13.5856 0.00238457H18.5814L18.5838 0Z" fill="black"></path>
+						</svg>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- common_sns -->
+
+		<div class="footer_read">
+			<div class="boxs clearfix">
+				<div class="box">
+					<div class="box_clms">
+						<div class="box_img">
+							<a href="./"><img src="./img/footer/logo.png" data-rjs="2" alt="イエローモバイル" data-rjs-processed="true" width="243" height="58"></a>
+						</div>
+						<!-- box_img -->
+						<div class="box_clm">
+							<ul>
+								<li>千葉県習志野市実籾4‐8‐24</li>
+							</ul>
+						</div>
+						<!-- box_clm -->
+						<div class="box_nav">
+							<ul>
+								<li>
+									<a href="https://www.yellowmobile.jp/view/company">会社概要</a>
+								</li>
+								<li>
+									<a href="https://yellowmobile.jp/html/privacy.html">個人情報保護に関する基本方針</a>
+								</li>
+								<li>
+									<a href="https://www.yellowmobile.jp/html/ordercontract.html">特定商取引法表示</a>
+								</li>
+								<li>
+									<a href="https://www.yellowmobile.jp/view/page/solicitationpolicy">勧誘方針</a>
+								</li>
+								<li>
+									<a href="https://www.yellowmobile.jp/view/page/salespolicy">販売方針</a>
+								</li>
+							</ul>
+						</div>
+						<!-- box_nav -->
+					</div>
+					<!-- box_clms -->
+				</div>
+				<!-- box -->
+			</div>
+			<!-- boxs -->
+		</div>
+		<!-- footer_read -->
+	</div>
+  <div class="footer_copy">
+		<p>Copyright 2024 © Yellow Mobile イエローモバイル-イエモバ- Inc All rights reserved</p>
+	</div>
+</section>
 </body>
 </html>

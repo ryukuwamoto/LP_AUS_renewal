@@ -556,26 +556,12 @@
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           background-color: #fff;
 
-          &::after {
-            content: "";
-            position: absolute;
-            bottom: 10px;
-            right: 15px;
-            width: 11.6px;
-            height: 12px;
-            background-image: url("../img/header/最新情報/icon.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            pointer-events: none;
-          }
-
           &:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
           }
 
-          img {
+          .thumnail {
             width: 100%;
             height: auto;
           }

@@ -137,13 +137,13 @@
 
     .intl-target{
       @include font-gen(bold);
-      color: var(--ink);
-      font-size: 13px;
+      color: #959595;
+      font-size: 10px;
       line-height: 1;
 
       .num-sm{
         @include font-sofia(700);
-        font-size: 14px;
+        font-size: 12px;
         margin: 0 1px;
       }
     }

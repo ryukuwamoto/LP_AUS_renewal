@@ -127,7 +127,7 @@ ul {
     @include btn-color(#fff, #FF0064);
   }
 
-  &.is-witegreen {
+  &.is-whitegreen {
     @include btn-color(#fff, #06C755);
   }
 
@@ -192,4 +192,17 @@ ul {
     padding: 0 20px;
   }
 }
+}
+
+.wrap-wide {
+  position: relative;
+  max-width: 1070px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.target-line {
+  position: absolute;
+  top: -60px;
+  left: 0;
 }

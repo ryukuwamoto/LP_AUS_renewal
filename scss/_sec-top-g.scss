@@ -60,10 +60,11 @@
 .g-tabs{
   display: flex;
   align-items: end;
+  justify-content: center;
   gap: 30px;
-  padding-left: 144px;        // eSIM タブの左位置（デザイン準拠）
   position: relative;
   z-index: 2;
+  height: 70px;
 }
 
 .g-tab{
@@ -114,7 +115,7 @@
 .g-panel-wrap{
   background: var(--yellow);
   border-radius: 10px;
-  padding: 80px 0;
+  padding: 80px 20px;
   position: relative;
   z-index: 1;
 }
@@ -135,37 +136,169 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 35px;
+  gap: 82px;
 }
 
 .g-step{
-  width: 700px;
-  background: #fff;
-  border-radius: 10px;
-  padding: 35px;
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  padding: 35px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 26px;
+  gap: 35px;
+}
+
+.tab-esim {
+  .g-step {
+    &:nth-of-type(1) {
+      .window-shape {
+        position: absolute;
+        height: 280px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-image: url("../img/sec-top-g/windowsim1.png");
+        background-size: 100% 280px;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
+    }
+
+    &:nth-of-type(2) {
+      .window-shape {
+        position: absolute;
+        height: 432px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-image: url("../img/sec-top-g/windowsim2.png");
+        background-size: 100% 432px;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
+    }
+
+    &:nth-of-type(3) {
+      .window-shape {
+        position: absolute;
+        height: 432px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-image: url("../img/sec-top-g/windowsim3.png");
+        background-size: 100% 432px;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
+    }
+
+    &:nth-of-type(4) {
+      .window-shape {
+        position: absolute;
+        height: 294px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-image: url("../img/sec-top-g/windowsim4.png");
+        background-size: 100% 294px;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
+    }
+
+    &:last-of-type {
+      background-color: #fff;
+      border-radius: 10px;
+    }
+  }
+}
+
+.tab-sim {
+  .g-step {
+    &:nth-of-type(1) {
+      .window-shape {
+        position: absolute;
+        height: 280px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-image: url("../img/sec-top-g/windowsim1.png");
+        background-size: 100% 280px;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
+    }
+
+    &:nth-of-type(2) {
+      .window-shape {
+        position: absolute;
+        height: 450px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-image: url("../img/sec-top-g/windowsimcard2.png");
+        background-size: 100% 450px;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
+    }
+
+    &:nth-of-type(3) {
+      .window-shape {
+        position: absolute;
+        height: 257px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-image: url("../img/sec-top-g/windowsimcard3.png");
+        background-size: 100% 257px;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
+    }
+
+    &:nth-of-type(4) {
+      .window-shape {
+        position: absolute;
+        height: 294px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-image: url("../img/sec-top-g/windowsim4.png");
+        background-size: 100% 294px;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
+    }
+
+    &:last-of-type {
+      background-color: #fff;
+      border-radius: 10px;
+    }
+  }
 }
 
 .g-step-head{
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-}
+  gap: 20px;
 
-.g-step-ico{
-  width: 36px;
+  img {
+    width: 36px;
   height: auto;
   display: block;
-}
+  }
 
-.g-step-title{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: var(--teal);
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--teal);
+    gap: 2px
+  }
 }
 
 .g-step-label{
@@ -174,11 +307,12 @@
   line-height: 1;
   display: inline-flex;
   align-items: baseline;
-  gap: 6px;
-  order: -1;          // STEP.X を「お申込み」より上に表示
+  gap: 1px;
+  order: -1;
 
   .step-num{
     font-size: 28px;
+    @include font-sofia(900);
   }
 }
 
@@ -186,7 +320,7 @@
   @include font-gen(bold);
   font-weight: 900;
   font-size: 21px;
-  line-height: 1.4;
+  line-height: 26px;
   color: var(--teal);
 
   .en{
@@ -196,45 +330,57 @@
 }
 
 .g-step-desc{
-  width: 572px;
+  position: relative;
+  max-width: 572px;
+  width: 100%;
   @include font-gen(500);
   font-size: 16px;
-  line-height: 1.7;
+  line-height: normal;
   color: var(--ink);
   text-align: left;
 
   .link{
     color: #46c9f4;
     text-decoration: underline;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
 
 // ---------- コールアウト（黄色枠 + ピル + イラスト） ----------
 .g-callout{
   width: 430px;
-  background: #fff;
   border: 2px solid var(--yellow);
   border-radius: 10px;
-  padding: 16px 18px;
+  padding: 16px 0 18px;
   display: flex;
-  align-items: center;
-  gap: 18px;
+  align-items: start;
+  justify-content: space-between;
   position: relative;
 }
 
-.g-callout-illust{
+.g-callout-illust1{
   width: 94px;
   height: auto;
   display: block;
-  flex-shrink: 0;
+  margin: 7px 0 0 27px;
+}
+
+.g-callout-illust2{
+  width: 103px;
+  height: auto;
+  display: block;
+  margin: 7px 0 0 31px;
 }
 
 .g-callout-body{
-  flex: 1;
   display: flex;
+  width: 268px;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 21px;
 }
 
 .g-callout-pill{
@@ -242,9 +388,9 @@
   align-items: center;
   justify-content: center;
   height: 30px;
-  padding: 0 16px;
+  width: 100%;
   background: var(--yellow);
-  border-radius: 999px;
+  border-radius: 5px 0 0 5px;
   @include font-gen(bold);
   font-size: 14px;
   color: var(--ink);
@@ -259,13 +405,12 @@
 .g-callout-text{
   @include font-gen(500);
   font-size: 14px;
-  line-height: 1.65;
+  line-height: 23px;
   color: var(--ink);
   text-align: center;
 
   .underline{
-    text-decoration: underline;
-    text-underline-offset: 2px;
+    text-decoration: underline var(--yellow) 2px;
   }
 }
 

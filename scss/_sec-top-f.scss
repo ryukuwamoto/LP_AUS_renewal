@@ -333,3 +333,11 @@
     margin-top: 16px;
   }
 }
+
+.inline-icon {
+  display: inline;
+  height: 0.8em;            /* 文字のフォントサイズと同じ高さにする */
+  width: auto;            /* 横幅はアスペクト比を維持 */
+  vertical-align: middle; /* 文字の高さの中央に揃える */
+  margin: 0 0 3px 4px;       /* 文字とアイコンの間の隙間（任意） */
+}
