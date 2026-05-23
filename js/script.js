@@ -4,6 +4,7 @@ $(function () {
     centerMode: true,      // アクティブスライドを中央に
     autoplay: true,
     autoplaySpeed: 3000,
+    slidesToShow: 3,
     speed: 600,
     arrows: false,
     dots: true,
@@ -143,3 +144,32 @@ $(function () {
 
 })(window.jQuery);
 
+
+// f-slider
+$(function () {
+  $(".f-slider").slick({
+    autoplay: true,
+    dots: true,
+    variableWidth: true,
+    prevArrow: '<img src="https://gigaplus.makeshop.jp/yemoba4818/YM-LP/AUS/sec-top-h/sliderarrow.png" class="slide-arrow prev-arrow">',
+    nextArrow: '<img src="https://gigaplus.makeshop.jp/yemoba4818/YM-LP/AUS/sec-top-h/sliderarrow.png" class="slide-arrow next-arrow">',
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+    {
+      breakpoint: 1100,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 748,
+      settings: {
+        slidesToShow: 1,
+      }
+    }
+  ],
+    autoplaySpeed: 2000,
+    dotsClass: "f-slide-dots",
+  });
+});

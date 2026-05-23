@@ -76,40 +76,40 @@
 }
 
 .h-handbook{
-  max-width: 1030px;
+  width: 100%;
   margin: 0 auto;
   background: var(--yellow);
   border-radius: 10px;
-  padding: 40px;
   display: flex;
-  align-items: stretch;
   justify-content: center;
-  gap: 30px;
-
-  // 子要素にも min-width: 0 を許可してフレックス縮小を有効にする
-  > *{ min-width: 0; }
+  aspect-ratio: 1030 / 574;
+  overflow: hidden;
 }
 
 // ---------- 目次 ----------
 .h-toc{
+  display: flex;
+  flex-direction: column;
   list-style: none;
   margin: 0;
-  padding: 0;
-  background: var(--yellow);
-  width: 234px;
+  padding: 2.8155% 3%;
+  width: 28.932%;
+  height: 100%;
   flex-shrink: 0;
+  background: var(--yellow-soft);
 }
 
 .h-toc-item{
+  flex: 1;
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 0;
   cursor: pointer;
-  border-bottom: 1px dashed rgba(0,0,0,.4);
   transition: color .2s ease, font-weight .2s ease;
 
-  &:last-child{ border-bottom: none; }
+  &:not(:last-child) {
+      border-bottom: 3px dotted #fff; /* ドットの色や太さは任意で調整 */
+    }
 
   // 番号：通常は文字のみ、アクティブ時は黄色フラッグで装飾
   .h-toc-num{
@@ -130,14 +130,13 @@
 
   .h-toc-text{
     @include font-gen(bold);
-    font-size: 16px;
+    font-size: 16px; 
+
+  @media (max-width: 1030px) {
+    font-size: 1.5534vw; 
+  }
     line-height: 1.25;
     color: var(--ink);
-
-    .en{
-      @include font-sofia(700);
-      font-size: 18px;
-    }
   }
 
   // アクティブ状態：番号に右向きフラッグのあしらい
@@ -156,10 +155,11 @@
 
 // ---------- ページビューワー（固定 340×489 / 比率維持で縮小 / スクロール） ----------
 .h-pages{
-  width: 340px;
+  width: 42.1359%;
   max-width: 100%;
   aspect-ratio: 340 / 489;
   flex-shrink: 1;
+  margin: 4.0776% 4.5631%;
   background: #fff;
   border-radius: 10px;
   position: relative;
@@ -171,10 +171,6 @@
   inset: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 28px 26px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
 
   &[hidden]{ display: none; }
 
@@ -194,89 +190,35 @@
 .h-page-cover{
   align-items: center;
   text-align: center;
-  padding-top: 6px;
+  background: url('../img/sec-top-h/表紙.png');
+  background-size: 100%;
 }
-
-.h-cover-ribbon{
-  width: 100%;
-  background: var(--yellow);
-  padding: 10px 14px;
-  border-radius: 6px;
-  position: relative;
-
-  // リボン両端の三角形（任意装飾）
-  &::before,
-  &::after{
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    transform: translateY(-50%);
-  }
-  &::before{
-    left: -10px;
-    border-width: 14px 10px 14px 0;
-    border-color: transparent var(--yellow) transparent transparent;
-  }
-  &::after{
-    right: -10px;
-    border-width: 14px 0 14px 10px;
-    border-color: transparent transparent transparent var(--yellow);
-  }
-
-  .ribbon-sub{
-    @include font-gen(bold);
-    font-size: 13px;
-    color: var(--ink);
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-
-  .ribbon-main{
-    @include font-gen(bold);
-    font-size: 17px;
-    color: var(--ink);
-    line-height: 1.3;
-
-    .en{
-      @include font-sofia(700);
-      font-size: 19px;
-    }
-  }
-}
-
-.h-cover-illust{
-  margin: 6px 0;
-
-  img{
-    width: 100%;
-    max-width: 260px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-}
-
 .h-cover-cta{
   display: inline-flex;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 200px;
-  height: 44px;
+  width: 50%;
+  height: 8%;
   background: var(--teal);
   color: #fff;
   border-radius: 999px;
   @include font-gen(bold);
-  font-size: 15px;
+  font-size: 16px; 
+
+  @media (max-width: 1030px) {
+    font-size: 1.5534vw; 
+  }
   text-decoration: none;
   transition: opacity .25s ease;
 
   .cta-arrow{
-    width: 16px;
-    height: 16px;
+    width: 8%;
+    height: auto;
   }
 
   &:hover{ opacity: .85; }
@@ -441,7 +383,7 @@
   position: sticky;
   bottom: 0;
   margin-top: auto;                 // 短いページではいちばん下に押し付け
-  padding: 12px 0 4px;
+  padding: 10px 10px 20px;
   background: #fff;                 // スクロールするコンテンツの上に乗せるため不透明
   display: flex;
   align-items: center;
@@ -449,16 +391,9 @@
   gap: 10px;
   z-index: 2;
 
-  // コンテンツとの境目に薄いフェード
-  &::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 100%;
-    height: 14px;
-    background: linear-gradient(rgba(255,255,255,0), #fff);
-    pointer-events: none;
+  img {
+    width: 6%;
+    height: auto;
   }
 
   button{
@@ -478,7 +413,6 @@
   .h-nav-down{
     background: #fff;
     color: var(--teal);
-    border: 1px solid var(--teal);
     padding: 4px 10px;
   }
 }
@@ -597,16 +531,15 @@
 
 // ---------- 右側ロゴ ----------
 .h-handbook-logo{
-  width: 200px;
+  width: 28.932%;
   flex-shrink: 0;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding-top: 30px;
+  background-color: var(--yellow-soft);
 
   img{
-    width: 100%;
-    max-width: 200px;
+    width: 65%;
     height: auto;
   }
 }
@@ -614,181 +547,73 @@
 // =========================================================
 // Customer Reviews
 // =========================================================
-.h-block-reviews{
-  // sec-head の色は white のままで OK
-}
-
-.h-reviews-slider{
-  max-width: 1030px;
-  margin: 0 auto;
-  visibility: hidden;
-
-  &.slick-initialized{
-    visibility: visible;
-  }
-
-  // slick
-  .slick-list{ overflow: hidden; }
-  .slick-track{ display: flex; align-items: stretch; }
-
-  .h-review-slide{
-    padding: 0 12px;
-  }
-
-  // ドット
-  .slick-dots{
-    position: relative;
-    bottom: 0;
-    margin-top: 24px;
-    padding: 0;
-    text-align: center;
-    line-height: 0;
-
-    li{
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      margin: 0 4px;
-      vertical-align: middle;
-
-      button{
-        width: 10px;
-        height: 10px;
-        padding: 0;
-
-        &::before{
-          content: '';
-          width: 10px;
-          height: 10px;
-          background: rgba(255,255,255,.5);
-          border-radius: 50%;
-          opacity: 1;
-          top: 0;
-          left: 0;
-        }
-      }
-
-      &.slick-active button::before{
-        background: #fff;
-      }
+.f-slider-wrap {
+    padding-bottom: 40px;
+    @media (max-width: 1070px) {
+        width: 680px;
+        margin: 0 auto;
     }
-  }
-
-  // 左右の矢印
-  .slick-prev,
-  .slick-next{
-    width: 32px;
-    height: 32px;
-    z-index: 2;
-
-    &::before{
-      content: '';
-      display: block;
-      width: 32px;
-      height: 32px;
-      background-image: url("../img/sec-top-h/slider-arrow.svg");
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 1;
+    @media (max-width: 748px) {
+        width: 330px;
     }
-  }
-  .slick-prev{ left: -40px; }
-  .slick-next{ right: -40px; transform: translateY(-50%) scaleX(-1); }
 }
 
-// レビューカード
-.h-review-card{
-  background: #fff;
-  border-radius: 10px;
-  padding: 22px 22px 26px;
-  min-height: 360px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.h-review-card-placeholder{
-  background: rgba(255,255,255,.5);
-  border: 2px dashed rgba(255,255,255,.6);
-}
-
-.h-review-head{
-  display: inline-flex;
-  align-items: baseline;
-  gap: 10px;
-
-  .voice-en{
-    @include font-sofia(700);
-    font-style: italic;
-    font-size: 21px;
-    color: var(--ink);
-  }
-
-  .voice-num{
-    @include font-sofia(700);
-    font-style: italic;
-    font-size: 35px;
-    color: var(--yellow);
-    line-height: 1;
-  }
-}
-
-.h-review-user{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.h-review-avatar{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+// sec-f-slider
+.f-slider {
+  position: relative;
   display: block;
-}
+  width: 100%;
+  height: auto;
 
-.h-review-meta{
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
+  .slide-arrow {
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+    margin: auto;
+    height: 30px;
+    width: 30px;
+    left: 50%;
+    z-index: 10;
+  }
 
-.h-review-name{
-  @include font-gen(500);
-  font-size: 12px;
-  color: var(--ink);
-}
+  .prev-arrow {
+    transform: translateX(calc(-50% - 130px)) translateY(10px) rotate(180deg);
+  }
 
-.h-review-tags{
-  @include font-gen(500);
-  font-size: 12px;
-  color: var(--ink);
-}
+  .next-arrow {
+    transform: translateX(calc(-50% + 130px)) translateY(10px);
+  }
 
-.h-review-stars{
-  color: var(--yellow);
-  font-size: 14px;
-  letter-spacing: 2px;
-  line-height: 1;
-}
+  .slide, .slick-slide {
+    width: 330px;
+    margin: 0 10px;
+    img {
+      width: 330px;
+      height: 415px;
+      margin: 0 auto;
+    }
+  }
 
-.h-review-title{
-  @include font-gen(500);
-  font-size: 17px;
-  line-height: 1.5;
-  color: var(--ink);
-}
+  .f-slide-dots {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-size: 0;
+    padding-top: 36px;
 
-.h-review-divider{
-  border: 0;
-  border-top: 1px solid #ddd;
-  margin: 4px 0;
-}
+    li {
+      width: 8px;
+      height: 8px;
+      margin: 0 5px;
+      background: white;
+      border-radius: 50%;
+      cursor: pointer;
 
-.h-review-text{
-  @include font-gen(500);
-  font-size: 13px;
-  line-height: 1.8;
-  color: var(--ink);
+      &.slick-active {
+        transform: scale(2);
+      }
+    }
+  }
 }
 
 // =========================================================
