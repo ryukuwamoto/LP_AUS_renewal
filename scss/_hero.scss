@@ -13,6 +13,14 @@
   padding: 0;
   height: 425px;
   text-align: center;
+
+  @media (max-width: 768px){
+    background-image: url("../img/hero/back_ph.png");
+    background-size: 100% auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 195 / 203;
+  }
 }
 
 .hero-anime{
@@ -31,6 +39,15 @@
   transform: translateX(-50%);
   animation: sway-pause 5s ease-in-out infinite;
   z-index: 10;
+
+  @media (max-width: 768px){
+    width: 36%;
+    height: auto;
+    aspect-ratio: 109 / 125;
+    left: calc(50% + 0vw);
+    top: calc(50% + 68vw);
+    margin-left: 0;
+  }
   }
 }
 
@@ -49,6 +66,11 @@
   background-repeat: no-repeat;
   opacity: 0;
   animation-fill-mode: forwards;
+
+  @media (max-width: 768px){
+    left: 50%;
+    top: 50%;
+  }
 }
 
 .item-passport {
@@ -56,6 +78,13 @@
   animation: fly-left-top 5s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards;
   width: 89px;
   height: 100px;
+
+  @media (max-width: 768px){
+    animation: fly-left-top_ph 5s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards;
+    width: 25%;
+    height: auto;
+    aspect-ratio: 100 / 89;
+  }
 }
 
 .item-ticket {
@@ -63,6 +92,10 @@
   animation: fly-left-bottom 5s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.4s;
   width: 130px;
   height: 128px;
+
+  @media (max-width: 768px){
+    display: none;
+  }
 }
 
 .item-phone {
@@ -70,6 +103,13 @@
   animation: fly-right-top 5s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.2s;
   width: 109px;
   height: 132px;
+
+  @media (max-width: 768px){
+    animation: fly-right-top_ph 5s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.2s;
+    width: 29%;
+    height: auto;
+    aspect-ratio: 132 / 109;
+  }
 }
 
 .item-boomerang {
@@ -77,6 +117,10 @@
   animation: fly-right-bottom 5s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.7s;
   width: 124px;
   height: 119px;
+
+  @media (max-width: 768px){
+    display: none;
+  }
 }
 
 /* 1. 斜め左下(画面外) → 左上 */
@@ -86,11 +130,23 @@
   100% { left: 50%;   top: 50%;   margin-left: -387px;   margin-top: 17px;    opacity: 1; }
 }
 
+@keyframes fly-left-top_ph {
+  0%   { transform: translate(-500px, 200px) rotate(0deg); opacity: 0;}
+  20%  { transform: translate(-46vw, 12vw) rotate(15deg); opacity: 1;}
+  100% { transform: translate(-48vw, 13vw); opacity: 1;}
+}
+
 /* 2. 右下(画面外) → 右上 */
 @keyframes fly-right-top {
   0%   { right: -100px; top: 550px; opacity: 0; transform: rotate(0deg); }
   20%  { right: 50%;   top: 50%;   margin-right: -380px;   margin-top: 234px;     opacity: 1; transform: rotate(-15deg); }
   100% { right: 50%;   top: 50%;   margin-right: -390px;   margin-top: 244px;     opacity: 1; }
+}
+
+@keyframes fly-right-top_ph {
+  0%   { transform: translate(500px, 200px) rotate(0deg); opacity: 0;}
+  20%  { transform: translate(25vw, 72vw) rotate(-15deg); opacity: 1;}
+  100% { transform: translate(27vw, 73vw); opacity: 1;}
 }
 
 /* 3. 斜め左下(画面外) → 左下 */

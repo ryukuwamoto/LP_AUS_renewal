@@ -2,18 +2,16 @@
 
 .sec-top-g{
   background: #fff;
-  padding: 60px 20px 80px;
+  padding: 60px 0 80px;
   overflow: hidden;
 
   @media (max-width: 768px){
-    padding: 40px 20px 60px;  // SP は仮値（後日デザイン入稿時に調整）
+    padding: 40px 0 60px;  // SP は仮値（後日デザイン入稿時に調整）
   }
 }
 
 // ---------- 見出し ----------
 .sec-head{
-  text-align: center;
-  margin-bottom: 42px;
 
   .sec-ico{
     width: 40px;
@@ -50,11 +48,6 @@
 }
 
 // ---------- ラッパー（タブ + パネル） ----------
-.g-wrap{
-  max-width: 1030px;
-  margin: 0 auto;
-  position: relative;
-}
 
 // ---------- タブ ----------
 .g-tabs{
@@ -93,6 +86,10 @@
     @include font-gen(bold);
     font-size: 28px;
   }
+
+  @media (max-width: 1070px){
+    width: 320px;
+    }
 
   &.is-active{
     height: 70px;
@@ -375,12 +372,23 @@
   margin: 7px 0 0 31px;
 }
 
+.g-callout-illust3{
+  width: 94px;
+  height: auto;
+  display: block;
+  margin: 13px 0 0 27px;
+}
+
 .g-callout-body{
   display: flex;
   width: 268px;
   flex-direction: column;
   align-items: center;
   gap: 21px;
+
+  &.simcard {
+    gap: 14px;
+  }
 }
 
 .g-callout-pill{

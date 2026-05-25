@@ -25,47 +25,18 @@
   background-position: center;
 }
 // ---------- 共通：見出し ----------
-.sec-head{
-  text-align: center;
-  margin-bottom: 32px;
+.h-head {
+  padding: 0 0 35px;
 
-  .sec-ico{
-    width: 40px;
-    height: auto;
-    margin: 0 auto 8px;
-    display: block;
-  }
-
-  .sec-en{
-    @include font-sofia(500);
-    font-style: italic;
-    font-size: 36px;
+.sec-head {
+    .sec-en, .sec-jp {
     color: #fff;
-    line-height: 1.2;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
 
-    .line-l, .line-r{
-      display: inline-block;
-      width: 200px;
-      height: 1px;
+      .line-l, .line-r {
       background: #fff;
+      }
     }
-  }
-
-  .sec-jp{
-    margin-top: 8px;
-    @include font-gen(bold);
-    font-size: 16px;
-    color: #fff;
-
-    .en{
-      @include font-sofia(700);
-      font-size: 18px;
-    }
-  }
+}
 }
 
 // =========================================================
@@ -153,7 +124,7 @@
   }
 }
 
-// ---------- ページビューワー（固定 340×489 / 比率維持で縮小 / スクロール） ----------
+// ---------- ページビューワー----------
 .h-pages{
   width: 42.1359%;
   max-width: 100%;
@@ -167,22 +138,38 @@
 }
 
 .h-page{
-  position: absolute;
-  inset: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto; /* 上（画像）は残りの高さ全て、下（ナビ）は文字の高さ */
+  overflow: hidden;
 
   &[hidden]{ display: none; }
 
-  // スクロールバー（控えめ）
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0,0,0,.25) transparent;
+  .h-page-imgwrap {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;  /* 👈 ここでスクロールバーを出します */
+    overflow-x: hidden;
 
-  &::-webkit-scrollbar{ width: 6px; }
-  &::-webkit-scrollbar-track{ background: transparent; }
-  &::-webkit-scrollbar-thumb{
-    background: rgba(0,0,0,.2);
-    border-radius: 3px;
+    // スクロールバー（控えめ）の設定
+    scrollbar-width: thin;
+    scrollbar-color: var(--ink-soft) transparent;
+
+    &::-webkit-scrollbar{ width: 4px; }
+    &::-webkit-scrollbar-track{ background: transparent; }
+    &::-webkit-scrollbar-thumb{
+      background: var(--ink-soft);
+      border-radius: 3px;
+    }
+  }
+
+  /* ▼ [変更] 中の画像自体は100%の幅で素直に表示させます ▼ */
+  img {
+    width: 100%;
+    height: auto;      /* 👈 縦に潰れず、本来の比率で縦長に表示されます */
+    display: block;
   }
 }
 
@@ -224,172 +211,18 @@
   &:hover{ opacity: .85; }
 }
 
-// ===== 01〜06 共通 =====
-.h-page-head{
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
-}
-
-.h-page-num{
-  @include font-sofia(700);
-  font-size: 18px;
-  color: var(--ink);
-  flex-shrink: 0;
-}
-
-.h-page-title{
-  @include font-gen(bold);
-  font-size: 17px;
-  line-height: 1.4;
-  color: var(--ink);
-
-  .en{
-    @include font-sofia(700);
-    font-size: 19px;
-  }
-}
-
-.h-page-illust{
-  text-align: center;
-  margin: 4px 0;
-
-  img{
-    width: auto;
-    max-height: 130px;
-    margin: 0 auto;
-    display: block;
-  }
-}
-
-.h-page-lead{
-  @include font-gen(bold);
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--ink);
-  text-align: center;
-
-  .hl{
-    background: linear-gradient(transparent 60%, var(--yellow) 60%);
-    padding: 0 2px;
-  }
-
-  .en{
-    @include font-sofia(700);
-    font-size: 16px;
-  }
-}
-
-.h-page-body{
-  @include font-gen(500);
-  font-size: 13px;
-  line-height: 1.7;
-  color: var(--ink);
-
-  .en{
-    @include font-sofia(700);
-    font-size: 14px;
-  }
-}
-
-.h-page-note{
-  @include font-gen(bold);
-  font-size: 12px;
-  color: var(--ink);
-  text-align: center;
-}
-
-.h-page-list{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-
-  li{
-    @include font-gen(500);
-    font-size: 13px;
-    line-height: 1.55;
-    color: var(--ink);
-    padding-left: 14px;
-    position: relative;
-
-    &::before{
-      content: '・';
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--teal);
-      font-weight: 700;
-    }
-
-    .en{
-      @include font-sofia(700);
-      font-size: 14px;
-    }
-
-    .sub{
-      display: block;
-      font-size: 11px;
-      color: #5a5a5a;
-      margin-top: 2px;
-    }
-  }
-
-  &.h-page-list-dot li::before{
-    content: '●';
-    font-size: 10px;
-    top: 4px;
-    color: var(--teal);
-  }
-}
-
-// CHECK POINT
-.h-checkpoint{
-  background: var(--yellow-soft);
-  border-radius: 8px;
-  padding: 12px 14px;
-}
-
-.h-checkpoint-label{
-  @include font-gen(bold);
-  font-size: 11px;
-  color: var(--teal);
-  margin-bottom: 4px;
-
-  .en{
-    @include font-sofia(700);
-    font-size: 12px;
-  }
-}
-
-.h-checkpoint-text{
-  @include font-gen(500);
-  font-size: 12px;
-  line-height: 1.6;
-  color: var(--ink);
-
-  .en{
-    @include font-sofia(700);
-    font-size: 13px;
-  }
-}
-
 // ページ内ナビ：スクロールしてもページ下部に固定
 .h-page-nav{
-  position: sticky;
-  bottom: 0;
-  margin-top: auto;                 // 短いページではいちばん下に押し付け
-  padding: 10px 10px 20px;
+  position: relative;
+  width: 100%;
+  padding: 15px 10px;
   background: #fff;                 // スクロールするコンテンツの上に乗せるため不透明
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
   z-index: 2;
+  box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.05);
 
   img {
     width: 6%;
@@ -416,119 +249,6 @@
     padding: 4px 10px;
   }
 }
-
-// ===== ページ 05 のテーブル =====
-.h-data-table{
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  font-size: 11px;
-  @include font-gen(500);
-
-  thead{
-    th{
-      background: var(--teal);
-      color: #fff;
-      padding: 4px 6px;
-      text-align: center;
-      @include font-sofia(700);
-      font-size: 13px;
-
-      &:first-child{ background: transparent; }
-    }
-  }
-
-  tbody{
-    th{
-      text-align: left;
-      padding: 6px 8px;
-      @include font-gen(bold);
-      font-size: 11px;
-      color: var(--ink);
-      background: #fff8d8;
-    }
-
-    td{
-      text-align: center;
-      padding: 6px 8px;
-      color: var(--ink);
-      background: #fff;
-      border-top: 1px solid #f3e89c;
-    }
-  }
-}
-
-.h-page-foot-note{
-  @include font-gen(300);
-  font-size: 10px;
-  color: #6b5400;
-  text-align: right;
-}
-
-// ===== ページ 06 プランカード =====
-.h-plans{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.h-plan{
-  background: #fff;
-  border: 1px solid var(--yellow);
-  border-radius: 8px;
-  padding: 10px 12px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 6px 10px;
-  align-items: center;
-}
-
-.h-plan-tag{
-  grid-column: 1 / -1;
-  display: inline-block;
-  width: max-content;
-  background: var(--yellow);
-  color: var(--ink);
-  @include font-gen(bold);
-  font-size: 12px;
-  padding: 2px 12px;
-  border-radius: 999px;
-}
-
-.h-plan-note{
-  @include font-gen(500);
-  font-size: 11px;
-  line-height: 1.5;
-  color: var(--ink);
-
-  .en{
-    @include font-sofia(700);
-    font-size: 12px;
-  }
-}
-
-.h-plan-price{
-  @include font-gen(bold);
-  font-size: 13px;
-  color: var(--pink);
-  text-align: right;
-  white-space: nowrap;
-
-  .num{
-    @include font-sofia(700);
-    font-size: 24px;
-    margin: 0 2px;
-  }
-
-  .en{
-    @include font-sofia(700);
-    font-size: 13px;
-  }
-}
-
 // ---------- 右側ロゴ ----------
 .h-handbook-logo{
   width: 28.932%;

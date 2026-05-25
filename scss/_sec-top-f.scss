@@ -28,19 +28,10 @@
   background-position: center;
 }
 
-.sec-top-f-inner{
-  max-width: 1070px;
-  margin: 0 auto;
-  padding: 0 20px 30px;
-
-  @media (max-width: 768px){
-    padding: 40px 16px 32px;
-  }
-}
 
 // ---------- 見出し（ティール背景上の白文字バージョン） ----------
 .f-head {
-  padding: 30px 0 50px;
+  padding: 30px 20px 50px;
 
   .sec-head {
     .sec-en, .sec-jp {
@@ -336,8 +327,8 @@
 
 .inline-icon {
   display: inline;
-  height: 0.8em;            /* 文字のフォントサイズと同じ高さにする */
-  width: auto;            /* 横幅はアスペクト比を維持 */
-  vertical-align: middle; /* 文字の高さの中央に揃える */
-  margin: 0 0 3px 4px;       /* 文字とアイコンの間の隙間（任意） */
+  height: 0.8em;
+  width: auto;
+  vertical-align: middle;
+  margin: 0 0 3px 4px;
 }

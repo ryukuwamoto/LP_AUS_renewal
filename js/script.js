@@ -12,7 +12,8 @@ $(function () {
     swipe: true,
     swipeToSlide: true,
     pauseOnHover: false,
-    pauseOnFocus: false
+    pauseOnFocus: false,
+    dotsClass: "b-slide-dots"
   });
 });
 
@@ -78,6 +79,12 @@ $(function () {
         p.classList.toggle('is-active', active);
         if (active) {
           p.removeAttribute('hidden');
+
+          const imgWrap = p.querySelector('.h-page-imgwrap');
+          if (imgWrap) {
+            imgWrap.scrollTop = 0;
+          }
+          
         } else {
           p.setAttribute('hidden', '');
         }
@@ -121,26 +128,6 @@ $(function () {
   }
 
   // ---------- Customer Reviews スライダー ----------
-  if (typeof $ !== 'undefined' && $.fn.slick) {
-    $('.h-reviews-slider').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      arrows: true,
-      dots: true,
-      infinite: true,
-      autoplay: false,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1,
-            centerMode: true,
-            centerPadding: '30px'
-          }
-        }
-      ]
-    });
-  }
 
 })(window.jQuery);
 

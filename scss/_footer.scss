@@ -20,9 +20,12 @@
     }
 
 	.box_clm {
-		padding: 12px 0 35px;
+		padding: 20px 0 45px;
 
 		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
 			li {
 				font-size: 107%;
 				font-weight: 300;
@@ -37,11 +40,7 @@
 				font-size: 94%;
 				font-weight: 300;
 				display: inline-block;
-
-				&:nth-child(2) {
-					margin: 0 50px;
-				}
-
+				margin: 0 10px;
 				a {
 					text-decoration: underline;
 				}
@@ -125,7 +124,7 @@
 }
 
 .common_sns {
-	margin-top: 80px;
+	margin-top: 60px;
 
 	&.__header {
 		margin: -28px 0 42px;
@@ -221,4 +220,12 @@
         }
       }
     }
+}
+
+.footer-inline-icon {
+  display: inline;
+  height: 0.8em;
+  width: auto;
+  vertical-align: middle;
+  margin: 0 5px 2px 0;
 }

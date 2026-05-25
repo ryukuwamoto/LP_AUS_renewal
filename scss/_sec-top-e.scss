@@ -2,18 +2,13 @@
 
 .sec-top-e{
   background: var(--yellow);
-  padding: 60px 20px 80px;
+  padding: 60px 0 80px;
   margin-top: -0.5px;
   overflow: hidden;
 
   @media (max-width: 768px){
-    padding: 32px 16px 48px;
+    padding: 32px 0 48px;
   }
-}
-
-.sec-top-e-inner{
-  max-width: 1180px;
-  margin: 0 auto;
 }
 
 // ---------- セクション見出し ----------
@@ -248,7 +243,7 @@
     &::before {
     content: "";
     position: absolute;
-    top: 36.5px;
+    top: 36px;
     left: -2px;
     z-index: -1;
     background-color: var(--ink);

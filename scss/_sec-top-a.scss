@@ -17,7 +17,12 @@
   align-items: stretch;
   gap: 20px;
 
+  @media (max-width: 1020px){
+    gap: 10px;
+  }
+
   @media (max-width: 768px){
+    max-width: 500px;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -39,12 +44,17 @@
   justify-content: space-between;
   position: relative;
 
+  @media (max-width: 1020px){
+    padding: 25px 4px;
+  }
+
   @media (max-width: 768px){
     width: 100%;
     height: 180px;
     padding: 13px 14px 14px;
     gap: 10px;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -56,6 +66,11 @@
     width: 100%;
     height: auto;
     display: block;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 1020px){
+    width: 90px;
   }
 
   @media (max-width: 768px){
@@ -70,6 +85,12 @@
   text-align: left;
   justify-content: space-between;
 
+  @media (max-width: 1020px){
+    align-items: stretch;
+    justify-content: center;
+    gap: 10px;
+  }
+
   @media (max-width: 768px){
     align-items: stretch;
   }
@@ -77,12 +98,17 @@
 
 .support-card-text{
   h2 {
-    @include font-gen(bold);
+    @include font-gen(900);
   color: var(--ink);
   line-height: 1.35;
 
   .lg{ font-size: 21px; }
   .sm{ font-size: 15px; }
+
+  @media (max-width: 1020px){
+    .lg{ font-size: 17px; }
+    .sm{ font-size: 11px; }
+  }
 
   @media (max-width: 768px){
     .lg{ font-size: 17px; }
@@ -101,11 +127,24 @@
       @include font-sofia(700);
       font-size: 16px;
     }
+    
+    @media (max-width: 1020px){
+      font-size: 12px;
+      line-height: 1.5;
+      margin-top: 4px;
+
+      .en{ font-size: 13px; }
+    }
+
+    @media (max-width: 824px){
+      .res { display: none;}
+    }
 
     @media (max-width: 768px){
       font-size: 11px;
       line-height: 1.5;
       margin-top: 4px;
+      .res { display: block;}
 
       .en{ font-size: 13px; }
     }
@@ -120,8 +159,12 @@
   gap: 20px;
   flex: 57;
 
+  @media (max-width: 1020px){
+    gap: 10px;
+  }
+
   @media (max-width: 768px){
-    gap: 9px;
+    gap: 10px;
     width: 100%;
     justify-content: space-between;
   }
@@ -140,7 +183,7 @@
   position: relative;
 
   @media (max-width: 768px){
-    width: 107px;
+    width: 100%;
     height: 100px;
     padding: 12px 4px 8px;
   }
@@ -179,6 +222,14 @@
     font-size: 16px;
   }
 
+  @media (max-width: 1020px){
+      font-size: 12px;
+      line-height: 1.5;
+      margin-top: 4px;
+
+      .en{ font-size: 13px; }
+    }
+
   @media (max-width: 768px){
     font-size: 11px;
     line-height: 1.45;
@@ -215,10 +266,10 @@
   }
 
   @media (max-width: 768px){
-    top: -8px;
-    left: 6px;
-    width: 42px;
-    height: 42px;
+    top: -6px;
+    left: -6px;
+    width: 40px;
+    height: 40px;
 
     .en{ font-size: 10px; }
     .jp{ font-size: 10px; }
