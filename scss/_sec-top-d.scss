@@ -7,7 +7,7 @@
   padding-top: 60px;
 
   @media (max-width: 768px){
-    padding-top: 32px;
+    padding-top: 0;
   }
 }
 
@@ -20,6 +20,12 @@
   left: calc(50% + 60px);
   transform-origin: bottom center;
   animation: walkDiagonal 2.5s linear infinite;
+
+  @media (max-width: 768px){
+    width: 93px;
+    top: 100px;
+    animation: walkDiagonal-sp 2.5s infinite linear;
+  }
 }
 
 @keyframes walkDiagonal {
@@ -72,6 +78,37 @@
   }
 }
 
+@keyframes walkDiagonal-sp {
+  0% {
+    top: -10px; // スマホ用の位置
+    left: calc(50% + 60px);
+    transform: scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  22% {
+    top: calc(-10px + 14px - 3px);
+    left: calc(50% + 54px);
+    transform: scale(0.7) rotate(6deg);
+  }
+  45% {
+    top: calc(0px + 18px);
+    left: calc(50% + 42px);
+    transform: scale(0.78) rotate(-6deg);
+  }
+  67% {
+    top: calc(0px + 22px - 3px);
+    left: calc(50% + 36px);
+    transform: scale(0.9) rotate(6deg);
+  }
+  90%, 100% {
+    top: 32px; // スマホ用の位置
+    left: calc(50% + 20px);
+    transform: scale(1.0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
 // ---------- メインビジュアル + ティール + 黄色帯 ----------
 .select-visual{
   position: relative;
@@ -81,6 +118,12 @@
   background-size: 1920px 817px;
   background-repeat: no-repeat;
   background-position: center; // 常に中央を基準にする
+
+  @media (max-width: 768px){
+    background-image: url("../img/select/scene_sp.png");
+    height: 539px;
+    background-size: auto 539px;
+  }
 }
 
 .visual-teal {
@@ -90,7 +133,11 @@
 }
 
 .d-content-wrap {
-    padding-top: 340px;
+  padding-top: 340px;
+
+  @media (max-width: 768px){
+    padding-top: 145px;
+  }
 }
 
 // サクッとSIM ロゴ
@@ -103,7 +150,7 @@
   z-index: 3;
 
   @media (max-width: 768px){
-    width: 156px;
+    width: 209px;
     margin-bottom: 20px;
   }
 }
@@ -121,9 +168,12 @@
   z-index: 3;
 
   @media (max-width: 768px){
-    grid-template-columns: repeat(2, 166px);
+    display: flex;
+    max-width: 500px;
+    grid-template-columns: none;
+    flex-wrap: wrap;
     gap: 8px;
-    padding: 0 12px;
+    padding: 0 20px;
   }
 }
 
@@ -165,7 +215,7 @@
   }
 
   @media (max-width: 768px){
-    width: 166px;
+    width: calc(100% / 2 - 4px);
     height: 71px;
     border-radius: 5px;
 
@@ -197,7 +247,7 @@
   z-index: 3;
 
   @media (max-width: 768px){
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 16px;
   }
 }
