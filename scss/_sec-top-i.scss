@@ -12,6 +12,9 @@
 
     @media (max-width: 768px){
       display: block;
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
     }
   }
 
@@ -19,5 +22,9 @@
     display: flex;
     justify-content: center;
     margin-top: 20px;
+  }
+
+  @media (max-width: 768px){
+    padding: 56px 0 66px;
   }
 }

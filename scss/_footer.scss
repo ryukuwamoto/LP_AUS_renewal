@@ -47,10 +47,29 @@
 			}
 		}
 	}
+
+	@media (max-width: 768px){
+		.box_img {
+			a {
+				img {
+					width: 150px;
+					height: auto;
+				}
+			}
+		}
+
+		.box_nav {
+			ul {
+				li {
+					margin: 0 10px;
+				}
+			}
+		}
+    }
 }
 
 .footer_copy {
-	padding: 25px 0;
+	padding: 25px 30px;
 	background-color: #00a3ad;
 
 	p {
@@ -149,6 +168,12 @@
 
 		gap: 100px;
 	}
+
+	@media (max-width: 768px){
+		ul {
+			gap: 44px;
+		}
+    }
 }
 
 .footer_press {
@@ -219,6 +244,15 @@
           }
         }
       }
+    }
+
+	@media (max-width: 768px){
+        max-width: 400px;
+		margin: 0 auto;
+
+		.inner {
+			flex-direction: column;
+		}
     }
 }
 

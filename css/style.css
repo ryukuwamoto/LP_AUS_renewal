@@ -3371,7 +3371,7 @@ ul {
   .phone-need-item .body {
     font-size: 13px;
     border-radius: 0 0 10px 10px;
-    padding: 10px;
+    padding: 10px 6px;
   }
 }
 
@@ -3753,7 +3753,7 @@ ul {
 }
 @media (max-width: 768px) {
   .good-point-card:nth-of-type(1) .gp-illust {
-    width: 87px;
+    width: 80px;
     margin: 0 8px 0 7px;
   }
 }
@@ -3801,7 +3801,7 @@ ul {
 }
 @media (max-width: 768px) {
   .good-point-card:nth-of-type(4) .gp-illust {
-    width: 79px;
+    width: 72px;
     margin: 0 12px 0 11px;
   }
 }
@@ -3836,7 +3836,7 @@ ul {
 @media (max-width: 768px) {
   .good-point-card:nth-of-type(6) .gp-illust {
     width: 50px;
-    margin: 0 26px 0 26px;
+    margin: 0 35px 0 17px;
   }
 }
 
@@ -5126,22 +5126,6 @@ ul {
 }
 
 @media (max-width: 768px) {
-  .sec-top-h {
-    padding: 50px 16px 70px;
-  }
-  .sec-top-h::before, .sec-top-h::after {
-    height: 28px;
-  }
-  .sec-head .sec-en {
-    font-size: 25px;
-    gap: 12px;
-  }
-  .sec-head .sec-en .line-l, .sec-head .sec-en .line-r {
-    width: 46px;
-  }
-  .sec-head .sec-jp {
-    font-size: 14px;
-  }
   .h-block-guide {
     margin-bottom: 60px;
   }
@@ -5166,15 +5150,6 @@ ul {
   .h-handbook-logo {
     padding-top: 0;
   }
-  .h-reviews-slider .h-review-slide {
-    padding: 0 8px;
-  }
-  .h-reviews-slider .slick-prev {
-    left: 8px;
-  }
-  .h-reviews-slider .slick-next {
-    right: 8px;
-  }
 }
 .sec-top-i {
   padding: 120px 0;
@@ -5190,6 +5165,9 @@ ul {
 @media (max-width: 768px) {
   .sec-top-i .line_sp {
     display: block;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
   }
 }
 .sec-top-i .button-wrap {
@@ -5200,6 +5178,11 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .sec-top-i {
+    padding: 56px 0 66px;
+  }
 }
 
 .footer {
@@ -5244,9 +5227,18 @@ ul {
 .footer_read .box_nav ul li a {
   text-decoration: underline;
 }
+@media (max-width: 768px) {
+  .footer_read .box_img a img {
+    width: 150px;
+    height: auto;
+  }
+  .footer_read .box_nav ul li {
+    margin: 0 10px;
+  }
+}
 
 .footer_copy {
-  padding: 25px 0;
+  padding: 25px 30px;
   background-color: #00a3ad;
 }
 .footer_copy p {
@@ -5333,6 +5325,11 @@ ul {
           justify-content: center;
   gap: 100px;
 }
+@media (max-width: 768px) {
+  .common_sns ul {
+    gap: 44px;
+  }
+}
 
 .footer_press {
   padding-top: 100px;
@@ -5408,6 +5405,18 @@ ul {
   font-size: 16px;
   -webkit-text-decoration: underline var(--ink) 1px;
           text-decoration: underline var(--ink) 1px;
+}
+@media (max-width: 768px) {
+  .footer_press {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .footer_press .inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .footer-inline-icon {

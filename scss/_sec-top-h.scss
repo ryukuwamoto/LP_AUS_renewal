@@ -341,26 +341,6 @@
 // =========================================================
 @media (max-width: 768px){
 
-  .sec-top-h{
-    padding: 50px 16px 70px;
-
-    &::before,
-    &::after{ height: 28px; }
-  }
-
-  .sec-head{
-    .sec-en{
-      font-size: 25px;
-      gap: 12px;
-
-      .line-l, .line-r{ width: 46px; }
-    }
-
-    .sec-jp{
-      font-size: 14px;
-    }
-  }
-
   // --- ハンドブック ---
   .h-block-guide{ margin-bottom: 60px; }
 
@@ -382,13 +362,5 @@
 
   .h-handbook-logo{
     padding-top: 0;
-  }
-
-  // --- レビュー ---
-  .h-reviews-slider{
-    .h-review-slide{ padding: 0 8px; }
-
-    .slick-prev{ left: 8px; }
-    .slick-next{ right: 8px; }
   }
 }
