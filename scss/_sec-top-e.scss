@@ -604,7 +604,22 @@
     padding-bottom: 6px;
   }
 
-  @media (max-width: 768px){ font-size: 11px; }
+  @media (max-width: 768px){
+    padding: 25px 0 2px;
+    flex-direction: column;
+    gap: 0;
+
+    .cross{
+      @include font-sofia(400);
+      font-size: 1.8rem;
+      padding-bottom: 6px;
+      line-height: 0.8;
+    }
+  }
+}
+
+.desc3 {
+  margin: 0 auto 25px;
 }
 
 // 比較表
@@ -613,11 +628,36 @@
   margin: 0 auto;
 
   @media (max-width: 768px){
-    max-width: none;
+    max-width: 538px;
   }
 
-  img {
+  @media (max-width: 607px){
+    max-width: none;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-shrink: 0;
+  }
+
+  .table_pc {
     width: 100%;
     height: auto;
+  }
+
+  .table_sp {
+    display: none;
+  }
+
+  @media (max-width: 768px){
+    .table_pc {
+      display: none;
+    }
+
+    .table_sp {
+      display: block;
+      width: 538px;
+      min-width: 538px;
+      height: auto;
+      flex-shrink: 0;
+    }
   }
 }
