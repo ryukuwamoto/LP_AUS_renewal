@@ -555,7 +555,7 @@ ul {
             flex: 0 0 100%; /* 💡横幅いっぱいに広げて強制的に下段へ落とす */
     width: 100%;
     background-color: var(--teal);
-    padding: 10px 20px;
+    padding: 10px 20px 0;
     -ms-flex-pack: distribute;
         justify-content: space-around;
     -webkit-box-align: baseline;
@@ -563,9 +563,20 @@ ul {
             align-items: baseline;
     gap: 0;
   }
+}
+@media (max-width: 768px) and (max-width: 660px) {
+  .nav {
+    padding: 6px 20px 0;
+  }
+}
+@media (max-width: 768px) {
+  .nav .nav-item-wrapper:hover {
+    background-color: #98DADE;
+    border-radius: 4px 4px 0 0;
+  }
   .nav .nav-item-wrapper .nav-item {
     text-align: center;
-    padding: 12px 0; /* スマホ用に上下の余白を少しスマートに */
+    padding: 12px 10px; /* スマホ用に上下の余白を少しスマートに */
     font-size: 14px;
     color: #fff;
   }
@@ -573,24 +584,12 @@ ul {
 @media (max-width: 768px) and (max-width: 660px) {
   .nav .nav-item-wrapper .nav-item {
     font-size: 11px;
-    padding: 0;
+    padding: 10px 5px 6px;
   }
 }
 @media (max-width: 768px) {
   .nav .nav-item-wrapper .nav-item::after {
-    content: "";
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--teal);
-    -webkit-transform: scale(0, 1);
-            transform: scale(0, 1);
-    -webkit-transition: -webkit-transform 0.3s;
-    transition: -webkit-transform 0.3s;
-    transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
+    display: none;
   }
   .nav .nav-item-wrapper .nav-item img {
     display: inline-block;
@@ -827,6 +826,45 @@ ul {
   width: 32px;
   height: auto;
   padding-bottom: 4px;
+}
+@media (max-width: 768px) {
+  .menu-service .content-box1 {
+    gap: 16px;
+  }
+  .menu-service .content-box1 .content-box2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    width: 100%;
+  }
+  .menu-service .content-box1 .content-box2 a, .menu-service .content-box1 .content-box2 div {
+    -webkit-box-flex: initial;
+        -ms-flex: initial;
+            flex: initial;
+  }
+  .menu-service .content-box1 .content-box2 .content-box3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 16px;
+    height: 100%;
+  }
+  .menu-service .content-box1 .content-box2 .content-box3 .box {
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    width: calc(50% - 10px);
+    height: calc(50% - 10px);
+  }
+  .menu-service .content-box1 > .box {
+    display: none;
+    width: 100%;
+  }
 }
 
 .menu-process .content-box1 {
