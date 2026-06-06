@@ -142,6 +142,42 @@ ul {
     border-right: 2px solid #fff;
   }
   }
+
+  &.content-sp, &.apply-sp {
+    width: 94px;
+    height: 24px;
+    font-size: 11px;
+    padding-left: 10px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      border: 1.5px solid black;
+      border-radius: 9999px;
+      transform: translate(1px, 2px) translateZ(-1px);
+      transition: .3s;
+    }
+
+    &:hover {
+      transform: translate(2px, 2px);
+
+      &::before {
+        transform: translate(-1.5px, -1.5px) translateZ(-1px);
+      }
+    }
+
+    .icon-circle {
+      left: 4px;
+      width: 16px;
+      height: 16px;
+      border: 0.5px solid var(--ink);
+    }
+  }
 }
 
 .head-wrap {
