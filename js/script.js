@@ -16,6 +16,11 @@ $(function() {
   $('.nav-item').on('click fontstart', function() {
     $('.nav-item-wrapper').removeClass('is-close');
   });
+
+  $('.mega-menu a[href^="#"]').on('click', function() {
+    // クリックされたリンクの親にある「.nav-item-wrapper」を探して非表示クラスをつける
+    $(this).closest('.nav-item-wrapper').addClass('is-close');
+  });
 });
 
 

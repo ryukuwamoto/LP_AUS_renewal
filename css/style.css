@@ -74,7 +74,7 @@ html, body {
   background: #fff;
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img {
@@ -564,6 +564,10 @@ ul {
 .nav .nav-item-wrapper:hover .mega-menu {
   opacity: 1;
   visibility: visible;
+}
+.nav .nav-item-wrapper.is-close .mega-menu {
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 @media (max-width: 768px) {
   .nav {

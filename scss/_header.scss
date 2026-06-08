@@ -109,6 +109,13 @@
         visibility: visible;
       }
     }
+
+    &.is-close {
+      .mega-menu {
+        opacity: 0 !important;
+        visibility: hidden !important;
+      }
+    }
   }
 
   @media (max-width: 768px) {
