@@ -1,3 +1,25 @@
+$(function() {
+  // 閉じるボタンをクリックしたときの処理
+  $('.menu-close-btn').on('click', function(e) {
+    e.stopPropagation(); // 親要素へのイベント伝播を止める
+    
+    // クリックされたボタンの属するメニューラッパーに非表示クラスをつける
+    $(this).closest('.nav-item-wrapper').addClass('is-close');
+  });
+
+  // マウスがメニューから外れたら、非表示クラスを解除して次回また開くようにする
+  $('.nav-item-wrapper').on('mouseleave', function() {
+    $(this).removeClass('is-close');
+  });
+  
+  // スマホのタップ対策：他のナビアイテムを触ったら非表示クラスをリセット
+  $('.nav-item').on('click fontstart', function() {
+    $('.nav-item-wrapper').removeClass('is-close');
+  });
+});
+
+
+
 $(function () {
   $('.campaign-slider').slick({
     variableWidth: true,   // 各スライドを 310px 固定幅で扱う

@@ -217,18 +217,34 @@ ul {
 
     &.fico{
     padding-left: 180px;
+
+    @media (max-width: 768px){
+      padding-left: 120px;
+      }
     }
 
     &.gico{
     padding-left: 170px;
+
+    @media (max-width: 768px){
+      padding-left: 115px;
+      }
     }
 
     &.h1ico{
     padding-left: 300px;
+
+    @media (max-width: 768px){
+      padding-left: 220px;
+      }
     }
 
     &.h2ico{
     padding-left: 280px;
+
+    @media (max-width: 768px){
+      padding-left: 205px;
+      }
     }
   }
 
