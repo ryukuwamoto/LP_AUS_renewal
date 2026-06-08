@@ -1,25 +1,34 @@
 $(function() {
-  // 閉じるボタンをクリックしたときの処理
+  // 1. 閉じるボタンをクリックしたときの処理
   $('.menu-close-btn').on('click', function(e) {
     e.stopPropagation(); // 親要素へのイベント伝播を止める
     
-    // クリックされたボタンの属するメニューラッパーに非表示クラスをつける
-    $(this).closest('.nav-item-wrapper').addClass('is-close');
+    var $wrapper = $(this).closest('.nav-item-wrapper');
+    $wrapper.addClass('is-close'); // メニューを閉じる
+    
+    // 💡【追加】スマホのアクティブ状態（背景色）を強制リセット
+    $wrapper.find('.nav-item').trigger('blur');
+    $(this).trigger('blur');
   });
 
-  // マウスがメニューから外れたら、非表示クラスを解除して次回また開くようにする
+  // 2. マウスがメニューから外れたら、非表示クラスを解除して次回また開くようにする
   $('.nav-item-wrapper').on('mouseleave', function() {
     $(this).removeClass('is-close');
   });
   
-  // スマホのタップ対策：他のナビアイテムを触ったら非表示クラスをリセット
+  // 3. スマホのタップ対策：他のナビアイテムを触ったら非表示クラスをリセット
   $('.nav-item').on('click fontstart', function() {
     $('.nav-item-wrapper').removeClass('is-close');
   });
 
+  // 4. メガメニュー内のページ内リンクをクリックしたときの処理
   $('.mega-menu a[href^="#"]').on('click', function() {
-    // クリックされたリンクの親にある「.nav-item-wrapper」を探して非表示クラスをつける
-    $(this).closest('.nav-item-wrapper').addClass('is-close');
+    var $wrapper = $(this).closest('.nav-item-wrapper');
+    $wrapper.addClass('is-close'); // メニューを閉じる
+    
+    // 💡【追加】スマホのアクティブ状態（背景色）を強制リセット
+    $wrapper.find('.nav-item').trigger('blur');
+    $(this).trigger('blur');
   });
 });
 

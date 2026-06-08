@@ -163,13 +163,23 @@ ul {
       transition: .3s;
     }
 
+    @media (hover: hover) {
     &:hover {
-      transform: translate(2px, 2px);
-
+      transform: translate(3px, 3px);
       &::before {
         transform: translate(-1.5px, -1.5px) translateZ(-1px);
       }
     }
+  }
+
+  @media (hover: none) {
+    &:active {
+      transform: translate(3px, 3px);
+      &::before {
+        transform: translate(-1.5px, -1.5px) translateZ(-1px);
+      }
+    }
+  }
 
     .icon-circle {
       left: 4px;
