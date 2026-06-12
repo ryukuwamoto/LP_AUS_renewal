@@ -76,11 +76,10 @@ html, body {
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
 }
-
-body.menu-open {
-  overflow: hidden;
-  -ms-touch-action: none;
-      touch-action: none;
+html.menu-open, body.menu-open {
+  overflow: clip;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
 }
 
 img {

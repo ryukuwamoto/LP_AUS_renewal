@@ -17,12 +17,12 @@ html, body{
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
-  
-}
 
-body.menu-open {
-  overflow: hidden;
-  touch-action: none; // スマホ（iOS）のスクロール慣性を完全に止める
+  &.menu-open {
+    overflow: clip;
+    overscroll-behavior: none;
+  }
+  
 }
 
 
