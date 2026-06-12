@@ -5,8 +5,10 @@ $(function() {
     
     var $wrapper = $(this).closest('.nav-item-wrapper');
     $wrapper.addClass('is-close'); // メニューを閉じる
+    $wrapper.removeClass('is-open'); // 💡【追加】アクティブ色のクラスを消す
+    $('body').removeClass('menu-open'); // 💡【追加】背景ページのスクロールロックを解除
     
-    // 💡【追加】スマホのアクティブ状態（背景色）を強制リセット
+    // スマホのアクティブ状態（背景色）を強制リセット
     $wrapper.find('.nav-item').trigger('blur');
     $(this).trigger('blur');
   });
@@ -14,19 +16,35 @@ $(function() {
   // 2. マウスがメニューから外れたら、非表示クラスを解除して次回また開くようにする
   $('.nav-item-wrapper').on('mouseleave', function() {
     $(this).removeClass('is-close');
+    $(this).removeClass('is-open'); // 💡【追加】PCでもマウスが外れたら色を消す
+    $('body').removeClass('menu-open'); // 💡【追加】念のためロック解除
   });
   
   // 3. スマホのタップ対策：他のナビアイテムを触ったら非表示クラスをリセット
-  $('.nav-item').on('click fontstart', function() {
+  // 💡【修正】'fontstart' を正しいイベント名 'touchstart' に修正しました
+  $('.nav-item').on('click touchstart', function() {
+    var $wrapper = $(this).closest('.nav-item-wrapper');
+    
     $('.nav-item-wrapper').removeClass('is-close');
+    
+    // 💡【追加】他のメニューから開いているクラス（色）を消し、タップされたメニューだけに付与
+    $('.nav-item-wrapper').not($wrapper).removeClass('is-open');
+    $wrapper.addClass('is-open');
+    
+    // 💡【追加】スマホ（画面幅768px以下）の時だけ背景ページをスクロール不可にする
+    if (window.innerWidth <= 768) {
+      $('body').addClass('menu-open');
+    }
   });
 
   // 4. メガメニュー内のページ内リンクをクリックしたときの処理
   $('.mega-menu a[href^="#"]').on('click', function() {
     var $wrapper = $(this).closest('.nav-item-wrapper');
     $wrapper.addClass('is-close'); // メニューを閉じる
+    $wrapper.removeClass('is-open'); // 💡【追加】アクティブ色のクラスを消す
+    $('body').removeClass('menu-open'); // 💡【追加】リンクを踏んだら確実にロック解除
     
-    // 💡【追加】スマホのアクティブ状態（背景色）を強制リセット
+    // スマホのアクティブ状態（背景色）を強制リセット
     $wrapper.find('.nav-item').trigger('blur');
     $(this).trigger('blur');
   });
