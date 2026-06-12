@@ -20,6 +20,11 @@ html, body{
   
 }
 
+body.menu-open {
+  overflow: hidden;
+  touch-action: none; // スマホ（iOS）のスクロール慣性を完全に止める
+}
+
 
 img{
   max-width: 100%;

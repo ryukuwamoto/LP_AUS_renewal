@@ -178,7 +178,7 @@
       }
 
       @media (hover: none) {
-        &:not(.is-close) {
+        .is-open {
         background-color: #98DADE;
         border-radius: 4px 4px 0 0;
       }

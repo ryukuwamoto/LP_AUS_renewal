@@ -77,6 +77,12 @@ html, body {
   overflow-x: clip;
 }
 
+body.menu-open {
+  overflow: hidden;
+  -ms-touch-action: none;
+      touch-action: none;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -641,7 +647,7 @@ ul {
   }
 }
 @media (max-width: 768px) and (hover: none) {
-  .nav .nav-item-wrapper:not(.is-close) {
+  .nav .nav-item-wrapper .is-open {
     background-color: #98DADE;
     border-radius: 4px 4px 0 0;
   }
