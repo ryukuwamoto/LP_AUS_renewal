@@ -1,57 +1,72 @@
 $(function() {
-  // 💡【追加】PC用：マウスがメニューに乗ったときにスクロールをロック
-  $('.nav-item-wrapper').on('mouseenter', function() {
-    if (window.innerWidth > 768) {
-      $(this).addClass('is-open');
-      // 💡 他のis-closeなどをリセットしつつロック
-      $(this).removeClass('is-close');
-      $('html, body').addClass('menu-open');
+  // スクロール位置を記憶する変数
+  var scrollPosition = 0;
+
+  // 💡【共通の関数】スマホの背景固定を解除する
+  function unlockBody() {
+    if (window.innerWidth <= 768) {
+      if ($('body').hasClass('menu-open')) {
+        $('html, body').removeClass('menu-open');
+        $('body').css({ 'position': '', 'top': '', 'width': '' });
+        $(window).scrollTop(scrollPosition); // 記憶していた位置に戻す
+      }
+    } else {
+      $('html, body').removeClass('menu-open');
     }
-  });
+  }
 
   // 1. 閉じるボタンをクリックしたときの処理
   $('.menu-close-btn').on('click', function(e) {
-    e.stopPropagation(); // 親要素へのイベント伝播を止める
-    
+    e.stopPropagation();
     var $wrapper = $(this).closest('.nav-item-wrapper');
-    $wrapper.addClass('is-close'); // メニューを閉じる
-    $wrapper.removeClass('is-open'); // アクティブ色のクラスを消す
-    $('html, body').removeClass('menu-open'); // 💡【修正】スクロールロックを解除
+    $wrapper.addClass('is-close');
+    $wrapper.removeClass('is-open');
     
-    // スマホのアクティブ状態（背景色）を強制リセット
+    unlockBody(); // 💡【修正】固定解除の関数を呼ぶ
+    
     $wrapper.find('.nav-item').trigger('blur');
     $(this).trigger('blur');
   });
 
-  // 2. マウスがメニューから外れたら、非表示クラスを解除して次回また開くようにする
+  // 2. マウスがメニューから外れたら...（ここは元のままでOK）
   $('.nav-item-wrapper').on('mouseleave', function() {
     $(this).removeClass('is-close');
-    $(this).removeClass('is-open'); // PCでもマウスが外れたら色を消す
-    $('html, body').removeClass('menu-open'); // 💡【修正】スクロールロックを解除
+    $(this).removeClass('is-open');
+    unlockBody(); // 💡【修正】固定解除の関数を呼ぶ
   });
   
   // 3. スマホのタップ対策：他のナビアイテムを触ったら非表示クラスをリセット
   $('.nav-item').on('click touchstart', function() {
     var $wrapper = $(this).closest('.nav-item-wrapper');
-    
     $('.nav-item-wrapper').removeClass('is-close');
-    
-    // 他のメニューから開いているクラス（色）を消し、タップされたメニューだけに付与
     $('.nav-item-wrapper').not($wrapper).removeClass('is-open');
     $wrapper.addClass('is-open');
     
-    // 💡【修正】スマホ・PC問わず、クリック/タップで開いたときも確実にロック
-    $('html, body').addClass('menu-open');
+    // 💡【修正】スマホとPCで処理を分岐します
+    if (window.innerWidth <= 768) {
+      // まだ固定されていない場合だけ、現在のスクロール位置を記憶して固定
+      if (!$('body').hasClass('menu-open')) {
+        scrollPosition = $(window).scrollTop();
+        $('body').css({
+          'position': 'fixed',
+          'top': '-' + scrollPosition + 'px',
+          'width': '100%'
+        });
+        $('html, body').addClass('menu-open');
+      }
+    } else {
+      $('html, body').addClass('menu-open');
+    }
   });
 
   // 4. メガメニュー内のページ内リンクをクリックしたときの処理
   $('.mega-menu a[href^="#"]').on('click', function() {
     var $wrapper = $(this).closest('.nav-item-wrapper');
-    $wrapper.addClass('is-close'); // メニューを閉じる
-    $wrapper.removeClass('is-open'); // アクティブ色のクラスを消す
-    $('html, body').removeClass('menu-open'); // 💡【修正】リンクを踏んだら確実にロック解除
+    $wrapper.addClass('is-close');
+    $wrapper.removeClass('is-open');
     
-    // スマホのアクティブ状態（背景色）を強制リセット
+    unlockBody(); // 💡【修正】固定解除の関数を呼ぶ
+    
     $wrapper.find('.nav-item').trigger('blur');
     $(this).trigger('blur');
   });
