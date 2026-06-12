@@ -276,7 +276,6 @@
   .gp-num-label{
     @include font-sofia(700);
     font-size: 9px;
-    letter-spacing: 0.5px;
   }
 
   .gp-num-value{
@@ -288,7 +287,7 @@
   @media (max-width: 768px){
     height: 40px;
     width: 33px;
-    padding: 4px 8px 3px 6px;
+    padding: 4px 0 0;
 
     .gp-num-label{ font-size: 8px; }
     .gp-num-value{ font-size: 20px; }

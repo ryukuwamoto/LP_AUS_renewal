@@ -1177,14 +1177,14 @@
     &.fill-box.box-bottom {
       flex-direction: row;
       align-items: start;
-      gap: 31px;
+      gap: 25px;
       justify-content: left;
 
       &:nth-of-type(1) {
         img {
          width: 50px;
         height: auto;
-        margin: 21px 0 0 29px;
+        margin: 21px 0 0 32px;
         }
 
         div {
@@ -1203,9 +1203,9 @@
 
       &:nth-of-type(2) {
         img {
-          width: 50px;
+          width: 77px;
           height: auto;
-          margin: 21px 0 0 29px;
+          margin: 22px 0 0 20px;
         }
 
         div {

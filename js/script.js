@@ -80,6 +80,28 @@ $(function () {
 });
 
 
+$(function() {
+
+  // 599px以下のプラン表エリアがスクロールされたら、最初の1回だけ実行
+  $('.plan-table-scroll').one('scroll', function() {
+    // 同じグループ内にあるヒント画像（.scroll-hint-overlay）を探して非表示クラスを付与
+    $(this).siblings('.scroll-hint-overlay').addClass('is-hidden');
+  });
+
+});
+
+$(function() {
+
+  // サービス早見表（画像）エリアがスクロールされたら、最初の1回だけ実行
+  $('.service-table-scroll').one('scroll', function() {
+    // 隣にあるヒント画像に非表示クラスを付与
+    $(this).siblings('.scroll-hint-overlay').addClass('is-hidden');
+  });
+
+});
+
+
+
 // =========================================================
 // sec-top-g — eSIM / SIMカード タブ切替
 // =========================================================

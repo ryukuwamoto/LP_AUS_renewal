@@ -63,25 +63,6 @@
 
   &:last-child{ padding-bottom: 86px; text-align: center;}
 
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    // 右下にずらす
-    top: 10px;
-    left: 10px;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    
-    // 斑点模様の影
-    background-image: radial-gradient(circle, #494949 40%, transparent 40%);
-    background-size: 5px 5px;
-    
-    // 3D的な重なりを安定させる（以前のテクニック）
-    transform: translateZ(-1px);
-  }
-
   @media (max-width: 768px){
     padding: 25px 15px;
     border-radius: 8px;
@@ -391,8 +372,11 @@
 
   p {
     display: inline-block;
-    border-bottom: 3px dotted var(--teal);
-    padding-bottom: 1px;
+    background-image: radial-gradient(circle, var(--teal) 1.5px, transparent 1.5px);
+  background-size: 6px 3px; /* 1つ目の数字：ドットの間隔 / 2つ目の数字：ドットの縦幅（直径） */
+  background-repeat: repeat-x;
+  background-position: bottom;
+    padding-bottom: 3px;
   }
   
   @media (max-width: 768px){
@@ -623,6 +607,37 @@
 }
 
 // 比較表
+.service-table-wrapper {
+  position: relative; // 💡画像を中央配置するための基準
+  width: 100%;
+
+  .scroll-hint-overlay {
+    display: none; // 💡基本は非表示
+
+    @media (max-width: 607px) {
+      display: block; // 💡このセクションで横スクロールが発生する「607px以下」だけ表示
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      pointer-events: none; // 💡画像の上からでもスワイプできるように透過
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+
+      img {
+        width: 76px; // 💡サイズは自由に調整してください
+        height: auto;
+      }
+
+      // JSでこのクラスがついたら非表示
+      &.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+}
+
 .service-table-scroll{
   max-width: 700px;
   margin: 0 auto;
