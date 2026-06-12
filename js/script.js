@@ -1,65 +1,60 @@
 $(function() {
-  // 💡 【超重要】画面幅ではなく「マウスが使えるPCかどうか」を判定するお守り
-  var isPC = () => window.matchMedia('(hover: hover)').matches;
-
-  // 共通の「メニューを閉じる＆背景ロック解除」の処理
-  function closeMenu($wrapper) {
-    $wrapper.addClass('is-close').removeClass('is-open');
+  // 全て閉じる関数
+  function closeAllMenus() {
+    // 💡開くクラスを消して、閉じるクラスをしっかりつける
+    $('.nav-item-wrapper').removeClass('is-open').addClass('is-close');
     $('html, body').removeClass('menu-open');
-    
-    // スマホ環境のときだけ、ピン留めを外して元のスクロール位置に戻す
-    if (!isPC() && $('body').css('position') === 'fixed') {
-      var scrollPosition = $('body').data('scroll-y');
-      $('body').css({ 'position': '', 'top': '', 'width': '' });
-      $(window).scrollTop(scrollPosition);
-    }
   }
 
-  // 1. 【PC（マウス操作）】ホバーで開閉
+  // PC版：ホバー開閉（ここは元のままでOKです）
   $('.nav-item-wrapper').on('mouseenter', function() {
-    if (isPC()) {
+    if (window.innerWidth > 768) {
       $(this).addClass('is-open').removeClass('is-close');
-      $('html, body').addClass('menu-open'); // PCはCSSのoverflow:hiddenだけでロック
+      $('html, body').addClass('menu-open');
     }
   }).on('mouseleave', function() {
-    if (isPC()) {
+    if (window.innerWidth > 768) {
       $(this).removeClass('is-open');
       $('html, body').removeClass('menu-open');
     }
   });
 
-  // 2. 【スマホ（タッチ操作）】タップで開く
-  $('.nav-item').on('click touchstart', function(e) {
-    if (isPC()) return; // 💡 PCならどれだけ画面が小さくてもここの処理はスルー
-    
-    var $wrapper = $(this).closest('.nav-item-wrapper');
-    if ($wrapper.hasClass('is-open')) return;
-
-    $('.nav-item-wrapper').not($wrapper).removeClass('is-open');
-    $wrapper.addClass('is-open');
-    
-    // スマホ特有の背景固定（開いた場所を記憶してピン留め）
-    if (!$('body').hasClass('menu-open')) {
-      var scrollPosition = $(window).scrollTop();
-      $('body').data('scroll-y', scrollPosition); // 位置をデータに保存
-      $('body').css({
-        'position': 'fixed',
-        'top': '-' + scrollPosition + 'px',
-        'width': '100%'
-      });
-      $('html, body').addClass('menu-open');
+  // スマホ版：クリック開閉
+  $('.nav-item').on('click', function(e) {
+    if (window.innerWidth <= 768) {
+      e.stopPropagation(); 
+      
+      var $wrapper = $(this).closest('.nav-item-wrapper');
+      
+      if ($wrapper.hasClass('is-open')) {
+        closeAllMenus();
+      } else {
+        // 💡他のメニューの開閉クラスをリセット
+        $('.nav-item-wrapper').not($wrapper).removeClass('is-open').addClass('is-close');
+        
+        // 💡ここがポイント：is-open を足すだけでなく、is-close をきっちり消す！
+        $wrapper.addClass('is-open').removeClass('is-close');
+        $('html, body').addClass('menu-open'); 
+      }
     }
   });
 
-  // 3. 【共通】「閉じる」ボタンを押したとき
+  // 各種閉じるイベント（ここは元のままでOKです）
   $('.menu-close-btn').on('click', function(e) {
     e.stopPropagation();
-    closeMenu($(this).closest('.nav-item-wrapper'));
+    closeAllMenus();
   });
 
-  // 4. 【共通】メガメニュー内のリンクをクリックしたとき
   $('.mega-menu a').on('click', function() {
-    closeMenu($(this).closest('.nav-item-wrapper'));
+    closeAllMenus();
+  });
+
+  $(document).on('click', function(e) {
+    if (window.innerWidth <= 768) {
+      if (!$(e.target).closest('.nav-item-wrapper').length) {
+        closeAllMenus(); 
+      }
+    }
   });
 });
 
