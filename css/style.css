@@ -641,7 +641,7 @@ ul {
   }
 }
 @media (max-width: 768px) and (hover: none) {
-  .nav .nav-item-wrapper:active {
+  .nav .nav-item-wrapper:not(.is-close) {
     background-color: #98DADE;
     border-radius: 4px 4px 0 0;
   }
