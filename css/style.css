@@ -563,7 +563,6 @@ ul {
   left: 0;
   right: 0;
   width: 100%;
-  background: #fff;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.4s ease;
@@ -583,6 +582,21 @@ ul {
   .nav .nav-item-wrapper .mega-menu {
     padding-top: 103px;
   }
+}
+.nav .nav-item-wrapper .mega-menu::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -2;
+  pointer-events: none;
+}
+.nav .nav-item-wrapper .white {
+  width: 100%;
+  background-color: #fff;
 }
 .nav .nav-item-wrapper:hover .nav-item::after {
   -webkit-transform: scale(1, 1);
@@ -773,6 +787,7 @@ ul {
 }
 
 .mega-menu-inner {
+  background-color: #fff;
   max-width: 740px;
   margin: 0 auto;
   padding: 40px 20px;

@@ -96,12 +96,11 @@
       left: 0;
       right: 0;
       width: 100%;
-      background: #fff;
       opacity: 0;
       visibility: hidden;
       transition: all 0.4s ease;
       z-index: -1;
-      max-height: calc(100vh);
+      max-height: 100vh;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
       padding-top: 60px;
@@ -113,7 +112,28 @@
       @media (max-width: 660px) {
         padding-top: 103px;
       }
+
+      &::after {
+        content: '';
+        position: fixed; // 画面全体に固定
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5); // 👈 0.5 で暗さを調整できます
+        
+        // メニュー本体（z-index: -1）の「さらに後ろ」に敷くための指定
+        z-index: -2; 
+        
+        // メニューが閉じているときは触れないようにする
+        pointer-events: none; 
+      }
       
+    }
+
+    .white {
+      width: 100%;
+      background-color: #fff;
     }
 
     &:hover {
@@ -289,6 +309,7 @@
 }
 
 .mega-menu-inner {
+  background-color: #fff;
   max-width: 740px;
   margin: 0 auto;
   padding: 40px 20px;
