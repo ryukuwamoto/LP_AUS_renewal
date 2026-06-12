@@ -620,11 +620,19 @@ ul {
     padding: 6px 20px 0;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 768px) and (hover: hover) {
   .nav .nav-item-wrapper:hover {
     background-color: #98DADE;
     border-radius: 4px 4px 0 0;
   }
+}
+@media (max-width: 768px) and (hover: none) {
+  .nav .nav-item-wrapper:active {
+    background-color: #98DADE;
+    border-radius: 4px 4px 0 0;
+  }
+}
+@media (max-width: 768px) {
   .nav .nav-item-wrapper.is-close .mega-menu {
     opacity: 0 !important;
     visibility: hidden !important;
