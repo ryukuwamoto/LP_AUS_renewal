@@ -1,0 +1,625 @@
+@use "variables" as *;
+
+.p-fv {
+  .plan-head {
+    padding-bottom: 120px;
+  }  
+}
+
+
+// ==========================================
+// Common Components (.c-)
+// ==========================================
+.c-headline {
+  display: table;
+  margin: 120px auto 40px;
+  font-size: 21px;
+  @include font-gen(700);
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.c-anchor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 920px;
+  margin: 0 auto ;
+
+  &__item {
+    flex: 1 1 250px;
+    max-width: 280px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid var(--teal); // 変数対応
+    border-radius: 8px;
+    padding: 14px 18px;
+    color: var(--ink);
+    @include font-mix(700); // 混成フォントミックスイン
+    font-size: 14px;
+    background: #fff;
+    transition: background .2s, color .2s;
+
+    &:hover {
+      background: var(--teal);
+      color: #fff;
+
+      .c-anchor__icon img {
+        filter: brightness(0) invert(1);
+      }
+      .c-anchor__arrow {
+        color: #fff;
+      }
+    }
+  }
+
+  &__icon {
+    flex: 0 0 23px;
+    width: 23px;
+    height: 23px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 23px;
+      height: 23px;
+      object-fit: contain;
+    }
+  }
+
+  &__arrow {
+    margin-left: auto;
+    color: var(--teal);
+    @include font-gen(900);
+    font-size: 10px;
+  }
+}
+
+// ※ベース側に、より高機能な立体デザインの「.common_btn」が定義されているため、
+// 特殊な丸型パーツなどで「.c-btn」を単体利用する場合のフォント・変数を最適化
+.c-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 14px 30px;
+  @include font-mix(900);
+  font-size: 15px;
+  color: var(--ink);
+  box-shadow: 4px 4px 0 var(--pink); // 変数対応
+  transition: transform .12s, box-shadow .12s;
+
+  &:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+  }
+
+  &__arrow {
+    margin-left: 2px;
+    font-size: 17px;
+    @include font-gen(900);
+    line-height: 1;
+  }
+}
+
+.c-btnarea {
+  text-align: center;
+  margin-top: 28px;
+
+  &--pair {
+    display: flex;
+    gap: 120px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+
+    @media (max-width: 768px) {
+      gap: 20px;
+    }
+  }
+}
+
+.c-accordion {
+  max-width: 1010px;
+  margin: 30px auto 0;
+
+  &__item {
+    border-bottom: 1px solid var(--ink-soft); // 柔らかい境界線変数
+
+    &[open] {
+      .c-accordion__mark {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &__head {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 18px 6px;
+    @include font-gen(900);
+    font-size: 15px;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &__mark {
+    margin-left: auto;
+    font-size: 22px;
+    @include font-gen(900);
+    color: var(--ink);
+  }
+
+  &__body {
+    padding: 0 6px 20px;
+    font-size: 14px;
+    color: var(--ink);
+  }
+}
+
+.c-plus {
+  text-align: center;
+  font-size: 40px;
+  @include font-gen(900);
+  margin: 50px 0;
+}
+
+.c-pagetop {
+  text-align: center;
+  padding: 30px 0 0;
+
+  &__link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--ink);
+    font-size: 11px;
+    @include font-mix(700);
+  }
+
+  &__circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+}
+
+.c-article {
+  &__heading {
+    text-align: center;
+    font-size: 15px;
+    @include font-gen(900);
+    margin-bottom: 14px;
+  }
+
+  &__photo {
+    background: #fff;
+    border-radius: 8px;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    font-size: 12px;
+  }
+
+  &__date {
+    font-size: 12px;
+    color: #888888;
+    margin: 12px 0 4px;
+  }
+
+  &__title {
+    font-size: 13.5px;
+    @include font-gen(700);
+    line-height: 1.6;
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.c-sns {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  padding: 18px 0 4px;
+
+  &__item {
+    font-size: 13px;
+    @include font-mix(700);
+    color: var(--ink);
+
+    &:hover {
+      color: var(--teal);
+    }
+  }
+}
+
+// ==========================================
+// Page Specific Blocks (.p-)
+// ==========================================
+
+// ─── First View 見出し ───
+// ベース側の「.head-wrap .sec-head」と構造・線のデザインが酷似しているため、
+// 共通のミックスインとプロパティを割り当てて再定義
+.p-fv {
+  text-align: center;
+  padding: 70px 0 10px;
+
+  &__icon {
+    width: 58px;
+    height: auto;
+    margin: 0 auto 6px;
+  }
+
+  &__en {
+    @include font-sofia(500); // ベースの .sec-en と統一
+    font-style: italic;
+    font-size: 38px;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+
+    &::before, &::after {
+      content: "";
+      width: 120px;
+      height: 2px;
+      background: var(--ink);
+    }
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+      &::before, &::after { width: 50px; }
+    }
+
+    @media (max-width: 480px) {
+      font-size: 22px;
+      gap: 10px;
+      &::before, &::after { width: 24px; }
+    }
+  }
+
+  &__heading {
+    @include font-gen(bold); // ベースの .sec-jp と統一
+    font-size: 19px;
+    margin-top: 6px;
+    color: var(--ink);
+  }
+}
+
+// ─── Cycle Section ───
+.p-cycle {
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    border: 2px solid var(--ink);
+    border-radius: 14px;
+    padding: 32px 40px 30px;
+
+    @media (max-width: 480px) {
+      padding: 28px 18px 26px;
+    }
+  }
+
+  &__badge {
+    width: 62px;
+    height: auto;
+    margin: 0 auto 14px;
+  }
+
+  &__heading {
+    text-align: center;
+    color: var(--teal);
+    font-size: 19px;
+    @include font-gen(900);
+    margin-bottom: 30px;
+  }
+
+  &__pay {
+    width: 100%;
+    max-width: 412px;
+    margin: 0 auto 30px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 1px;
+
+    strong {
+      color: var(--teal);
+      @include font-gen(700);
+    }
+  }
+
+  &__link {
+    color: #46C9F4;
+    text-decoration: underline;
+  }
+
+  &__photo {
+    max-width: 350px;
+    margin: 30px auto 0;
+  }
+
+  &__notice {
+    width: 100%;
+    max-width: 428px;
+    margin: 30px auto 0;
+  }
+
+  &__example {
+    background: var(--yellow-soft); // 柔らかい黄色の背景変数に変更
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-top: 30px;
+
+    dl {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 4px 14px;
+    }
+    dt {
+      @include font-gen(900);
+      font-size: 14.5px;
+      white-space: nowrap;
+    }
+    dd {
+      font-size: 14px;
+      margin-bottom: 16px;
+      &:last-child { margin-bottom: 0; }
+
+      b {
+        display: block;
+        margin-bottom: -10px;
+      }
+    }
+  }
+
+  .btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto 0;
+  }
+}
+
+// ─── Fees Section ───
+.p-fees {
+  .c-headline {
+    margin-bottom: 60px;
+  }
+
+  &__wrap {
+    position: relative;
+    width: 100%;
+    padding: 46px 20px 50px;
+    border: 2px solid var(--ink);
+    border-radius: 10px;
+
+    p {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 21px;
+      font-weight: 900;
+      padding: 0 40px;
+      background-color: #fff;
+    }
+  }
+  &__photo {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  &__label {
+    display: block;
+    text-align: center;
+    background: var(--yellow-soft);
+    color: var(--ink);
+    @include font-gen(700);
+    font-size: 16px;
+    padding: 12px;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    margin: 40px 20px ;
+  }
+
+  &__lead {
+    font-size: 16px;
+    max-width: 980px;
+    line-height: 1.6;
+    margin: 0 auto;
+  }
+}
+
+// ─── Plan Section ───
+.p-plan {
+  &__banner {
+    border: 2px solid var(--ink);
+    border-radius: 10px;
+    overflow: hidden;
+
+    &-head {
+      background: var(--ink);
+      color: #fff;
+      text-align: center;
+      padding: 18px;
+      font-size: 22px;
+      @include font-gen(900);
+
+      small {
+        font-size: 16px;
+        @include font-gen(700);
+      }
+    }
+
+    &-sub {
+      text-align: center;
+      padding: 16px;
+      font-size: 18px;
+      @include font-gen(900);
+      color: var(--teal);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 36px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__table {
+    width: 100%;
+  }
+
+  &__aside {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  &__note {
+    background: var(--yellow-soft);
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 14px;
+    margin-right: 80px;
+    line-height: 1.6;
+
+    strong {
+      color: var(--pink); // 警告等の強いアクセントカラーを変数化
+      @include font-gen(700);
+    }
+
+    .mr {
+      margin-right: 130px;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    max-width: 148px;
+    top: 70px;
+    right: 50px;
+  }
+}
+
+// ─── Option Section ───
+.p-option {
+  &__frame {
+    position: relative;
+    border: 2px solid var(--yellow);
+    border-radius: 14px;
+    padding: 44px 30px 36px;
+    margin-top: 20px;
+  }
+
+  &__tab {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 0 22px;
+    font-size: 18px;
+    @include font-gen(900);
+    letter-spacing: 2px;
+  }
+
+  &__heading {
+    text-align: center;
+    font-size: 26px;
+    @include font-gen(900);
+    margin-bottom: 6px;
+
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
+
+    span {
+      // マーカー風グラデーションの背景色を設定（上部透明、下部に黄色）
+      background: linear-gradient(transparent 60%, var(--yellow) 60%);
+    }
+  }
+
+  &__lead {
+    text-align: center;
+    font-size: 14.5px;
+    margin-bottom: 26px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+    max-width: 880px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    width: 100%;
+  }
+}
+
+// ─── Short Section ───
+.p-short {
+  &__photo {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  &__banner {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  &__note {
+    text-align: center;
+    margin-top: 14px;
+    font-size: 12px;
+    color: #888888;
+    line-height: 1.7;
+  }
+}

@@ -6804,4 +6804,672 @@ ul {
   width: auto;
   vertical-align: middle;
   margin: 0 5px 2px 0;
+}
+
+.p-fv .plan-head {
+  padding-bottom: 120px;
+}
+
+.c-headline {
+  display: table;
+  margin: 120px auto 40px;
+  font-size: 21px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.c-anchor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.c-anchor__item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 250px;
+          flex: 1 1 250px;
+  max-width: 280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  border: 2px solid var(--teal);
+  border-radius: 8px;
+  padding: 14px 18px;
+  color: var(--ink);
+  font-family: "sofia-pro-soft", "GenJyuuGothic", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  background: #fff;
+  -webkit-transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s;
+}
+.c-anchor__item:hover {
+  background: var(--teal);
+  color: #fff;
+}
+.c-anchor__item:hover .c-anchor__icon img {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+.c-anchor__item:hover .c-anchor__arrow {
+  color: #fff;
+}
+.c-anchor__icon {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 23px;
+          flex: 0 0 23px;
+  width: 23px;
+  height: 23px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.c-anchor__icon img {
+  width: 23px;
+  height: 23px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.c-anchor__arrow {
+  margin-left: auto;
+  color: var(--teal);
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 10px;
+}
+
+.c-btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 14px 30px;
+  font-family: "sofia-pro-soft", "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  color: var(--ink);
+  -webkit-box-shadow: 4px 4px 0 var(--pink);
+          box-shadow: 4px 4px 0 var(--pink);
+  -webkit-transition: -webkit-transform 0.12s, -webkit-box-shadow 0.12s;
+  transition: -webkit-transform 0.12s, -webkit-box-shadow 0.12s;
+  transition: transform 0.12s, box-shadow 0.12s;
+  transition: transform 0.12s, box-shadow 0.12s, -webkit-transform 0.12s, -webkit-box-shadow 0.12s;
+}
+.c-btn:hover {
+  -webkit-transform: translate(4px, 4px);
+          transform: translate(4px, 4px);
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+}
+.c-btn__arrow {
+  margin-left: 2px;
+  font-size: 17px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  line-height: 1;
+}
+
+.c-btnarea {
+  text-align: center;
+  margin-top: 28px;
+}
+.c-btnarea--pair {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 120px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 30px;
+}
+@media (max-width: 768px) {
+  .c-btnarea--pair {
+    gap: 20px;
+  }
+}
+
+.c-accordion {
+  max-width: 1010px;
+  margin: 30px auto 0;
+}
+.c-accordion__item {
+  border-bottom: 1px solid var(--ink-soft);
+}
+.c-accordion__item[open] .c-accordion__mark {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.c-accordion__head {
+  list-style: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 18px 6px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 15px;
+}
+.c-accordion__head::-webkit-details-marker {
+  display: none;
+}
+.c-accordion__mark {
+  margin-left: auto;
+  font-size: 22px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: var(--ink);
+}
+.c-accordion__body {
+  padding: 0 6px 20px;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.c-plus {
+  text-align: center;
+  font-size: 40px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  margin: 50px 0;
+}
+
+.c-pagetop {
+  text-align: center;
+  padding: 30px 0 0;
+}
+.c-pagetop__link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+  color: var(--ink);
+  font-size: 11px;
+  font-family: "sofia-pro-soft", "GenJyuuGothic", sans-serif;
+  font-weight: 700;
+}
+.c-pagetop__circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 18px;
+}
+
+.c-article__heading {
+  text-align: center;
+  font-size: 15px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  margin-bottom: 14px;
+}
+.c-article__photo {
+  background: #fff;
+  border-radius: 8px;
+  aspect-ratio: 16/9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #bbb;
+  font-size: 12px;
+}
+.c-article__date {
+  font-size: 12px;
+  color: #888888;
+  margin: 12px 0 4px;
+}
+.c-article__title {
+  font-size: 13.5px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.6;
+}
+.c-article__title a:hover {
+  text-decoration: underline;
+}
+
+.c-sns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 22px;
+  padding: 18px 0 4px;
+}
+.c-sns__item {
+  font-size: 13px;
+  font-family: "sofia-pro-soft", "GenJyuuGothic", sans-serif;
+  font-weight: 700;
+  color: var(--ink);
+}
+.c-sns__item:hover {
+  color: var(--teal);
+}
+
+.p-fv {
+  text-align: center;
+  padding: 70px 0 10px;
+}
+.p-fv__icon {
+  width: 58px;
+  height: auto;
+  margin: 0 auto 6px;
+}
+.p-fv__en {
+  font-family: "sofia-pro-soft", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-style: italic;
+  font-size: 38px;
+  color: var(--ink);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 22px;
+}
+.p-fv__en::before, .p-fv__en::after {
+  content: "";
+  width: 120px;
+  height: 2px;
+  background: var(--ink);
+}
+@media (max-width: 768px) {
+  .p-fv__en {
+    font-size: 28px;
+  }
+  .p-fv__en::before, .p-fv__en::after {
+    width: 50px;
+  }
+}
+@media (max-width: 480px) {
+  .p-fv__en {
+    font-size: 22px;
+    gap: 10px;
+  }
+  .p-fv__en::before, .p-fv__en::after {
+    width: 24px;
+  }
+}
+.p-fv__heading {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 19px;
+  margin-top: 6px;
+  color: var(--ink);
+}
+
+.p-cycle__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+@media (max-width: 768px) {
+  .p-cycle__list {
+    grid-template-columns: 1fr;
+  }
+}
+.p-cycle__card {
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  padding: 32px 40px 30px;
+}
+@media (max-width: 480px) {
+  .p-cycle__card {
+    padding: 28px 18px 26px;
+  }
+}
+.p-cycle__badge {
+  width: 62px;
+  height: auto;
+  margin: 0 auto 14px;
+}
+.p-cycle__heading {
+  text-align: center;
+  color: var(--teal);
+  font-size: 19px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  margin-bottom: 30px;
+}
+.p-cycle__pay {
+  width: 100%;
+  max-width: 412px;
+  margin: 0 auto 30px;
+}
+.p-cycle__text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 1px;
+}
+.p-cycle__text strong {
+  color: var(--teal);
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.p-cycle__link {
+  color: #46C9F4;
+  text-decoration: underline;
+}
+.p-cycle__photo {
+  max-width: 350px;
+  margin: 30px auto 0;
+}
+.p-cycle__notice {
+  width: 100%;
+  max-width: 428px;
+  margin: 30px auto 0;
+}
+.p-cycle__example {
+  background: var(--yellow-soft);
+  border-radius: 10px;
+  padding: 22px 24px;
+  margin-top: 30px;
+}
+.p-cycle__example dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 14px;
+}
+.p-cycle__example dt {
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 14.5px;
+  white-space: nowrap;
+}
+.p-cycle__example dd {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+.p-cycle__example dd:last-child {
+  margin-bottom: 0;
+}
+.p-cycle__example dd b {
+  display: block;
+  margin-bottom: -10px;
+}
+.p-cycle .btn-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 30px auto 0;
+}
+
+.p-fees .c-headline {
+  margin-bottom: 60px;
+}
+.p-fees__wrap {
+  position: relative;
+  width: 100%;
+  padding: 46px 20px 50px;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+}
+.p-fees__wrap p {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 21px;
+  font-weight: 900;
+  padding: 0 40px;
+  background-color: #fff;
+}
+.p-fees__photo {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.p-fees__label {
+  display: block;
+  text-align: center;
+  background: var(--yellow-soft);
+  color: var(--ink);
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  padding: 12px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  margin: 40px 20px;
+}
+.p-fees__lead {
+  font-size: 16px;
+  max-width: 980px;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+.p-plan__banner {
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.p-plan__banner-head {
+  background: var(--ink);
+  color: #fff;
+  text-align: center;
+  padding: 18px;
+  font-size: 22px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+.p-plan__banner-head small {
+  font-size: 16px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.p-plan__banner-sub {
+  text-align: center;
+  padding: 16px;
+  font-size: 18px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: var(--teal);
+}
+.p-plan__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 36px;
+}
+@media (max-width: 768px) {
+  .p-plan__list {
+    grid-template-columns: 1fr;
+  }
+}
+.p-plan__table {
+  width: 100%;
+}
+.p-plan__aside {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+}
+.p-plan__note {
+  background: var(--yellow-soft);
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 14px;
+  margin-right: 80px;
+  line-height: 1.6;
+}
+.p-plan__note strong {
+  color: var(--pink);
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.p-plan__note .mr {
+  margin-right: 130px;
+}
+.p-plan__photo {
+  position: absolute;
+  max-width: 148px;
+  top: 70px;
+  right: 50px;
+}
+
+.p-option__frame {
+  position: relative;
+  border: 2px solid var(--yellow);
+  border-radius: 14px;
+  padding: 44px 30px 36px;
+  margin-top: 20px;
+}
+.p-option__tab {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #fff;
+  padding: 0 22px;
+  font-size: 18px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 2px;
+}
+.p-option__heading {
+  text-align: center;
+  font-size: 26px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  margin-bottom: 6px;
+}
+@media (max-width: 480px) {
+  .p-option__heading {
+    font-size: 20px;
+  }
+}
+.p-option__heading span {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(60%, var(--yellow)));
+  background: linear-gradient(transparent 60%, var(--yellow) 60%);
+}
+.p-option__lead {
+  text-align: center;
+  font-size: 14.5px;
+  margin-bottom: 26px;
+}
+.p-option__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .p-option__list {
+    grid-template-columns: 1fr;
+  }
+}
+.p-option__item {
+  width: 100%;
+}
+
+.p-short__photo {
+  width: 100%;
+  margin-top: 20px;
+}
+.p-short__banner {
+  width: 100%;
+  margin-top: 30px;
+}
+.p-short__note {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 12px;
+  color: #888888;
+  line-height: 1.7;
 }/*# sourceMappingURL=style.css.map */
