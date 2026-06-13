@@ -11,6 +11,16 @@
 
 html {
   scrollbar-gutter: stable;
+  scroll-padding-top: 80px;
+  scroll-behavior: smooth;
+
+  @media (max-width: 768px) {
+    scroll-padding-top: 140px;
+  }
+
+  @media (max-width: 660px) {
+    scroll-padding-top: 116px;
+  }
 }
 
 html, body{

@@ -486,7 +486,7 @@
   @media (max-width: 768px){
     max-width: 300px;
     width: 100%;
-    padding: 12px 0 18px;
+    padding: 12px 0 12px;
   }
 }
 
@@ -515,12 +515,12 @@
 
   @media (max-width: 768px){
     width: 94px;
-    margin: 3px 0 0 25px;
+    margin: 7px 0 0 25px;
   }
 
   @media (max-width: 400px){
     width: 80px;
-    margin: 3px 0 0 15px;
+    margin: 10px 0 0 15px;
   }
 }
 
@@ -532,12 +532,12 @@
 
   @media (max-width: 768px){
     width: 74px;
-    margin: 22px 0 0 25px;
+    margin: 26px 0 0 25px;
   }
 
   @media (max-width: 400px){
     width: 70px;
-    margin: 22px 0 0 15px;
+    margin: 30px 0 0 15px;
   }
 }
 
@@ -556,6 +556,14 @@
     max-width: 160px;
     width: 100%;
     gap: 8px;
+
+    &.simcard {
+      gap: 8px;
+
+      .sp {
+        display: none;
+      }
+    }
   }
 }
 
@@ -599,6 +607,7 @@
 
   @media (max-width: 768px){
     font-size: 12px;
+    padding: 0 15px;
 
     .sp {
       display: none;
