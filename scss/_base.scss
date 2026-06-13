@@ -164,8 +164,7 @@ ul {
   }
   }
 
-  &.content-sp, &.apply-sp {
-    width: 94px;
+  &.phone-sp, &.content-sp, &.apply-sp {
     height: 24px;
     font-size: 11px;
     padding-left: 10px;
@@ -197,6 +196,38 @@ ul {
       width: 16px;
       height: 16px;
       border: 0.5px solid var(--ink);
+    }
+  }
+
+  &.phone-sp {
+    width: 24px;
+
+    .phone-icon-circle {
+      border: none;
+
+      img {
+        width: 13px;
+        height: auto;
+        margin-right: 2px;
+      }
+    }
+
+    
+  }
+
+  &.content-sp {
+    width: 70px;
+
+    span:nth-of-type(2) {
+      padding-left: 5px;
+    }
+  }
+
+  &.apply-sp {
+    width: 93px;
+
+    span:nth-of-type(2) {
+      padding-left: 5px;
     }
   }
 }

@@ -240,13 +240,12 @@ ul {
   border-top: 2px solid #fff;
   border-right: 2px solid #fff;
 }
-.common_btn.content-sp, .common_btn.apply-sp {
-  width: 94px;
+.common_btn.phone-sp, .common_btn.content-sp, .common_btn.apply-sp {
   height: 24px;
   font-size: 11px;
   padding-left: 10px;
 }
-.common_btn.content-sp::before, .common_btn.apply-sp::before {
+.common_btn.phone-sp::before, .common_btn.content-sp::before, .common_btn.apply-sp::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -261,19 +260,42 @@ ul {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-.common_btn.content-sp:hover, .common_btn.apply-sp:hover {
+.common_btn.phone-sp:hover, .common_btn.content-sp:hover, .common_btn.apply-sp:hover {
   -webkit-transform: translate(3px, 3px);
           transform: translate(3px, 3px);
 }
-.common_btn.content-sp:hover::before, .common_btn.apply-sp:hover::before {
+.common_btn.phone-sp:hover::before, .common_btn.content-sp:hover::before, .common_btn.apply-sp:hover::before {
   -webkit-transform: translate(-1.5px, -1.5px) translateZ(-1px);
           transform: translate(-1.5px, -1.5px) translateZ(-1px);
 }
-.common_btn.content-sp .icon-circle, .common_btn.apply-sp .icon-circle {
+.common_btn.phone-sp .icon-circle, .common_btn.content-sp .icon-circle, .common_btn.apply-sp .icon-circle {
   left: 4px;
   width: 16px;
   height: 16px;
   border: 0.5px solid var(--ink);
+}
+.common_btn.phone-sp {
+  width: 24px;
+}
+.common_btn.phone-sp .phone-icon-circle {
+  border: none;
+}
+.common_btn.phone-sp .phone-icon-circle img {
+  width: 13px;
+  height: auto;
+  margin-right: 2px;
+}
+.common_btn.content-sp {
+  width: 70px;
+}
+.common_btn.content-sp span:nth-of-type(2) {
+  padding-left: 5px;
+}
+.common_btn.apply-sp {
+  width: 93px;
+}
+.common_btn.apply-sp span:nth-of-type(2) {
+  padding-left: 5px;
 }
 
 .head-wrap {
@@ -499,7 +521,7 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-left: 16px;
+  padding: 0 8px 0 16px;
 }
 .logo img {
   width: 164px;
@@ -1869,6 +1891,12 @@ ul {
   text-decoration: none;
   color: #fff;
   padding: 0 8px;
+  width: 137px;
+}
+@media (max-width: 768px) {
+  .header-cta .header-phone-link {
+    display: none;
+  }
 }
 .header-cta .header-phone-link .phone-num-box {
   display: -webkit-inline-box;
@@ -1947,6 +1975,11 @@ ul {
           flex-direction: column;
   line-height: normal;
   width: 85px;
+}
+@media (max-width: 1100px) {
+  .pill-btn {
+    width: 75px;
+  }
 }
 .pill-btn.contact {
   background: var(--green);
