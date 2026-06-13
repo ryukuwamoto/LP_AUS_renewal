@@ -261,25 +261,13 @@ ul {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-@media (hover: hover) {
-  .common_btn.content-sp:hover, .common_btn.apply-sp:hover {
-    -webkit-transform: translate(3px, 3px);
-            transform: translate(3px, 3px);
-  }
-  .common_btn.content-sp:hover::before, .common_btn.apply-sp:hover::before {
-    -webkit-transform: translate(-1.5px, -1.5px) translateZ(-1px);
-            transform: translate(-1.5px, -1.5px) translateZ(-1px);
-  }
+.common_btn.content-sp:hover, .common_btn.apply-sp:hover {
+  -webkit-transform: translate(3px, 3px);
+          transform: translate(3px, 3px);
 }
-@media (hover: none) {
-  .common_btn.content-sp:active, .common_btn.apply-sp:active {
-    -webkit-transform: translate(3px, 3px);
-            transform: translate(3px, 3px);
-  }
-  .common_btn.content-sp:active::before, .common_btn.apply-sp:active::before {
-    -webkit-transform: translate(-1.5px, -1.5px) translateZ(-1px);
-            transform: translate(-1.5px, -1.5px) translateZ(-1px);
-  }
+.common_btn.content-sp:hover::before, .common_btn.apply-sp:hover::before {
+  -webkit-transform: translate(-1.5px, -1.5px) translateZ(-1px);
+          transform: translate(-1.5px, -1.5px) translateZ(-1px);
 }
 .common_btn.content-sp .icon-circle, .common_btn.apply-sp .icon-circle {
   left: 4px;
@@ -1864,6 +1852,60 @@ ul {
     padding-right: 20px;
   }
 }
+.header-cta .header-phone-link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  padding: 0 8px;
+}
+.header-cta .header-phone-link .phone-num-box {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+  padding: 2px 8px 4px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  background-color: var(--pink);
+}
+.header-cta .header-phone-link .phone-num-box img {
+  width: auto;
+  height: 1em;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-top: 2px;
+}
+.header-cta .header-phone-link .phone-sub-text {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--pink);
+}
+.header-cta .header-phone-link {
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .header-cta .header-phone-link {
+    pointer-events: auto;
+  }
+}
 .header-cta .common_btn {
   display: none;
 }
@@ -3094,15 +3136,20 @@ ul {
   left: calc(50% + 60px);
   -webkit-transform-origin: bottom center;
           transform-origin: bottom center;
-  -webkit-animation: walkDiagonal 2.5s linear infinite;
-          animation: walkDiagonal 2.5s linear infinite;
+  opacity: 0;
+}
+.simkichiwalk.is-animated {
+  -webkit-animation: walkDiagonal 2.5s linear forwards;
+          animation: walkDiagonal 2.5s linear forwards;
 }
 @media (max-width: 768px) {
   .simkichiwalk {
     width: 93px;
     top: 100px;
-    -webkit-animation: walkDiagonal-sp 2.5s infinite linear;
-            animation: walkDiagonal-sp 2.5s infinite linear;
+  }
+  .simkichiwalk.is-animated {
+    -webkit-animation: walkDiagonal-sp 2.5s linear forwards;
+            animation: walkDiagonal-sp 2.5s linear forwards;
   }
 }
 
@@ -6208,9 +6255,13 @@ ul {
   -webkit-box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.05);
           box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.05);
 }
-.h-page-nav img {
+.h-page-nav .scroll-arrow {
+  display: block;
+  margin: 0 auto;
   width: 6%;
   height: auto;
+  -webkit-animation: bounceUpDown 2s ease-in-out infinite;
+          animation: bounceUpDown 2s ease-in-out infinite;
 }
 .h-page-nav button {
   font-family: "GenJyuuGothic", sans-serif;
@@ -6234,6 +6285,27 @@ ul {
   padding: 4px 10px;
 }
 
+@-webkit-keyframes bounceUpDown {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(60%);
+            transform: translateY(60%);
+  }
+}
+
+@keyframes bounceUpDown {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(60%);
+            transform: translateY(60%);
+  }
+}
 .h-handbook-logo {
   width: 28.932%;
   -ms-flex-negative: 0;

@@ -1338,6 +1338,47 @@
     padding-right: 20px;
   }
 
+  .header-phone-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  padding: 0 8px;
+
+  .phone-num-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px 4px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    background-color: var(--pink);
+
+    img {
+      width: auto;
+      height: 1em;
+      object-fit: contain;
+      margin-top: 2px;
+    }
+  }
+
+  .phone-sub-text {
+    display: block;
+    margin-top: 6px;
+    font-size: 11px; 
+    color: var(--pink);
+  }
+
+  pointer-events: none;
+  @media (max-width: 768px) {
+    pointer-events: auto;
+  }
+}
+
   .common_btn {
     display: none;
 

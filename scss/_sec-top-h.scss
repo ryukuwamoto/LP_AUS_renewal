@@ -702,10 +702,15 @@
   z-index: 2;
   box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.05);
 
-  img {
-    width: 6%;
-    height: auto;
-  }
+  .scroll-arrow {
+  display: block;
+  margin: 0 auto;
+  width: 6%;
+  height: auto;
+
+  // 💡 2秒かけて上下にフワフワと無限ループ（infinite）させる
+  animation: bounceUpDown 2.0s ease-in-out infinite;
+}
 
   button{
     @include font-gen(bold);
@@ -726,6 +731,16 @@
     padding: 4px 10px;
   }
 }
+
+@keyframes bounceUpDown {
+  0%, 100% {
+    transform: translateY(0); // 最初と最後は元の位置
+  }
+  50% {
+    transform: translateY(60%); // 💡真ん中のタイミングで下に12px沈む
+  }
+}
+
 // ---------- 右側ロゴ ----------
 .h-handbook-logo{
   width: 28.932%;

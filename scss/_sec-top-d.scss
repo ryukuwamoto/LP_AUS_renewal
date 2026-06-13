@@ -19,12 +19,18 @@
   top: 130px;
   left: calc(50% + 60px);
   transform-origin: bottom center;
-  animation: walkDiagonal 2.5s linear infinite;
+  opacity: 0;
+
+  &.is-animated {
+    animation: walkDiagonal 2.5s linear forwards;
+  }
 
   @media (max-width: 768px){
     width: 93px;
     top: 100px;
-    animation: walkDiagonal-sp 2.5s infinite linear;
+    &.is-animated {
+    animation: walkDiagonal-sp 2.5s linear forwards;
+  }
   }
 }
 

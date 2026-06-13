@@ -101,6 +101,35 @@ $(function() {
 });
 
 
+// =========================================================
+// sec-top-d — シム吉歩かせるアニメーション
+// =========================================================
+
+$(function() {
+  
+  // 画面に入ったかどうかを判定する監視カメラ（Observer）を作成
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        // 💡 画面に入ったらアニメーション開始クラスを付与
+        $(entry.target).addClass('is-animated');
+        
+        // 💡 【パターンA（1回だけ）の場合】：一度動いたら監視を解除して終了
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    // 画面の上下10%にキャラクターが入ってきたら発火（発火タイミングの微調整用）
+    rootMargin: '-30% 0px -30% 0px' 
+  });
+
+  // 対象のキャラクター（.simkichiwalk）を監視対象に登録する
+  $('.simkichiwalk').each(function() {
+    observer.observe(this);
+  });
+
+});
+
 
 // =========================================================
 // sec-top-g — eSIM / SIMカード タブ切替
