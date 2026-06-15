@@ -6806,8 +6806,19 @@ ul {
   margin: 0 5px 2px 0;
 }
 
+@media (max-width: 768px) {
+  main.plan .wrap-wide {
+    max-width: 500px;
+  }
+}
+
 .p-fv .plan-head {
   padding-bottom: 120px;
+}
+@media (max-width: 768px) {
+  .p-fv .plan-head {
+    padding-bottom: 60px;
+  }
 }
 
 .c-headline {
@@ -6819,6 +6830,11 @@ ul {
   font-style: normal;
   padding-bottom: 3px;
   border-bottom: 1px solid var(--ink);
+}
+@media (max-width: 768px) {
+  .c-headline {
+    margin: 60px auto 30px;
+  }
 }
 
 .c-anchor {
@@ -6833,6 +6849,11 @@ ul {
   gap: 20px;
   max-width: 920px;
   margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .c-anchor {
+    gap: 10px;
+  }
 }
 .c-anchor__item {
   -webkit-box-flex: 1;
@@ -6856,6 +6877,18 @@ ul {
   background: #fff;
   -webkit-transition: background 0.2s, color 0.2s;
   transition: background 0.2s, color 0.2s;
+}
+@media (max-width: 768px) {
+  .c-anchor__item {
+    gap: 4px;
+    max-width: calc((100% - 20px) / 3);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 10px 0 2px;
+    font-size: 12px;
+  }
 }
 .c-anchor__item:hover {
   background: var(--teal);
@@ -6897,6 +6930,32 @@ ul {
   font-weight: 900;
   font-style: normal;
   font-size: 10px;
+}
+@media (max-width: 768px) {
+  .c-anchor__arrow {
+    display: none;
+  }
+}
+.c-anchor__uarrow {
+  display: none;
+  color: var(--teal);
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 10px;
+}
+@media (max-width: 768px) {
+  .c-anchor__uarrow {
+    display: inline;
+  }
+}
+.c-anchor .sp {
+  display: none;
+}
+@media (max-width: 768px) {
+  .c-anchor .sp {
+    display: inline;
+  }
 }
 
 .c-btn {
@@ -6955,16 +7014,25 @@ ul {
 }
 @media (max-width: 768px) {
   .c-btnarea--pair {
-    gap: 20px;
+    gap: 35px;
+    margin-top: 15px;
   }
 }
 
 .c-accordion {
-  max-width: 1010px;
-  margin: 30px auto 0;
+  max-width: 1030px;
+  margin: 40px auto 0;
+}
+@media (max-width: 768px) {
+  .c-accordion {
+    margin: 80px auto 0;
+  }
 }
 .c-accordion__item {
-  border-bottom: 1px solid var(--ink-soft);
+  border-bottom: 1.5px solid var(--ink);
+}
+.c-accordion__item:first-child {
+  border-top: 1.5px solid var(--ink);
 }
 .c-accordion__item[open] .c-accordion__mark {
   -webkit-transform: rotate(45deg);
@@ -6979,11 +7047,11 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 18px 6px;
+  padding: 18px 10px;
   font-family: "GenJyuuGothic", sans-serif;
-  font-weight: 900;
+  font-weight: 700;
   font-style: normal;
-  font-size: 15px;
+  font-size: 16px;
 }
 .c-accordion__head::-webkit-details-marker {
   display: none;
@@ -6997,18 +7065,38 @@ ul {
   color: var(--ink);
 }
 .c-accordion__body {
-  padding: 0 6px 20px;
-  font-size: 14px;
+  padding-right: 20px;
+  font-size: 12px;
+  font-weight: 300;
   color: var(--ink);
+  line-height: 1.6;
+  padding-left: calc(1.2em + 10px);
+  text-indent: -1.2em;
+}
+.c-accordion__body:last-child {
+  padding-bottom: 20px;
+}
+.c-accordion__body .link {
+  color: #46c9f4;
+  text-decoration: underline;
+}
+.c-accordion__body .link:hover {
+  opacity: 0.8;
 }
 
 .c-plus {
   text-align: center;
-  font-size: 40px;
+  font-size: 60px;
   font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
   font-style: normal;
-  margin: 50px 0;
+  margin: 60px 0;
+}
+@media (max-width: 768px) {
+  .c-plus {
+    font-size: 50px;
+    margin: 50px 0;
+  }
 }
 
 .c-pagetop {
@@ -7112,7 +7200,7 @@ ul {
 
 .p-fv {
   text-align: center;
-  padding: 70px 0 10px;
+  padding: 70px 0 0px;
 }
 .p-fv__icon {
   width: 58px;
@@ -7173,7 +7261,7 @@ ul {
 }
 @media (max-width: 768px) {
   .p-cycle__list {
-    grid-template-columns: 1fr;
+    display: none;
   }
 }
 .p-cycle__card {
@@ -7222,6 +7310,7 @@ ul {
 }
 .p-cycle__photo {
   max-width: 350px;
+  width: 100%;
   margin: 30px auto 0;
 }
 .p-cycle__notice {
@@ -7267,9 +7356,113 @@ ul {
           justify-content: center;
   margin: 30px auto 0;
 }
+.p-cycle .p-accordion {
+  display: none;
+  max-width: 1030px;
+  margin: 0 auto 0;
+}
+@media (max-width: 768px) {
+  .p-cycle .p-accordion {
+    display: block;
+  }
+}
+.p-cycle .p-accordion__item {
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.p-cycle .p-accordion__item[open] .c-accordion__mark {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.p-cycle .p-accordion__head {
+  list-style: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 14px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+}
+.p-cycle .p-accordion__head::-webkit-details-marker {
+  display: none;
+}
+.p-cycle .p-accordion__head .bar {
+  font-weight: 500;
+  padding: 0 5px 2px;
+}
+.p-cycle .p-accordion__inner {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px 20px 32px;
+}
+.p-cycle .p-accordion__pay {
+  width: 100%;
+  margin: 0 auto 30px;
+}
+.p-cycle .p-accordion__text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 1px;
+}
+.p-cycle .p-accordion__text strong {
+  color: var(--teal);
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.p-cycle .p-accordion__link {
+  color: #46C9F4;
+  text-decoration: underline;
+}
+.p-cycle .p-accordion__link:hover {
+  opacity: 0.8;
+}
+.p-cycle .p-accordion__notice {
+  width: 100%;
+  margin: 30px auto 0;
+}
+.p-cycle .p-accordion__mark {
+  margin-left: auto;
+  font-size: 22px;
+  font-family: "GenJyuuGothic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: var(--ink);
+}
+.p-cycle .p-accordion__body {
+  padding-right: 20px;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.6;
+  padding-left: calc(1.2em + 10px);
+  text-indent: -1.2em;
+}
+.p-cycle .p-accordion__body:last-child {
+  padding-bottom: 20px;
+}
+.p-cycle .p-accordion__body .link {
+  color: #46c9f4;
+  text-decoration: underline;
+}
+.p-cycle .p-accordion__body .link:hover {
+  opacity: 0.8;
+}
 
 .p-fees .c-headline {
   margin-bottom: 60px;
+}
+@media (max-width: 768px) {
+  .p-fees .c-headline {
+    margin-bottom: 40px;
+  }
 }
 .p-fees__wrap {
   position: relative;
@@ -7277,6 +7470,11 @@ ul {
   padding: 46px 20px 50px;
   border: 2px solid var(--ink);
   border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .p-fees__wrap {
+    padding: 30px 20px 20px;
+  }
 }
 .p-fees__wrap p {
   position: absolute;
@@ -7289,11 +7487,35 @@ ul {
   padding: 0 40px;
   background-color: #fff;
 }
+@media (max-width: 768px) {
+  .p-fees__wrap p {
+    top: -10px;
+    font-size: 17px;
+    padding: 0 20px;
+  }
+}
 .p-fees__photo {
   max-width: 800px;
   width: 100%;
   height: auto;
   margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .p-fees__photo {
+    display: none;
+  }
+}
+.p-fees__photo_sp {
+  display: none;
+  max-width: 360px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .p-fees__photo_sp {
+    display: block;
+  }
 }
 .p-fees__label {
   display: block;
@@ -7309,11 +7531,22 @@ ul {
   border-radius: 999px;
   margin: 40px 20px;
 }
+@media (max-width: 768px) {
+  .p-fees__label {
+    margin: 35px 20px;
+  }
+}
 .p-fees__lead {
   font-size: 16px;
-  max-width: 980px;
+  max-width: 1020px;
   line-height: 1.6;
+  padding: 20px;
   margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .p-fees__lead {
+    padding: 0 20px 20px;
+  }
 }
 
 .p-plan__banner {
@@ -7331,11 +7564,23 @@ ul {
   font-weight: 900;
   font-style: normal;
 }
+@media (max-width: 768px) {
+  .p-plan__banner-head {
+    font-size: 20px;
+    padding: 14px;
+  }
+}
 .p-plan__banner-head small {
   font-size: 16px;
   font-family: "GenJyuuGothic", sans-serif;
   font-weight: 700;
   font-style: normal;
+}
+@media (max-width: 768px) {
+  .p-plan__banner-head small {
+    display: block;
+    margin-top: 8px;
+  }
 }
 .p-plan__banner-sub {
   text-align: center;
@@ -7346,19 +7591,44 @@ ul {
   font-style: normal;
   color: var(--teal);
 }
+@media (max-width: 768px) {
+  .p-plan__banner-sub {
+    padding: 10px 30px;
+    display: block;
+    margin-top: 6px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
 .p-plan__list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  margin-top: 36px;
+  margin-top: 40px;
 }
 @media (max-width: 768px) {
   .p-plan__list {
     grid-template-columns: 1fr;
+    gap: 35px;
+    margin-top: 35px;
   }
 }
 .p-plan__table {
   width: 100%;
+}
+@media (max-width: 768px) {
+  .p-plan__table {
+    display: none;
+  }
+}
+.p-plan__table_sp {
+  width: 100%;
+  display: none;
+}
+@media (max-width: 768px) {
+  .p-plan__table_sp {
+    display: block;
+  }
 }
 .p-plan__aside {
   position: relative;
@@ -7373,13 +7643,18 @@ ul {
       -ms-flex-align: center;
           align-items: center;
   gap: 14px;
-  margin-top: 24px;
+  margin-top: 50px;
+}
+@media (max-width: 900px) {
+  .p-plan__aside {
+    margin-top: 35px;
+  }
 }
 .p-plan__note {
   background: var(--yellow-soft);
   border-radius: 12px;
   padding: 15px;
-  font-size: 14px;
+  font-size: 16px;
   margin-right: 80px;
   line-height: 1.6;
 }
@@ -7390,57 +7665,116 @@ ul {
   font-style: normal;
 }
 .p-plan__note .mr {
-  margin-right: 130px;
+  margin-right: 110px;
+}
+@media (max-width: 900px) {
+  .p-plan__note {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .p-plan__note {
+    margin-right: 55px;
+  }
+  .p-plan__note .mr {
+    margin-right: 60px;
+  }
 }
 .p-plan__photo {
   position: absolute;
-  max-width: 148px;
-  top: 70px;
-  right: 50px;
+  width: 148px;
+  top: 90px;
+  right: 30px;
+}
+@media (max-width: 900px) {
+  .p-plan__photo {
+    width: 110px;
+    top: 80px;
+    right: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .p-plan__photo {
+    width: 100px;
+    top: 40px;
+    right: 10px;
+  }
+}
+@media (max-width: 460px) {
+  .p-plan__photo {
+    width: 100px;
+    top: 86px;
+    right: 10px;
+  }
 }
 
 .p-option__frame {
   position: relative;
-  border: 2px solid var(--yellow);
-  border-radius: 14px;
-  padding: 44px 30px 36px;
-  margin-top: 20px;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  padding: 6px;
+  margin-top: 30px;
+  background-color: var(--yellow);
 }
 .p-option__tab {
   position: absolute;
-  top: -16px;
+  top: -14px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   background: #fff;
-  padding: 0 22px;
-  font-size: 18px;
+  padding: 0 40px;
+  font-size: 21px;
   font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
   font-style: normal;
-  letter-spacing: 2px;
+}
+@media (max-width: 768px) {
+  .p-option__tab {
+    top: -10px;
+    font-size: 17px;
+    padding: 0 20px;
+  }
+}
+.p-option__innner {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 50px 20px;
+}
+@media (max-width: 768px) {
+  .p-option__innner {
+    padding: 50px 20px 20px;
+  }
 }
 .p-option__heading {
   text-align: center;
-  font-size: 26px;
+  font-size: 27px;
   font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
   font-style: normal;
-  margin-bottom: 6px;
+  margin-bottom: 30px;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .p-option__heading {
-    font-size: 20px;
+    line-height: 1.6;
   }
 }
 .p-option__heading span {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(60%, var(--yellow)));
   background: linear-gradient(transparent 60%, var(--yellow) 60%);
 }
+.p-option__heading .sp {
+  display: none;
+}
+@media (max-width: 768px) {
+  .p-option__heading .sp {
+    display: inline;
+  }
+}
 .p-option__lead {
   text-align: center;
-  font-size: 14.5px;
-  margin-bottom: 26px;
+  font-size: 16px;
+  margin-bottom: 56px;
 }
 .p-option__list {
   display: grid;
@@ -7457,14 +7791,69 @@ ul {
 .p-option__item {
   width: 100%;
 }
+@media (max-width: 768px) {
+  .p-option__item {
+    display: none;
+  }
+}
+.p-option__item_sp {
+  display: none;
+  max-width: 360px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .p-option__item_sp {
+    display: block;
+  }
+}
+.p-option .btn-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 46px auto 0;
+}
 
 .p-short__photo {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 120px;
+}
+@media (max-width: 768px) {
+  .p-short__photo {
+    display: none;
+  }
+}
+.p-short__photo_sp {
+  width: 100%;
+  margin-top: 60px;
+  display: none;
+}
+@media (max-width: 768px) {
+  .p-short__photo_sp {
+    display: block;
+  }
 }
 .p-short__banner {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 40px;
+}
+@media (max-width: 768px) {
+  .p-short__banner {
+    display: none;
+  }
+}
+.p-short__banner_sp {
+  width: 100%;
+  margin-top: 35px;
+  display: none;
+}
+@media (max-width: 768px) {
+  .p-short__banner_sp {
+    display: block;
+  }
 }
 .p-short__note {
   text-align: center;
@@ -7472,4 +7861,18 @@ ul {
   font-size: 12px;
   color: #888888;
   line-height: 1.7;
+}
+.p-short .btn-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 40px auto 160px;
+}
+@media (max-width: 768px) {
+  .p-short .btn-wrap {
+    margin: 35px auto 90px;
+  }
 }/*# sourceMappingURL=style.css.map */
