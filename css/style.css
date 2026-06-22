@@ -8442,7 +8442,7 @@ ul {
 }
 @media (max-width: 768px) {
   .top_a__step-text {
-    max-width: 320px;
+    max-width: 300px;
   }
 }
 .top_a__step-link {
