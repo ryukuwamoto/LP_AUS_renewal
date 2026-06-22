@@ -8,6 +8,12 @@
 .top_a {
   background: #fff;
 
+  @media (max-width: 768px) {
+    .wrap-wide {
+      max-width: 500px;
+    }
+  }
+
   &__band {
     position: relative;
     width: 1030px;
@@ -43,7 +49,7 @@
     white-space: nowrap;
     padding-top: 6px;
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       font-size: 15px;
       gap: 6px;
     }
@@ -56,7 +62,7 @@
       text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 0px 1px 0 #000, 0 -1px 0 #000, -1px 0 0 #000, 1px 0 0 #000;
       margin-bottom: 6px;
 
-      @media (max-width: 480px) {
+      @media (max-width: 768px) {
         font-size: 25px;
       }
     }
@@ -72,7 +78,7 @@
     border-radius: 0 0 10px 10px;
     padding: 10px 10px;
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       font-size: 12px;
     }
   }
@@ -93,12 +99,38 @@
       align-items: center;
       gap: 14px;
       text-align: center;
+      margin: 16px auto 0;
     }
     
     .wrap {
       position: absolute;
       left: 173px;
       top: 95px;
+
+      > img {
+        height: 212px;
+        width: auto;
+        display: none;
+
+        @media (max-width: 768px) {
+          display: block;
+        }
+      }
+
+      @media (max-width: 768px) {
+        left: auto;
+        top: auto;
+        position: relative;
+        text-align: left;
+        display: flex;
+        gap: 15px;
+      }
+
+      &-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
     }
     &-heading {
       margin: 0;
@@ -115,6 +147,7 @@
       @media (max-width: 768px) {
         position: static;
         display: inline-block;
+        font-size: 16px;
       }
     }
 
@@ -128,6 +161,8 @@
       @media (max-width: 768px) {
         position: static;
         white-space: normal;
+        margin: 6px 0;
+        font-size: 13px;
       }
     }
 
@@ -153,7 +188,7 @@
     z-index: 2;
 
     @media (max-width: 768px) {
-      position: static;
+      display: none;
     }
   }
 
@@ -170,13 +205,27 @@
       left: auto;
       top: auto;
       width: 100%;
-      max-width: 480px;
     }
 
     &-bg {
       inset: 0;
       width: 100%;
       height: auto;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    &-bgsp {
+      inset: 0;
+      width: 100%;
+      height: auto;
+      display: none;
+
+      @media (max-width: 768px) {
+        display: block;
+      }
     }
   }
 
@@ -187,9 +236,9 @@
 
     @media (max-width: 768px) {
       position: static;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
+      margin-top: 0;
     }
   }
 
@@ -201,6 +250,12 @@
     gap: 7px;
     padding: 5px 64px 5px 13px;
     background-color: var(--yellow-soft);
+
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 4px 0 4px 13px;
+      max-width: 200px;
+    }
 
     &-icon {
       position: relative;
@@ -242,7 +297,7 @@
       white-space: nowrap;
       padding: 4px 10px 0;
 
-      @media (max-width: 480px) {
+      @media (max-width: 768px) {
         font-size: 15px;
       }
 
@@ -252,7 +307,7 @@
         font-size: 30px;
         margin-bottom: 6px;
 
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
           font-size: 22px;
         }
       }
@@ -262,7 +317,7 @@
         font-size: 36px;
         margin-bottom: 7px;
 
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
           font-size: 26px;
         }
       }
@@ -273,7 +328,7 @@
         font-size: 14px;
         line-height: 1;
 
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
           font-size: 11px;
         }
       }
@@ -285,6 +340,11 @@
     font-weight: 300;
     text-align: right;
     margin: 16px 0 40px;
+
+    @media (max-width: 768px) {
+          font-size: 10px;
+          margin: 8px 0 20px;
+        }
   }
 
   /* LINE 設定サポート枠 */
@@ -296,6 +356,22 @@
       display: flex;
       justify-content: center;
       margin-top: 20px;
+    }
+
+    &-sp {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      margin-bottom: 38px;
+
+      &-pc {
+        display: none;
+      }
+
+      &-sp {
+        display: block;
+      }
     }
   }
 
@@ -311,7 +387,6 @@
     @media (max-width: 768px) {
       flex-direction: column;
       align-items: center;
-      gap: 30px;
     }
   }
 
@@ -321,10 +396,18 @@
     max-width: 300px;
     padding-top: 18px;
 
+    @media (max-width: 768px) {
+      width: 100%;
+      max-width: 400px;
+    }
+
     &-sep {
       display: flex;
       align-items: center;
       align-self: center;
+      @media (max-width: 768px) {
+        transform: rotate(90deg);
+      }
     }
 
     &-badge {
@@ -442,6 +525,14 @@
   margin-bottom: 60px;
   background: #00A3AD;
 
+  @media (max-width: 768px) {
+    margin-top: 60px;
+
+    .wrap-wide {
+      max-width: 500px;
+    }
+  }
+
   /* セクションヘッダー */
   &__head {
     display: flex;
@@ -461,6 +552,17 @@
       font-size: 24px;
       color: #fff;
     }
+
+    @media (max-width: 768px) {
+      margin-top: 0px;
+
+      &-icon {
+        width: 76px;
+      }
+
+      &-title {}
+      font-size: 21px;
+    }
   }
 
   &__lead {
@@ -471,8 +573,34 @@
     color: #fff;
     text-align: center;
 
-    @media (max-width: 480px) {
-      font-size: 17px;
+    .sp {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      margin: 30px 0;
+
+      .sp {
+      display: inline;
+      }
+    }
+  }
+
+  &__box-img {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__box-img-sp {
+    display: none;
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      display: block;
     }
   }
 
@@ -503,8 +631,10 @@
     }
 
     @media (max-width: 768px) {
+      padding: 13px 10px;
+
       .main {
-        font-size: 16px;
+        font-size: 15px;
       }
       .sub {
         font-size: 13px;
@@ -524,9 +654,17 @@
       flex-wrap: wrap;
     }
 
+    @media (max-width: 768px) {
+      margin: 38px 0 20px;
+    }
+
     &__type-img {
       width: 100%;
       max-width: 330px;
+
+      @media (max-width: 768px) {
+        max-width: 400px;
+      }
     }
   }
 
@@ -776,7 +914,7 @@
     &-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 40px 30px;
+      gap: 30px;
       margin-top: 40px;
 
       @media (max-width: 768px) {
