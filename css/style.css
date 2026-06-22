@@ -8429,8 +8429,8 @@ ul {
 }
 .top_a__step-text {
   margin: 0;
-  width: 250px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 250px;
   font-weight: 500;
   font-size: 16px;
   line-height: 26px;
@@ -8439,6 +8439,11 @@ ul {
 .top_a__step-text strong {
   font-weight: 700;
   color: var(--teal);
+}
+@media (max-width: 768px) {
+  .top_a__step-text {
+    max-width: 320px;
+  }
 }
 .top_a__step-link {
   color: var(--ink);
@@ -8837,6 +8842,7 @@ ul {
 .top_c__plan .top_c__rate-img-sp {
   display: none;
   max-width: 400px;
+  width: 100%;
 }
 @media (max-width: 768px) {
   .top_c__plan .top_c__rate-img-sp {
