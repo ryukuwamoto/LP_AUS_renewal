@@ -298,6 +298,14 @@ ul {
       padding-left: 205px;
       }
     }
+
+    &.applyico{
+      padding-left: 270px;
+
+    @media (max-width: 768px){
+      padding-left: 180px;
+      }
+    }
   }
 
   .sec-en{

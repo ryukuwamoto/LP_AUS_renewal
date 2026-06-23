@@ -6,10 +6,30 @@
 .a-top_a {
   background-color: #fff;
   background-image: 
-    radial-gradient(circle at 3px 2.8px, var(--yellow-soft) 3px, transparent 3.6px), 
-    radial-gradient(circle at 16px 15.9px, var(--yellow-soft) 3px, transparent 3.6px);
+    radial-gradient(circle at 3px 2.8px, color-mix(in srgb, var(--yellow-soft) 35%, transparent) 3px, transparent 3.6px), 
+    radial-gradient(circle at 16px 15.9px, color-mix(in srgb, var(--yellow-soft) 35%, transparent) 3px, transparent 3.6px);
   background-size: 27px 27px;
-  padding: 30px 0;
+  padding: 30px 0 120px;
+
+  .wrap-wide {
+    @media (max-width: 768px) {
+      max-width: 500px;
+    }
+  }
+
+  .sp {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .usp {
+      display: none;
+
+      @media (max-width: 600px) {
+        display: inline;
+      }
+    }
 
   &__lead {
     margin: 60px 0;
@@ -20,8 +40,8 @@
     text-align: center;
     text-decoration: underline;
 
-    @media (max-width: 480px) {
-      font-size: 14px;
+    @media (max-width: 768px) {
+      margin: 30px 0;
     }
   }
 
@@ -35,7 +55,7 @@
     @media (max-width: 768px) {
       flex-direction: column;
       gap: 20px;
-      max-width: 360px;
+      max-width: 320px;
     }
   }
 
@@ -57,6 +77,10 @@
 
     &:first-child {
         margin-left: 20px;
+
+        @media (max-width: 768px) {
+          margin-left: 0;
+        }
     }
 
     .c-check {
@@ -77,6 +101,11 @@
     width: 100%;
     margin: 60px auto;
     gap: 50px;
+
+    @media (max-width: 768px) {
+      margin: 35px auto;
+      gap: 30px;
+    }
   }
 
   &__card {
@@ -92,14 +121,18 @@
     gap: 30px;
 
     @media (max-width: 768px) {
-      padding: 32px 18px;
-      gap: 24px;
+      padding: 24px 20px 30px;
+      gap: 20px;
     }
 
     &-head {
       display: flex;
       align-items: center;
       gap: 14px;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
     }
 
     &-title {
@@ -108,10 +141,6 @@
       font-size: 21px;
       line-height: 29px;
       color: var(--ink);
-
-      @media (max-width: 480px) {
-        font-size: 18px;
-      }
     }
 
     &-text {
@@ -122,8 +151,8 @@
       color: var(--ink);
       text-align: center;
 
-      @media (max-width: 480px) {
-        font-size: 14px;
+      @media (max-width: 768px) {
+        max-width: 320px;
       }
     }
 
@@ -139,9 +168,10 @@
       color: var(--ink);
       text-align: center;
 
-      @media (max-width: 480px) {
+      @media (max-width: 768px) {
         font-size: 14px;
         padding: 12px;
+        max-width: 320px;
       }
     }
   }
@@ -167,6 +197,10 @@
     flex-direction: column;
     align-items: center;
     gap: 14px;
+
+    @media (max-width: 768px) {
+      max-width: 320px;
+    }
 
     &-os {
       width: 100%;
@@ -217,6 +251,10 @@
       font-size: 12px;
       line-height: 20px;
       color: #00A3AD;
+
+      @media (max-width: 768px) {
+        text-align: center;
+      }
     }
 
     &-mini {
@@ -235,6 +273,10 @@
     text-align: center;
     border: 2px solid var(--ink);
     padding: 19px 10px;
+
+    @media (max-width: 768px) {
+      width: 90%;
+    }
 
     span {
       margin-left: 25px;
@@ -273,6 +315,10 @@
       color: var(--ink);
       text-align: center;
 
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+
       span {
         background: linear-gradient(transparent 60%, #FFD700 60%);
       }
@@ -291,8 +337,8 @@
         color: #E7322A;
       }
 
-      @media (max-width: 480px) {
-        padding-right: 0;
+      @media (max-width: 768px) {
+        padding-right: 106px;
       }
     }
 
@@ -303,11 +349,14 @@
       width: 102px;
       height: auto;
 
-      @media (max-width: 480px) {
-        position: static;
-        display: block;
-        width: 80px;
-        margin: 8px auto 0;
+      @media (max-width: 768px) {
+        right: 6px;
+        bottom: 5px;
+      }
+
+      @media (max-width: 365px) {
+        right: 8px;
+        bottom: 14px;
       }
     }
   }
@@ -336,7 +385,6 @@
 
     &-title {
       width: 100%;
-      max-width: 280px;
       height: 34px;
       display: flex;
       align-items: center;
@@ -367,7 +415,7 @@
     }
 
     &-sub {
-      margin: 0;
+      padding: 0 20px;
       font-weight: 500;
       font-size: 16px;
       line-height: 26px;
@@ -418,32 +466,33 @@
 
 /* クレジットカードブランドロゴ */
 .c-brands {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 10px 13px;
+  padding: 0 30px;
   width: 100%;
 
   img {
     display: block;
     height: auto;
   }
-
-  &__visa    { width: 72px; }
-  &__mc      { width: 73px; }
-  &__amex    { width: 46px; }
-  &__jcb     { width: 58px; }
-  &__diners  { width: 59px; }
 }
 
 /* =========================================================
    top_b … タブ切り替え・商品購入セクション
    ========================================================= */
-.top_b {
+.a-top_b {
   position: relative;
   background: #00A3AD;
   padding-bottom: 60px;
+  margin: 0 0 120px;
+
+  @media (max-width: 768px) {
+    margin: 0 0 80px;
+  }
+
+  .sp {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 
   &__inner {
     position: relative;
@@ -451,25 +500,36 @@
     max-width: 1070px;
     margin: 0 auto;
     padding: 0 20px;
-  }
-
-  /* タブメニュー */
-  &__tabs {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 18px;
-    max-width: 1030px;
-    margin: -64px auto 0;
 
     @media (max-width: 768px) {
-      margin-top: -52px;
+      padding: 0;
     }
   }
 
+  /* タブメニュー */
+  /* タブメニュー（親要素） */
+  &__tabs {
+    display: flex;
+    align-items: flex-end; // 下辺を揃えて上に向かって伸ばす
+    justify-content: center;
+    gap: 18px;
+    max-width: 1030px;
+    
+    /* 💡ここがガタつき防止のポイント */
+    height: 70px;          // エリア全体の高さを最大値の70pxに固定
+    margin: -70px auto 0;  // 高さに合わせたネガティブマージン
+
+    @media (max-width: 768px) {
+      height: 50px;        // スマホ版のエリア全体高さを50pxに固定
+      margin-top: -50px;
+      gap: 8px;
+    }
+  }
+
+  /* タブ単体 */
   &__tab {
     flex: 0 1 356px;
-    height: 64px;
+    height: 50px; // 閉じている時は50px
     border: 0;
     border-radius: 10px 10px 0 0;
     background: #98DADE;
@@ -477,7 +537,8 @@
     font-weight: 700;
     font-size: 22px;
     cursor: pointer;
-    transition: background .2s, color .2s;
+    transition: background .2s, color .2s, height .2s;
+    text-align: center;
 
     .en {
       font-weight: 700;
@@ -485,13 +546,19 @@
     }
 
     &.is-active {
+      height: 70px; // 開いている時は70px（親の高さ制限ぴったりまで伸びる）
       background: #00A3AD;
       color: #fff;
     }
 
+    /* レスポンシブ（スマホ版） */
     @media (max-width: 768px) {
       font-size: 15px;
-      height: 52px;
+      height: 38px; // スマホ版：閉じている時（50pxより少し低く）
+
+      &.is-active {
+        height: 50px; // スマホ版：開いている時（親の高さ50pxぴったりまで伸びる）
+      }
 
       .en {
         font-size: 17px;
@@ -501,7 +568,7 @@
 
   /* 導入テキスト */
   &__intro {
-    margin: 40px 0 0;
+    margin: 60px 0 0;
     text-align: center;
     font-weight: 700;
     font-size: 16px;
@@ -513,14 +580,15 @@
       align-items: center;
       gap: 5px;
       text-decoration: underline;
+
+      img {
+        height: 1em;
+        margin: 1px 0 0;
+      }
     }
 
-    ion-icon {
-      font-size: 15px;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 14px;
+    @media (max-width: 768px) {
+      margin: 25px 0 0;
     }
   }
 
@@ -543,8 +611,9 @@
     @media (max-width: 768px) {
       flex-direction: column;
       align-items: center;
-      gap: 40px;
-      padding: 32px 18px;
+      gap: 35px;
+      padding: 30px 30px;
+      margin: 25px auto 0;
     }
   }
 
@@ -552,13 +621,25 @@
   &__left {
     flex: 0 0 285px;
     width: 285px;
-    max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 
+    .c-accordion {
+      margin-top: 0;
+
+      &__head {
+        padding: 10px;
+      }
+
+      @media (max-width: 768px) {
+        margin-top: 15px;
+      }
+    }
+
     @media (max-width: 768px) {
-      flex-basis: auto;
+      flex: 1 1 auto;
+      width: 100%;
     }
   }
 
@@ -566,12 +647,21 @@
     width: 100%;
     height: auto;
     border-radius: 4px;
+
+    @media (max-width: 768px) {
+      width: 75%;
+      margin: 0 auto;
+    }
   }
 
   &__simsize {
     width: 282px;
     max-width: 100%;
     height: auto;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   /* 左カラム：アコーディオン（details/summary） */
@@ -579,44 +669,8 @@
     width: 282px;
     max-width: 100%;
 
-    &-item {
-      border-bottom: 1px solid var(--ink);
-
-      &:first-child {
-        border-top: 1px solid var(--ink);
-      }
-
-      &[open] {
-        .top_b__acc-mark {
-          transform: rotate(45deg);
-        }
-      }
-    }
-
-    &-head {
-      list-style: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      padding: 12px 4px;
-      font-weight: 700;
-      font-size: 16px;
-      color: var(--ink);
-
-      &::-webkit-details-marker {
-        display: none;
-      }
-    }
-
-    &-mark {
-      margin-left: auto;
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 1;
-    }
-
     &-body {
-      padding: 0 4px 14px;
+      padding: 0 10px 14px;
       font-weight: 400;
       font-size: 12px;
       line-height: 1.7;
@@ -641,7 +695,6 @@
       }
 
       .is-em {
-        margin-top: 8px;
         font-weight: 700;
         color: #00A3AD;
       }
@@ -656,7 +709,7 @@
     row-gap: 11px;
     width: 218px;
     max-width: 100%;
-    margin: 14px 0 4px;
+    margin: 14px auto 4px;
     padding: 19px 21px;
     border: 2px solid var(--ink);
 
@@ -688,16 +741,17 @@
 
   /* カード内：右カラム（セレクトボックス・購入ボタン等） */
   &__right {
-    flex: 0 0 421px;
-    width: 421px;
-    max-width: 100%;
+    flex: 1 1 0%;
+    width: 100%;
+    max-width: 421px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
 
     @media (max-width: 768px) {
-      flex-basis: auto;
+      flex: 1 1 auto;
+      gap: 35px;
     }
   }
 
@@ -708,10 +762,14 @@
     border-radius: 5px;
     padding: 9px 12px;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 18px;
     color: var(--ink);
     text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
   }
 
   &__selects {
@@ -914,6 +972,12 @@
   &__panel {
     &[hidden] {
       display: none;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 440px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
   }
 

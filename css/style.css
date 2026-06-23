@@ -367,6 +367,14 @@ ul {
     padding-left: 205px;
   }
 }
+.head-wrap .sec-head .sec-ico.applyico {
+  padding-left: 270px;
+}
+@media (max-width: 768px) {
+  .head-wrap .sec-head .sec-ico.applyico {
+    padding-left: 180px;
+  }
+}
 .head-wrap .sec-head .sec-en {
   font-family: "sofia-pro-soft", sans-serif;
   font-weight: 500;
@@ -9099,9 +9107,27 @@ ul {
    ========================================================= */
 .a-top_a {
   background-color: #fff;
-  background-image: radial-gradient(circle at 3px 2.8px, var(--yellow-soft) 3px, transparent 3.6px), radial-gradient(circle at 16px 15.9px, var(--yellow-soft) 3px, transparent 3.6px);
+  background-image: radial-gradient(circle at 3px 2.8px, color-mix(in srgb, var(--yellow-soft) 35%, transparent) 3px, transparent 3.6px), radial-gradient(circle at 16px 15.9px, color-mix(in srgb, var(--yellow-soft) 35%, transparent) 3px, transparent 3.6px);
   background-size: 27px 27px;
-  padding: 30px 0;
+  padding: 30px 0 120px;
+}
+@media (max-width: 768px) {
+  .a-top_a .wrap-wide {
+    max-width: 500px;
+  }
+}
+@media (max-width: 768px) {
+  .a-top_a .sp {
+    display: none;
+  }
+}
+.a-top_a .usp {
+  display: none;
+}
+@media (max-width: 600px) {
+  .a-top_a .usp {
+    display: inline;
+  }
 }
 .a-top_a__lead {
   margin: 60px 0;
@@ -9112,9 +9138,9 @@ ul {
   text-align: center;
   text-decoration: underline;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .a-top_a__lead {
-    font-size: 14px;
+    margin: 30px 0;
   }
 }
 .a-top_a {
@@ -9135,7 +9161,7 @@ ul {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 20px;
-    max-width: 360px;
+    max-width: 320px;
   }
 }
 .a-top_a__navitem {
@@ -9165,6 +9191,11 @@ ul {
 .a-top_a__navitem:first-child {
   margin-left: 20px;
 }
+@media (max-width: 768px) {
+  .a-top_a__navitem:first-child {
+    margin-left: 0;
+  }
+}
 .a-top_a__navitem .c-check {
   position: absolute;
   left: -31px;
@@ -9190,6 +9221,12 @@ ul {
   margin: 60px auto;
   gap: 50px;
 }
+@media (max-width: 768px) {
+  .a-top_a__cards {
+    margin: 35px auto;
+    gap: 30px;
+  }
+}
 .a-top_a__card {
   width: 100%;
   scroll-margin-top: 90px;
@@ -9211,8 +9248,8 @@ ul {
 }
 @media (max-width: 768px) {
   .a-top_a__card {
-    padding: 32px 18px;
-    gap: 24px;
+    padding: 24px 20px 30px;
+    gap: 20px;
   }
 }
 .a-top_a__card-head {
@@ -9224,17 +9261,20 @@ ul {
           align-items: center;
   gap: 14px;
 }
+@media (max-width: 768px) {
+  .a-top_a__card-head {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .a-top_a__card-title {
   margin: 0;
   font-weight: 700;
   font-size: 21px;
   line-height: 29px;
   color: var(--ink);
-}
-@media (max-width: 480px) {
-  .a-top_a__card-title {
-    font-size: 18px;
-  }
 }
 .a-top_a__card-text {
   margin: 0;
@@ -9244,9 +9284,9 @@ ul {
   color: var(--ink);
   text-align: center;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .a-top_a__card-text {
-    font-size: 14px;
+    max-width: 320px;
   }
 }
 .a-top_a__card-desc {
@@ -9261,10 +9301,11 @@ ul {
   color: var(--ink);
   text-align: center;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .a-top_a__card-desc {
     font-size: 14px;
     padding: 12px;
+    max-width: 320px;
   }
 }
 .a-top_a {
@@ -9308,6 +9349,11 @@ ul {
       -ms-flex-align: center;
           align-items: center;
   gap: 14px;
+}
+@media (max-width: 768px) {
+  .a-top_a__device {
+    max-width: 320px;
+  }
 }
 .a-top_a__device-os {
   width: 100%;
@@ -9360,6 +9406,11 @@ ul {
   line-height: 20px;
   color: #00A3AD;
 }
+@media (max-width: 768px) {
+  .a-top_a__device-foot {
+    text-align: center;
+  }
+}
 .a-top_a__device-mini {
   margin: 0;
   font-weight: 400;
@@ -9374,6 +9425,11 @@ ul {
   text-align: center;
   border: 2px solid var(--ink);
   padding: 19px 10px;
+}
+@media (max-width: 768px) {
+  .a-top_a__freq {
+    width: 90%;
+  }
 }
 .a-top_a__freq span {
   margin-left: 25px;
@@ -9411,6 +9467,11 @@ ul {
   color: var(--ink);
   text-align: center;
 }
+@media (max-width: 768px) {
+  .a-top_a__recommend-title {
+    font-size: 14px;
+  }
+}
 .a-top_a__recommend-title span {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(60%, #FFD700));
   background: linear-gradient(transparent 60%, #FFD700 60%);
@@ -9427,9 +9488,9 @@ ul {
   font-weight: 800;
   color: #E7322A;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .a-top_a__recommend-text {
-    padding-right: 0;
+    padding-right: 106px;
   }
 }
 .a-top_a__recommend-mascot {
@@ -9439,12 +9500,16 @@ ul {
   width: 102px;
   height: auto;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .a-top_a__recommend-mascot {
-    position: static;
-    display: block;
-    width: 80px;
-    margin: 8px auto 0;
+    right: 6px;
+    bottom: 5px;
+  }
+}
+@media (max-width: 365px) {
+  .a-top_a__recommend-mascot {
+    right: 8px;
+    bottom: 14px;
   }
 }
 .a-top_a {
@@ -9491,7 +9556,6 @@ ul {
 }
 .a-top_a__pay-title {
   width: 100%;
-  max-width: 280px;
   height: 34px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9525,7 +9589,7 @@ ul {
   text-align: center;
 }
 .a-top_a__pay-sub {
-  margin: 0;
+  padding: 0 20px;
   font-weight: 500;
   font-size: 16px;
   line-height: 26px;
@@ -9581,59 +9645,50 @@ ul {
 
 /* クレジットカードブランドロゴ */
 .c-brands {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 10px 13px;
+  padding: 0 30px;
   width: 100%;
 }
 .c-brands img {
   display: block;
   height: auto;
 }
-.c-brands__visa {
-  width: 72px;
-}
-.c-brands__mc {
-  width: 73px;
-}
-.c-brands__amex {
-  width: 46px;
-}
-.c-brands__jcb {
-  width: 58px;
-}
-.c-brands__diners {
-  width: 59px;
-}
 
 /* =========================================================
    top_b … タブ切り替え・商品購入セクション
    ========================================================= */
-.top_b {
+.a-top_b {
   position: relative;
   background: #00A3AD;
   padding-bottom: 60px;
+  margin: 0 0 120px;
 }
-.top_b__inner {
+@media (max-width: 768px) {
+  .a-top_b {
+    margin: 0 0 80px;
+  }
+}
+@media (max-width: 768px) {
+  .a-top_b .sp {
+    display: none;
+  }
+}
+.a-top_b__inner {
   position: relative;
   display: flow-root;
   max-width: 1070px;
   margin: 0 auto;
   padding: 0 20px;
 }
-.top_b {
-  /* タブメニュー */
+@media (max-width: 768px) {
+  .a-top_b__inner {
+    padding: 0;
+  }
 }
-.top_b__tabs {
+.a-top_b {
+  /* タブメニュー */
+  /* タブメニュー（親要素） */
+}
+.a-top_b__tabs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9645,18 +9700,25 @@ ul {
           justify-content: center;
   gap: 18px;
   max-width: 1030px;
-  margin: -64px auto 0;
+  /* 💡ここがガタつき防止のポイント */
+  height: 70px;
+  margin: -70px auto 0;
 }
 @media (max-width: 768px) {
-  .top_b__tabs {
-    margin-top: -52px;
+  .a-top_b__tabs {
+    height: 50px;
+    margin-top: -50px;
+    gap: 8px;
   }
 }
-.top_b__tab {
+.a-top_b {
+  /* タブ単体 */
+}
+.a-top_b__tab {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 356px;
           flex: 0 1 356px;
-  height: 64px;
+  height: 50px;
   border: 0;
   border-radius: 10px 10px 0 0;
   background: #98DADE;
@@ -9664,38 +9726,46 @@ ul {
   font-weight: 700;
   font-size: 22px;
   cursor: pointer;
-  -webkit-transition: background 0.2s, color 0.2s;
-  transition: background 0.2s, color 0.2s;
+  -webkit-transition: background 0.2s, color 0.2s, height 0.2s;
+  transition: background 0.2s, color 0.2s, height 0.2s;
+  text-align: center;
 }
-.top_b__tab .en {
+.a-top_b__tab .en {
   font-weight: 700;
   font-size: 24px;
 }
-.top_b__tab.is-active {
+.a-top_b__tab.is-active {
+  height: 70px;
   background: #00A3AD;
   color: #fff;
 }
+.a-top_b__tab {
+  /* レスポンシブ（スマホ版） */
+}
 @media (max-width: 768px) {
-  .top_b__tab {
+  .a-top_b__tab {
     font-size: 15px;
-    height: 52px;
+    height: 38px;
   }
-  .top_b__tab .en {
+  .a-top_b__tab.is-active {
+    height: 50px;
+  }
+  .a-top_b__tab .en {
     font-size: 17px;
   }
 }
-.top_b {
+.a-top_b {
   /* 導入テキスト */
 }
-.top_b__intro {
-  margin: 40px 0 0;
+.a-top_b__intro {
+  margin: 60px 0 0;
   text-align: center;
   font-weight: 700;
   font-size: 16px;
   line-height: 26px;
   color: #fff;
 }
-.top_b__intro a {
+.a-top_b__intro a {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -9705,18 +9775,19 @@ ul {
   gap: 5px;
   text-decoration: underline;
 }
-.top_b__intro ion-icon {
-  font-size: 15px;
+.a-top_b__intro a img {
+  height: 1em;
+  margin: 1px 0 0;
 }
-@media (max-width: 480px) {
-  .top_b__intro {
-    font-size: 14px;
+@media (max-width: 768px) {
+  .a-top_b__intro {
+    margin: 25px 0 0;
   }
 }
-.top_b {
+.a-top_b {
   /* メインカード */
 }
-.top_b__card {
+.a-top_b__card {
   max-width: 1030px;
   margin: 40px auto 0;
   background: #fff;
@@ -9731,13 +9802,13 @@ ul {
           justify-content: center;
 }
 @media (max-width: 1070px) {
-  .top_b__card {
+  .a-top_b__card {
     gap: 40px;
     padding: 40px;
   }
 }
 @media (max-width: 768px) {
-  .top_b__card {
+  .a-top_b__card {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -9745,19 +9816,19 @@ ul {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    gap: 40px;
-    padding: 32px 18px;
+    gap: 35px;
+    padding: 30px 30px;
+    margin: 25px auto 0;
   }
 }
-.top_b {
+.a-top_b {
   /* カード内：左カラム（商品画像・アコーディオン等） */
 }
-.top_b__left {
+.a-top_b__left {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 285px;
           flex: 0 0 285px;
   width: 285px;
-  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9767,92 +9838,82 @@ ul {
           flex-direction: column;
   gap: 20px;
 }
+.a-top_b__left .c-accordion {
+  margin-top: 0;
+}
+.a-top_b__left .c-accordion__head {
+  padding: 10px;
+}
 @media (max-width: 768px) {
-  .top_b__left {
-    -ms-flex-preferred-size: auto;
-        flex-basis: auto;
+  .a-top_b__left .c-accordion {
+    margin-top: 15px;
   }
 }
-.top_b__product {
+@media (max-width: 768px) {
+  .a-top_b__left {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    width: 100%;
+  }
+}
+.a-top_b__product {
   width: 100%;
   height: auto;
   border-radius: 4px;
 }
-.top_b__simsize {
+@media (max-width: 768px) {
+  .a-top_b__product {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+.a-top_b__simsize {
   width: 282px;
   max-width: 100%;
   height: auto;
 }
-.top_b {
+@media (max-width: 768px) {
+  .a-top_b__simsize {
+    width: 100%;
+  }
+}
+.a-top_b {
   /* 左カラム：アコーディオン（details/summary） */
 }
-.top_b__acc {
+.a-top_b__acc {
   width: 282px;
   max-width: 100%;
 }
-.top_b__acc-item {
-  border-bottom: 1px solid var(--ink);
-}
-.top_b__acc-item:first-child {
-  border-top: 1px solid var(--ink);
-}
-.top_b__acc-item[open] .top_b__acc-mark {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-.top_b__acc-head {
-  list-style: none;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 12px 4px;
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--ink);
-}
-.top_b__acc-head::-webkit-details-marker {
-  display: none;
-}
-.top_b__acc-mark {
-  margin-left: auto;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1;
-}
-.top_b__acc-body {
-  padding: 0 4px 14px;
+.a-top_b__acc-body {
+  padding: 0 10px 14px;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.7;
   color: var(--ink);
 }
-.top_b__acc-body p {
+.a-top_b__acc-body p {
   margin: 0;
 }
-.top_b__acc-body a {
+.a-top_b__acc-body a {
   color: #46C9F4;
   text-decoration: underline;
 }
-.top_b__acc-body .is-label {
+.a-top_b__acc-body .is-label {
   font-weight: 700;
   margin-top: 8px;
 }
-.top_b__acc-body .is-indent {
+.a-top_b__acc-body .is-indent {
   padding-left: 1em;
 }
-.top_b__acc-body .is-em {
-  margin-top: 8px;
+.a-top_b__acc-body .is-em {
   font-weight: 700;
   color: #00A3AD;
 }
-.top_b {
+.a-top_b {
   /* 左カラム：対応バンド表 */
 }
-.top_b__band {
+.a-top_b__band {
   display: grid;
   grid-template-columns: 108px auto;
   -webkit-box-align: center;
@@ -9861,11 +9922,11 @@ ul {
   row-gap: 11px;
   width: 218px;
   max-width: 100%;
-  margin: 14px 0 4px;
+  margin: 14px auto 4px;
   padding: 19px 21px;
   border: 2px solid var(--ink);
 }
-.top_b__band-label {
+.a-top_b__band-label {
   font-weight: 500;
   font-style: italic;
   font-size: 16px;
@@ -9873,28 +9934,28 @@ ul {
   color: var(--ink);
   white-space: nowrap;
 }
-.top_b__band-label--5g {
+.a-top_b__band-label--5g {
   color: #00A3AD;
 }
-.top_b__band-val {
+.a-top_b__band-val {
   font-weight: 700;
   font-size: 21px;
   line-height: 1;
   color: var(--ink);
   white-space: nowrap;
 }
-.top_b__band-val--5g {
+.a-top_b__band-val--5g {
   color: #00A3AD;
 }
-.top_b {
+.a-top_b {
   /* カード内：右カラム（セレクトボックス・購入ボタン等） */
 }
-.top_b__right {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 421px;
-          flex: 0 0 421px;
-  width: 421px;
-  max-width: 100%;
+.a-top_b__right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0%;
+          flex: 1 1 0%;
+  width: 100%;
+  max-width: 421px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9908,24 +9969,31 @@ ul {
   gap: 20px;
 }
 @media (max-width: 768px) {
-  .top_b__right {
-    -ms-flex-preferred-size: auto;
-        flex-basis: auto;
+  .a-top_b__right {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    gap: 35px;
   }
 }
-.top_b__bar {
+.a-top_b__bar {
   width: 100%;
   margin: 0;
   background: #FFD700;
   border-radius: 5px;
   padding: 9px 12px;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 18px;
   color: var(--ink);
   text-align: center;
 }
-.top_b__selects {
+@media (max-width: 768px) {
+  .a-top_b__bar {
+    font-size: 12px;
+  }
+}
+.a-top_b__selects {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9936,11 +10004,11 @@ ul {
           flex-direction: column;
   gap: 16px;
 }
-.top_b__select {
+.a-top_b__select {
   position: relative;
   display: block;
 }
-.top_b__select select {
+.a-top_b__select select {
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
@@ -9955,20 +10023,20 @@ ul {
   color: var(--ink);
   cursor: pointer;
 }
-.top_b__select select:invalid {
+.a-top_b__select select:invalid {
   color: #A7A7A7;
 }
-.top_b__select select:focus {
+.a-top_b__select select:focus {
   outline: none;
   border-color: #00A3AD;
 }
-.top_b__select select:focus-visible {
+.a-top_b__select select:focus-visible {
   outline: none;
   border-color: #00A3AD;
   -webkit-box-shadow: 0 0 0 1px #00A3AD;
           box-shadow: 0 0 0 1px #00A3AD;
 }
-.top_b__select::after {
+.a-top_b__select::after {
   content: "";
   position: absolute;
   right: 18px;
@@ -9980,10 +10048,10 @@ ul {
   background: var(--ink);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
-.top_b {
+.a-top_b {
   /* カート・購入ボタン */
 }
-.top_b__btn {
+.a-top_b__btn {
   position: relative;
   width: 285px;
   max-width: 100%;
@@ -10008,23 +10076,23 @@ ul {
   transition: transform 0.12s, box-shadow 0.12s, opacity 0.2s;
   transition: transform 0.12s, box-shadow 0.12s, opacity 0.2s, -webkit-transform 0.12s, -webkit-box-shadow 0.12s;
 }
-.top_b__btn .en {
+.a-top_b__btn .en {
   font-weight: 700;
   font-size: 20px;
 }
-.top_b__btn:not(:disabled):hover {
+.a-top_b__btn:not(:disabled):hover {
   opacity: 0.92;
 }
-.top_b__btn:not(:disabled):active {
+.a-top_b__btn:not(:disabled):active {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
   -webkit-box-shadow: none;
           box-shadow: none;
 }
-.top_b__btn:disabled {
+.a-top_b__btn:disabled {
   opacity: 1;
 }
-.top_b__btn-ico {
+.a-top_b__btn-ico {
   position: absolute;
   left: 16px;
   top: 50%;
@@ -10044,10 +10112,10 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.top_b__btn-ico ion-icon {
+.a-top_b__btn-ico ion-icon {
   font-size: 18px;
 }
-.top_b__btn-next {
+.a-top_b__btn-next {
   position: absolute;
   right: 16px;
   top: 50%;
@@ -10056,58 +10124,58 @@ ul {
   font-size: 16px;
   color: #fff;
 }
-.top_b__btn {
+.a-top_b__btn {
   /* カートボタンバリエーション */
 }
-.top_b__btn--cart {
+.a-top_b__btn--cart {
   background: #A7A7A7;
   -webkit-box-shadow: 0 4px 0 #7e7e7e;
           box-shadow: 0 4px 0 #7e7e7e;
   cursor: default;
 }
-.top_b__btn--cart .top_b__btn-ico ion-icon {
+.a-top_b__btn--cart .top_b__btn-ico ion-icon {
   color: #A7A7A7;
 }
-.top_b__btn--cart.is-ready {
+.a-top_b__btn--cart.is-ready {
   background: #FF0064;
   -webkit-box-shadow: 0 4px 0 #c2004c;
           box-shadow: 0 4px 0 #c2004c;
   cursor: pointer;
 }
-.top_b__btn--cart.is-ready .top_b__btn-ico ion-icon {
+.a-top_b__btn--cart.is-ready .top_b__btn-ico ion-icon {
   color: #FF0064;
 }
-.top_b__btn--multi {
+.a-top_b__btn--multi {
   background: #FF0064;
   -webkit-box-shadow: 0 4px 0 #c2004c;
           box-shadow: 0 4px 0 #c2004c;
 }
-.top_b__btn--multi .top_b__btn-ico ion-icon {
+.a-top_b__btn--multi .top_b__btn-ico ion-icon {
   color: #FF0064;
 }
-.top_b {
+.a-top_b {
   /* 注記エリア */
 }
-.top_b__notes {
+.a-top_b__notes {
   width: 100%;
   margin-top: 4px;
 }
-.top_b__notes p {
+.a-top_b__notes p {
   margin: 0;
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
   color: var(--ink);
 }
-.top_b__notes p.is-link {
+.a-top_b__notes p.is-link {
   font-weight: 500;
   color: #46C9F4;
 }
-.top_b__notes a {
+.a-top_b__notes a {
   color: #46C9F4;
   text-decoration: underline;
 }
-.top_b__notes .is-ext {
+.a-top_b__notes .is-ext {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -10115,16 +10183,16 @@ ul {
   font-size: 10px;
   color: #46C9F4;
 }
-.top_b {
+.a-top_b {
   /* セット端末・その他の要素 */
 }
-.top_b__setphone {
+.a-top_b__setphone {
   width: 280px;
   max-width: 100%;
   height: auto;
   margin: 0 auto;
 }
-.top_b__setlead {
+.a-top_b__setlead {
   width: 100%;
   margin: 0;
   font-weight: 700;
@@ -10133,13 +10201,20 @@ ul {
   color: #00A3AD;
   text-align: center;
 }
-.top_b__panel[hidden] {
+.a-top_b__panel[hidden] {
   display: none;
 }
-.top_b {
+@media (max-width: 768px) {
+  .a-top_b__panel {
+    max-width: 440px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+.a-top_b {
   /* 未選択状態などのプレースホルダー */
 }
-.top_b__placeholder {
+.a-top_b__placeholder {
   max-width: 1030px;
   margin: 40px auto 0;
   background: #fff;

@@ -273,3 +273,38 @@ $(function () {
     dotsClass: "f-slide-dots",
   });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // .top_b セクション内のタブ要素とパネル要素をすべて取得
+  const tabs = document.querySelectorAll('.a-top_b__tab');
+  const panels = document.querySelectorAll('.a-top_b__panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // 1. クリックされたタブの data-tab 属性の値を取得 (例: "sim" や "set")
+      const targetTab = tab.getAttribute('data-tab');
+
+      // 2. すべてのタブの活性化状態（クラス、aria属性）をクリア
+      tabs.forEach(t => {
+        t.classList.remove('is-active');
+        t.setAttribute('aria-selected', 'false');
+      });
+
+      // 3. クリックされたタブだけをアクティブにする
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+
+      // 4. すべてのパネルを一度非表示 [hidden] にする
+      panels.forEach(panel => {
+        panel.setAttribute('hidden', '');
+      });
+
+      // 5. data-panel の値が、取得した data-tab と一致するパネルだけを表示（hiddenを解除）
+      const targetPanel = document.querySelector(`.a-top_b__panel[data-panel="${targetTab}"]`);
+      if (targetPanel) {
+        targetPanel.removeAttribute('hidden');
+      }
+    });
+  });
+});
