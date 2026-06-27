@@ -501,6 +501,10 @@
       &-cyan {
         color: #46C9F4;
         text-decoration: underline;
+
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
 
@@ -920,6 +924,10 @@
       font-weight: 500;
       font-size: 16px;
       text-decoration: underline;
+
+      &:hover {
+        opacity: 0.7;
+      }
 
       img {
         height: 1em;

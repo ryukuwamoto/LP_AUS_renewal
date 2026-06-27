@@ -7317,6 +7317,9 @@ ul {
   color: #46C9F4;
   text-decoration: underline;
 }
+.p-cycle__link:hover {
+  opacity: 0.7;
+}
 .p-cycle__photo {
   max-width: 350px;
   width: 100%;
@@ -7431,7 +7434,7 @@ ul {
   text-decoration: underline;
 }
 .p-cycle .p-accordion__link:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 .p-cycle .p-accordion__notice {
   width: 100%;
@@ -8461,6 +8464,9 @@ ul {
   color: #46C9F4;
   text-decoration: underline;
 }
+.top_a__step-link-cyan:hover {
+  opacity: 0.7;
+}
 .top_a__step-arrow {
   -ms-flex-item-align: center;
       align-self: center;
@@ -8917,6 +8923,9 @@ ul {
   font-weight: 500;
   font-size: 16px;
   text-decoration: underline;
+}
+.top_c__terms-link:hover {
+  opacity: 0.7;
 }
 .top_c__terms-link img {
   height: 1em;
