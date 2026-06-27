@@ -138,7 +138,7 @@
   min-height: 100px;
   
   @media (max-width: 940px){
-    padding: 16px 30px 16px 45px;
+    padding: 14px 20px 14px 40px;
     gap: 5px;
   }
   
@@ -152,13 +152,18 @@
     gap: 10px;
   }
 
+  @media (max-width: 380px){
+    padding: 12px 12px 12px 45px;
+    gap: 5px;
+  }
+
   &:nth-of-type(1) {
     .gp-illust {
       width: 113px;
       height: auto;
       margin: 0 23px 0 22px;
 
-      @media (max-width: 940px){
+      @media (max-width: 1035px){
         width: 93px;
         margin: 0 23px 0 22px;
       }
@@ -175,7 +180,7 @@
       width: 158px;
       height: auto;
 
-      @media (max-width: 940px){
+      @media (max-width: 1035px){
         width: 138px;
       }
 
@@ -191,7 +196,7 @@
       height: auto;
       margin: 0 24px 0 24px;
 
-      @media (max-width: 940px){
+      @media (max-width: 1035px){
         width: 90px;
         margin: 0 24px 0 24px;
       }
@@ -209,7 +214,7 @@
       height: auto;
       margin: 0 24px 0 23px;
 
-      @media (max-width: 940px){
+      @media (max-width: 1035px){
         width: 83px;
         margin: 0 28px 0 27px;
       }
@@ -225,16 +230,16 @@
     .gp-illust {
       width: 125px;
       height: auto;
-      margin: 0 17px 0 16px;
+      margin: 0 7px 0 26px;
 
-      @media (max-width: 940px){
+      @media (max-width: 1035px){
         width: 93px;
-        margin: 0 23px 0 22px;
+        margin: 0 13px 0 32px;
       }
 
       @media (max-width: 768px){
         width: 94px;
-        margin: 0 4px 0 4px;
+        margin: 0 0 0 8px;
       }
     }
   }
@@ -245,7 +250,7 @@
       height: auto;
       margin: 0 43px 0 43px;
 
-      @media (max-width: 940px){
+      @media (max-width: 1035px){
         width: 60px;
         margin: 0 39px 0 39px;
       }
@@ -347,6 +352,25 @@
       .en{ font-size: 23px; }
     }
   }
+
+  @media (max-width: 1035px){
+    font-size: 13px;
+
+    .gp-text-sub{
+      font-size: 17px;
+      .en{ font-size: 13px; }
+    }
+
+    .gp-text-hl{
+      font-size: 19px;
+      .en{ font-size: 18px; }
+
+      &.gp-text-hl-inline{
+        font-size: 18px;
+        .en{ font-size: 16px; }
+      }
+    }
+  }
   
   @media (max-width: 768px){
     font-size: 12px;
@@ -364,6 +388,26 @@
       &.gp-text-hl-inline{
         font-size: 14px;
         .en{ font-size: 16px; }
+      }
+    }
+  }
+
+  @media (max-width: 380px){
+    font-size: 11px;
+    max-width: 170px;
+
+    .gp-text-sub{
+      font-size: 11px;
+      .en{ font-size: 12px; }
+    }
+
+    .gp-text-hl{
+      font-size: 15px;
+      .en{ font-size: 17px; }
+
+      &.gp-text-hl-inline{
+        font-size: 13px;
+        .en{ font-size: 15px; }
       }
     }
   }
