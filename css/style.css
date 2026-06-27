@@ -9251,11 +9251,11 @@ ul {
   text-align: center;
 }
 .a-top_a__navitem:first-child {
-  margin-left: 20px;
+  margin-left: 30px;
 }
 @media (max-width: 768px) {
-  .a-top_a__navitem:first-child {
-    margin-left: 0;
+  .a-top_a__navitem {
+    margin-left: 30px;
   }
 }
 .a-top_a__navitem .c-check {

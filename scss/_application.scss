@@ -76,13 +76,13 @@
     text-align: center;
 
     &:first-child {
-        margin-left: 20px;
+        margin-left: 30px;
 
-        @media (max-width: 768px) {
-          margin-left: 0;
-        }
+        
     }
-
+    @media (max-width: 768px) {
+      margin-left: 30px;
+    }
     .c-check {
       position: absolute;
       left: -31px;
