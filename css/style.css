@@ -9240,7 +9240,7 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 10px 14px 10px 30px;
+  padding: 14px 14px 14px 30px;
   background: #fff;
   border: 2px solid var(--ink);
   border-radius: 5px;
