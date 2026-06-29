@@ -100,6 +100,15 @@ $(function() {
 
 });
 
+$(function() {
+
+  // サービス早見表（画像）エリアがスクロールされたら、最初の1回だけ実行
+  $('.h-page-imgwrap').one('scroll', function() {
+    $(this).find('.scroll-hint-overlay').addClass('is-hidden');
+  });
+
+});
+
 
 // =========================================================
 // sec-top-d — シム吉歩かせるアニメーション
