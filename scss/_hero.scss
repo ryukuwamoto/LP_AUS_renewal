@@ -155,5 +155,5 @@
 /* 4. 右下(画面外) → 右下(画面内) */
 @keyframes fly-right-bottom {
   0%   { right: -100px; top: 200px; opacity: 0; transform: rotate(0deg); }
-  100% { right: 50%;   top: 50%;   margin-right: -700px;   margin-top: 140px;    opacity: 1; }
+  100% { right: 50%;   top: 50%;   margin-right: -700px;   margin-top: 140px;    opacity: 1; rotate:(-15deg); }
 }

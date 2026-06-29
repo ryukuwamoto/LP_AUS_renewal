@@ -2390,6 +2390,7 @@ ul {
     margin-right: -700px;
     margin-top: 140px;
     opacity: 1;
+    rotate: -15deg;
   }
 }
 @keyframes fly-right-bottom {
@@ -2406,6 +2407,7 @@ ul {
     margin-right: -700px;
     margin-top: 140px;
     opacity: 1;
+    rotate: -15deg;
   }
 }
 .sec-top-a {
