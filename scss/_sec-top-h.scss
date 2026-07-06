@@ -293,6 +293,10 @@
       margin: 0 auto;
     }
 
+    .page5-img {
+      margin: 0 auto 6%;
+    }
+
     .big-read {
       padding: 14% 0;
       p {
@@ -413,7 +417,11 @@
     }
 
     .bubble {
-      padding: 12% 0 8%;
+      position: sticky;
+      top: 0;
+      background-color: #fff;
+      z-index: 5;
+      padding: 6% 0 4%;
       display: flex;
       justify-content: center;
       gap: 28%;
@@ -424,10 +432,10 @@
     }
 
     .graph-wrap {
-      padding-bottom: 10%;
+      padding-top: 10%;
 
-      &:last-child {
-        padding-bottom: 0%;
+      &.firstgraph {
+        padding-top: 4%;
       }
 
       img {

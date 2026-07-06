@@ -8,6 +8,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto 425px;
+  background-color: var(--teal);
   position: relative;
   overflow: hidden;
   padding: 0;
@@ -31,7 +32,7 @@
   position: absolute;
   top: 277px;
   left: 50%;
-  margin-left: 14px;
+  margin-left: 7px;
   width: 125px;
   height: 109px;
   background-image: url("../img/hero/character.png");
@@ -127,7 +128,7 @@
 /* 1. 斜め左下(画面外) → 左上 */
 @keyframes fly-left-top {
   0%   { left: -100px; top: 450px; opacity: 0; transform: rotate(0deg); }
-  100% { left: 50%;   top: 50%;   margin-left: -387px;   margin-top: 17px;    opacity: 1; }
+  100% { left: 50%;   top: 50%;   margin-left: -420px;   margin-top: 16px;    opacity: 1; }
 }
 
 @keyframes fly-left-top_ph {
@@ -138,7 +139,7 @@
 /* 2. 右下(画面外) → 右上 */
 @keyframes fly-right-top {
   0%   { right: -100px; top: 550px; opacity: 0; transform: rotate(0deg); }
-  100% { right: 50%;   top: 50%;   margin-right: -390px;   margin-top: 244px;     opacity: 1; }
+  100% { right: 50%;   top: 50%;   margin-right: -390px;   margin-top: 234px;     opacity: 1; }
 }
 
 @keyframes fly-right-top_ph {
@@ -149,11 +150,11 @@
 /* 3. 斜め左下(画面外) → 左下 */
 @keyframes fly-left-bottom {
   0%   { left: -100px; top: 550px; opacity: 0; transform: rotate(0deg); }
-  100% { left: 50%;   top: 50%;   margin-left: -620px;   margin-top: 240px;   opacity: 1; }
+  100% { left: 50%;   top: 50%;   margin-left: -610px;   margin-top: 210px;   opacity: 1; }
 }
 
 /* 4. 右下(画面外) → 右下(画面内) */
 @keyframes fly-right-bottom {
   0%   { right: -100px; top: 200px; opacity: 0; transform: rotate(0deg); }
-  100% { right: 50%;   top: 50%;   margin-right: -700px;   margin-top: 140px;    opacity: 1; rotate:(-15deg); }
+  100% { right: 50%;   top: 50%;   margin-right: -690px;   margin-top: 120px;    opacity: 1; rotate:(-15deg); }
 }

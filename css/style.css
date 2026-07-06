@@ -2053,6 +2053,7 @@ ul {
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto 425px;
+  background-color: var(--teal);
   position: relative;
   overflow: hidden;
   padding: 0;
@@ -2077,7 +2078,7 @@ ul {
   position: absolute;
   top: 277px;
   left: 50%;
-  margin-left: 14px;
+  margin-left: 7px;
   width: 125px;
   height: 109px;
   background-image: url("../img/hero/character.png");
@@ -2240,8 +2241,8 @@ ul {
   100% {
     left: 50%;
     top: 50%;
-    margin-left: -387px;
-    margin-top: 17px;
+    margin-left: -420px;
+    margin-top: 16px;
     opacity: 1;
   }
 }
@@ -2256,8 +2257,8 @@ ul {
   100% {
     left: 50%;
     top: 50%;
-    margin-left: -387px;
-    margin-top: 17px;
+    margin-left: -420px;
+    margin-top: 16px;
     opacity: 1;
   }
 }
@@ -2298,7 +2299,7 @@ ul {
     right: 50%;
     top: 50%;
     margin-right: -390px;
-    margin-top: 244px;
+    margin-top: 234px;
     opacity: 1;
   }
 }
@@ -2314,7 +2315,7 @@ ul {
     right: 50%;
     top: 50%;
     margin-right: -390px;
-    margin-top: 244px;
+    margin-top: 234px;
     opacity: 1;
   }
 }
@@ -2354,8 +2355,8 @@ ul {
   100% {
     left: 50%;
     top: 50%;
-    margin-left: -620px;
-    margin-top: 240px;
+    margin-left: -610px;
+    margin-top: 210px;
     opacity: 1;
   }
 }
@@ -2370,8 +2371,8 @@ ul {
   100% {
     left: 50%;
     top: 50%;
-    margin-left: -620px;
-    margin-top: 240px;
+    margin-left: -610px;
+    margin-top: 210px;
     opacity: 1;
   }
 }
@@ -2387,8 +2388,8 @@ ul {
   100% {
     right: 50%;
     top: 50%;
-    margin-right: -700px;
-    margin-top: 140px;
+    margin-right: -690px;
+    margin-top: 120px;
     opacity: 1;
     rotate: -15deg;
   }
@@ -2404,8 +2405,8 @@ ul {
   100% {
     right: 50%;
     top: 50%;
-    margin-right: -700px;
-    margin-top: 140px;
+    margin-right: -690px;
+    margin-top: 120px;
     opacity: 1;
     rotate: -15deg;
   }
@@ -3199,7 +3200,7 @@ ul {
 @-webkit-keyframes walkDiagonal {
   0% {
     /* 【スタート：右上奥】 */
-    top: 80px;
+    top: -110px;
     left: calc(50% + 100px);
     -webkit-transform: scale(0.5) rotate(0deg);
             transform: scale(0.5) rotate(0deg);
@@ -3210,19 +3211,19 @@ ul {
   }
   /* --- 💡 左右の揺れ（rotate）を強め、上下のバウンドもはっきりさせる --- */
   22% {
-    top: 91px; /* 縦に4px進みつつ、3px上にピョコッと跳ねる */
+    top: -99px; /* 縦に4px進みつつ、3px上にピョコッと跳ねる */
     left: calc(50% + 94px); /* 横に6px左へ進む */
     -webkit-transform: scale(0.7) rotate(6deg);
             transform: scale(0.7) rotate(6deg); /* 💡 右に強めに傾く */
   }
   45% {
-    top: 108px; /* 縦に8px進む（着地） */
+    top: -82px; /* 縦に8px進む（着地） */
     right: 22px; /* 横に12px左へ進む */
     -webkit-transform: scale(0.78) rotate(-6deg);
             transform: scale(0.78) rotate(-6deg); /* 💡 左に強めに傾く */
   }
   67% {
-    top: 109px; /* 縦に12px進みつつ、3px上にピョコッと跳ねる */
+    top: -81px; /* 縦に12px進みつつ、3px上にピョコッと跳ねる */
     right: 28px; /* 横に18px左へ進む */
     -webkit-transform: scale(0.9) rotate(6deg);
             transform: scale(0.9) rotate(6deg); /* 💡 再び右に強めに傾く */
@@ -3230,7 +3231,7 @@ ul {
   90% {
     /* 【ゴール：左下手前】
        初期位置から「下へ15px」「左へ25px」移動（斜め約29pxの移動） */
-    top: 130px;
+    top: -60px;
     left: calc(50% + 60px);
     -webkit-transform: scale(1) rotate(0deg);
             transform: scale(1) rotate(0deg); /* 最後は正面に戻る */
@@ -3239,7 +3240,7 @@ ul {
   100% {
     /* 【ゴール：左下手前】
        初期位置から「下へ15px」「左へ25px」移動（斜め約29pxの移動） */
-    top: 130px;
+    top: -60px;
     left: calc(50% + 60px);
     -webkit-transform: scale(1) rotate(0deg);
             transform: scale(1) rotate(0deg); /* 最後は正面に戻る */
@@ -3250,7 +3251,7 @@ ul {
 @keyframes walkDiagonal {
   0% {
     /* 【スタート：右上奥】 */
-    top: 80px;
+    top: -110px;
     left: calc(50% + 100px);
     -webkit-transform: scale(0.5) rotate(0deg);
             transform: scale(0.5) rotate(0deg);
@@ -3261,19 +3262,19 @@ ul {
   }
   /* --- 💡 左右の揺れ（rotate）を強め、上下のバウンドもはっきりさせる --- */
   22% {
-    top: 91px; /* 縦に4px進みつつ、3px上にピョコッと跳ねる */
+    top: -99px; /* 縦に4px進みつつ、3px上にピョコッと跳ねる */
     left: calc(50% + 94px); /* 横に6px左へ進む */
     -webkit-transform: scale(0.7) rotate(6deg);
             transform: scale(0.7) rotate(6deg); /* 💡 右に強めに傾く */
   }
   45% {
-    top: 108px; /* 縦に8px進む（着地） */
+    top: -82px; /* 縦に8px進む（着地） */
     right: 22px; /* 横に12px左へ進む */
     -webkit-transform: scale(0.78) rotate(-6deg);
             transform: scale(0.78) rotate(-6deg); /* 💡 左に強めに傾く */
   }
   67% {
-    top: 109px; /* 縦に12px進みつつ、3px上にピョコッと跳ねる */
+    top: -81px; /* 縦に12px進みつつ、3px上にピョコッと跳ねる */
     right: 28px; /* 横に18px左へ進む */
     -webkit-transform: scale(0.9) rotate(6deg);
             transform: scale(0.9) rotate(6deg); /* 💡 再び右に強めに傾く */
@@ -3281,7 +3282,7 @@ ul {
   90% {
     /* 【ゴール：左下手前】
        初期位置から「下へ15px」「左へ25px」移動（斜め約29pxの移動） */
-    top: 130px;
+    top: -60px;
     left: calc(50% + 60px);
     -webkit-transform: scale(1) rotate(0deg);
             transform: scale(1) rotate(0deg); /* 最後は正面に戻る */
@@ -3290,7 +3291,7 @@ ul {
   100% {
     /* 【ゴール：左下手前】
        初期位置から「下へ15px」「左へ25px」移動（斜め約29pxの移動） */
-    top: 130px;
+    top: -60px;
     left: calc(50% + 60px);
     -webkit-transform: scale(1) rotate(0deg);
             transform: scale(1) rotate(0deg); /* 最後は正面に戻る */
@@ -3371,12 +3372,27 @@ ul {
     opacity: 1;
   }
 }
+.buildingsimg {
+  position: relative;
+  height: 270px;
+  margin: 40px 0 0 30px;
+  background-image: url("../img/select/scene_buildings.png");
+  background-size: 733px 270px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media (max-width: 768px) {
+  .buildingsimg {
+    display: none;
+  }
+}
+
 .select-visual {
   position: relative;
-  height: 817px;
-  margin-top: 40px;
-  background-image: url("../img/select/scene.png");
-  background-size: 1920px 817px;
+  height: 630px;
+  margin-top: -78px;
+  background-image: url("../img/select/scene_ground.png");
+  background-size: 1920px 630px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -3385,6 +3401,13 @@ ul {
     background-image: url("../img/select/scene_sp.png");
     height: 539px;
     background-size: auto 539px;
+    margin-top: 40px;
+  }
+}
+@media (min-width: 1920px) {
+  .select-visual {
+    background-image: url("../img/select/scene_ground.png");
+    background-size: 100% 630px;
   }
 }
 
@@ -3395,7 +3418,7 @@ ul {
 }
 
 .d-content-wrap {
-  padding-top: 340px;
+  padding-top: 160px;
 }
 @media (max-width: 768px) {
   .d-content-wrap {
@@ -5913,6 +5936,9 @@ ul {
   height: auto;
   margin: 0 auto;
 }
+.h-page .content-wrap .page5-img {
+  margin: 0 auto 6%;
+}
 .h-page .content-wrap .big-read {
   padding: 14% 0;
 }
@@ -6043,7 +6069,11 @@ ul {
   text-align: left;
 }
 .h-page .content-wrap .bubble {
-  padding: 12% 0 8%;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 5;
+  padding: 6% 0 4%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6056,10 +6086,10 @@ ul {
   width: 20%;
 }
 .h-page .content-wrap .graph-wrap {
-  padding-bottom: 10%;
+  padding-top: 10%;
 }
-.h-page .content-wrap .graph-wrap:last-child {
-  padding-bottom: 0%;
+.h-page .content-wrap .graph-wrap.firstgraph {
+  padding-top: 4%;
 }
 .h-page .content-wrap .graph-wrap img {
   margin: 0 auto;
@@ -7972,7 +8002,6 @@ ul {
 }
 .p-short__banner {
   width: 100%;
-  margin-top: 40px;
 }
 @media (max-width: 768px) {
   .p-short__banner {
@@ -7981,12 +8010,88 @@ ul {
 }
 .p-short__banner_sp {
   width: 100%;
-  margin-top: 35px;
   display: none;
 }
 @media (max-width: 768px) {
   .p-short__banner_sp {
     display: block;
+  }
+}
+.p-short .banner_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  margin: 120px 0 10px;
+}
+@media (max-width: 768px) {
+  .p-short .banner_title {
+    margin: 56px 0 10px;
+  }
+}
+.p-short .banner_title .bar {
+  font-size: 40px;
+  font-weight: 900;
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .p-short .banner_title .bar {
+    font-size: 50px;
+    font-weight: 400;
+    margin-top: 27px;
+  }
+}
+@media (max-width: 400px) {
+  .p-short .banner_title .bar {
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 27px;
+  }
+}
+.p-short .banner_title .bar:nth-of-type(1) {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+.p-short .banner_title .title {
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.4;
+}
+@media (max-width: 400px) {
+  .p-short .banner_title .title {
+    font-size: 14px;
+  }
+}
+.p-short .banner_title .title p:nth-of-type(2) {
+  font-size: 18px;
+  font-weight: 900;
+}
+@media (max-width: 400px) {
+  .p-short .banner_title .title p:nth-of-type(2) {
+    font-size: 16px;
+  }
+}
+.p-short .banner_title .title p:nth-of-type(2) .yellowline {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(65%, transparent), color-stop(65%, var(--yellow)));
+  background: linear-gradient(transparent 65%, var(--yellow) 65%);
+}
+.p-short .banner_title .title p:nth-of-type(2) .big {
+  font-size: 21px;
+}
+@media (max-width: 400px) {
+  .p-short .banner_title .title p:nth-of-type(2) .big {
+    font-size: 18px;
+  }
+}
+.p-short .banner_title .title p:nth-of-type(2) .sp {
+  display: none;
+}
+@media (max-width: 768px) {
+  .p-short .banner_title .title p:nth-of-type(2) .sp {
+    display: inline;
   }
 }
 .p-short__note {
