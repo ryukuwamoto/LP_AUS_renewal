@@ -1,14 +1,14 @@
+// =========================================================
+// sec-top-f
+// =========================================================
 @use "variables" as *;
 
 .sec-top-f{
   background: var(--teal);
   position: relative;
-  padding: 0;             // 内部の wave + inner で制御
+  padding: 0;
 }
 
-// ---------- 上下の波線（ジグザグ） ----------
-// CSS ジグザグで実装。実画像 (SVG) と差し替えたい時は
-// `background: url('../img/sec-top-f/wave-yellow-top.svg') ...` に変更。
 .sec-top-f-wave-top,
 .sec-top-f-wave-bottom{
   height: 75px;
@@ -28,8 +28,6 @@
   background-position: center;
 }
 
-
-// ---------- 見出し（ティール背景上の白文字バージョン） ----------
 .f-head {
   padding: 30px 20px 50px;
 
@@ -41,11 +39,7 @@
       background: #fff;
       }
     }
-
-    
   }
-  
-  
 }
 
 .sec-head-on-teal{
@@ -108,7 +102,6 @@
   }
 }
 
-// ---------- 6カードグリッド ----------
 .good-point-list{
   list-style: none;
   padding: 0;
@@ -263,7 +256,6 @@
   }
 }
 
-// POINT N バッジ（左上）
 .gp-num{
   position: absolute;
   top: -10px;
@@ -300,7 +292,6 @@
   }
 }
 
-// テキスト
 .gp-text{
   display: inline-block;
   @include font-gen(bold);
@@ -343,7 +334,6 @@
       margin-left: 1px;
     }
 
-    // インライン版（"安心の定額プラン" 等）
     &.gp-text-hl-inline {
       display: inline;
       font-size: 21px;

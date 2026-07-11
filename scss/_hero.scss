@@ -1,5 +1,5 @@
 // =========================================================
-// Hero — teal background with burst shape and floating items
+// Hero
 // =========================================================
 @use "variables" as *;
 
@@ -125,7 +125,6 @@
   }
 }
 
-/* 1. 斜め左下(画面外) → 左上 */
 @keyframes fly-left-top {
   0%   { left: -100px; top: 450px; opacity: 0; transform: rotate(0deg); }
   100% { left: 50%;   top: 50%;   margin-left: -420px;   margin-top: 16px;    opacity: 1; }
@@ -136,7 +135,6 @@
   100% { transform: translate(-48vw, 13vw); opacity: 1;}
 }
 
-/* 2. 右下(画面外) → 右上 */
 @keyframes fly-right-top {
   0%   { right: -100px; top: 550px; opacity: 0; transform: rotate(0deg); }
   100% { right: 50%;   top: 50%;   margin-right: -390px;   margin-top: 234px;     opacity: 1; }
@@ -147,13 +145,11 @@
   100% { transform: translate(27vw, 73vw); opacity: 1;}
 }
 
-/* 3. 斜め左下(画面外) → 左下 */
 @keyframes fly-left-bottom {
   0%   { left: -100px; top: 550px; opacity: 0; transform: rotate(0deg); }
   100% { left: 50%;   top: 50%;   margin-left: -610px;   margin-top: 210px;   opacity: 1; }
 }
 
-/* 4. 右下(画面外) → 右下(画面内) */
 @keyframes fly-right-bottom {
   0%   { right: -100px; top: 200px; opacity: 0; transform: rotate(0deg); }
   100% { right: 50%;   top: 50%;   margin-right: -690px;   margin-top: 120px;    opacity: 1; rotate:(-15deg); }

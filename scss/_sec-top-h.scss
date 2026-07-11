@@ -1,5 +1,5 @@
 // =========================================================
-// sec-top-h — Study & Work Guide（ハンドブック）+ Customer Reviews
+// sec-top-h
 // =========================================================
 @use "variables" as *;
 
@@ -24,7 +24,7 @@
   background-repeat: repeat;
   background-position: center;
 }
-// ---------- 共通：見出し ----------
+
 .h-head {
   padding: 0 0 35px;
 
@@ -39,9 +39,7 @@
 }
 }
 
-// =========================================================
-// Study & Work Guide
-// =========================================================
+// ---------- Study & Work Guide ----------
 .h-block-guide{
   margin-bottom: 80px;
   @media (max-width: 768px) {
@@ -91,10 +89,9 @@
   transition: color .2s ease, font-weight .2s ease;
 
   &:not(:last-child) {
-      border-bottom: 3px dotted #fff; /* ドットの色や太さは任意で調整 */
+      border-bottom: 3px dotted #fff;
     }
 
-  // 番号：通常は文字のみ、アクティブ時は黄色フラッグで装飾
   .h-toc-num{
     flex-shrink: 0;
     display: inline-flex;
@@ -122,11 +119,9 @@
     color: var(--ink);
   }
 
-  // アクティブ状態：番号に右向きフラッグのあしらい
   &.is-active{
     .h-toc-num{
       background: var(--yellow);
-      // 旗（右側に矢羽根）の形を clip-path で抜く
       clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%);
     }
   }
@@ -146,7 +141,7 @@
   background: #fff;
   border-radius: 10px;
   position: relative;
-  overflow: hidden;          // 角丸を保ったままページ側でスクロール
+  overflow: hidden;
 
   @media (max-width: 768px) {
     max-width: 340px;
@@ -160,7 +155,7 @@
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-rows: 1fr auto; /* 上（画像）は残りの高さ全て、下（ナビ）は文字の高さ */
+  grid-template-rows: 1fr auto;
   overflow: hidden;
 
   &[hidden]{ display: none; }
@@ -169,10 +164,8 @@
     position: relative;
     width: 100%;
     height: 100%;
-    overflow-y: auto;  /* 👈 ここでスクロールバーを出します */
+    overflow-y: auto;
     overflow-x: hidden;
-
-    // スクロールバー（控えめ）の設定
     scrollbar-width: thin;
     scrollbar-color: var(--ink-soft) transparent;
 
@@ -193,13 +186,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    pointer-events: none; // 💡ヒント画像の上からでも裏のコンテンツをスクロールできるようにする
+    pointer-events: none;
     z-index: 10;
     opacity: 1;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 
     img {
-      width: 70px; // 💡デザインに合わせてサイズは微調整してください
+      width: 70px;
       height: auto;
 
       &:nth-of-type(1) {
@@ -219,7 +212,6 @@
       }
     }
 
-    /* スクロールされたら消すクラス */
     &.is-hidden {
       opacity: 0;
       visibility: hidden;
@@ -227,10 +219,9 @@
   }
   }
 
-  /* ▼ [変更] 中の画像自体は100%の幅で素直に表示させます ▼ */
   .content-wrap {
     width: 100%;
-    height: auto;      /* 👈 縦に潰れず、本来の比率で縦長に表示されます */
+    height: auto;
     display: block;
     padding: 10% 5% 5%;
     text-align: center;
@@ -358,7 +349,7 @@
           }
 
           &::before {
-            content: ""; /* 💡中身は空っぽにする */
+            content: "";
             display: inline-block;
             width: 4%;
             aspect-ratio: 1 / 1;
@@ -741,12 +732,11 @@
   &:hover{ opacity: .85; }
 }
 
-// ページ内ナビ：スクロールしてもページ下部に固定
 .h-page-nav{
   position: relative;
   width: 100%;
   padding: 15px 10px;
-  background: #fff;                 // スクロールするコンテンツの上に乗せるため不透明
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -759,8 +749,6 @@
   margin: 0 auto;
   width: 6%;
   height: auto;
-
-  // 💡 2秒かけて上下にフワフワと無限ループ（infinite）させる
   animation: bounceUpDown 2.0s ease-in-out infinite;
 }
 
@@ -786,14 +774,13 @@
 
 @keyframes bounceUpDown {
   0%, 100% {
-    transform: translateY(0); // 最初と最後は元の位置
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(60%); // 💡真ん中のタイミングで下に12px沈む
+    transform: translateY(60%);
   }
 }
 
-// ---------- 右側ロゴ ----------
 .h-handbook-logo{
   width: 28.932%;
   flex-shrink: 0;
@@ -812,9 +799,7 @@
   }
 }
 
-// =========================================================
-// Customer Reviews
-// =========================================================
+// ---------- Customer Reviews ----------
 .f-slider-wrap {
     padding-bottom: 40px;
     @media (max-width: 1070px) {
@@ -829,7 +814,6 @@
     }
 }
 
-// sec-f-slider
 .f-slider {
   position: relative;
   display: block;

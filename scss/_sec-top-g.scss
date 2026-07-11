@@ -1,3 +1,6 @@
+// =========================================================
+// sec-top-g
+// =========================================================
 @use "variables" as *;
 
 .sec-top-g{
@@ -6,7 +9,7 @@
   overflow: hidden;
 
   @media (max-width: 768px){
-    padding: 40px 0 60px;  // SP は仮値（後日デザイン入稿時に調整）
+    padding: 40px 0 60px;
   }
 }
 
@@ -18,7 +21,6 @@
   }
 }
 
-// ---------- 見出し ----------
 .sec-head{
 
   .sec-ico{
@@ -55,9 +57,6 @@
   }
 }
 
-// ---------- ラッパー（タブ + パネル） ----------
-
-// ---------- タブ ----------
 .g-tabs{
   display: flex;
   align-items: end;
@@ -77,7 +76,7 @@
   width: 356px;
   height: 50px;
   border: none;
-  background: #fff3d3;        // 非アクティブ背景（淡黄色）
+  background: #fff3d3;
   color: #959595;
   border-radius: 10px 10px 0 0;
   cursor: pointer;
@@ -106,7 +105,7 @@
     height: 70px;
     background: var(--yellow);
     color: var(--ink);
-    margin-bottom: -1px;      // パネルとシームレスに繋ぐ
+    margin-bottom: -1px;
     align-items: center;
 
     .en{
@@ -136,7 +135,7 @@
       height: 55px;
       background: var(--yellow);
       color: var(--ink);
-      margin-bottom: -1px;      // パネルとシームレスに繋ぐ
+      margin-bottom: -1px;
       align-items: center;
 
       .en{
@@ -153,7 +152,6 @@
   }
 }
 
-// ---------- 黄色パネル ----------
 .g-panel-wrap{
   background: var(--yellow);
   border-radius: 10px;
@@ -175,7 +173,6 @@
   }
 }
 
-// ---------- STEP リスト ----------
 .g-steps{
   list-style: none;
   margin: 0;
@@ -472,7 +469,6 @@
   }
 }
 
-// ---------- コールアウト（黄色枠 + ピル + イラスト） ----------
 .g-callout{
   width: 430px;
   border: 2px solid var(--yellow);
@@ -656,7 +652,5 @@
   &:hover{
     background: #fff;
     color: var(--pink);
-
-    // 矢印・アイコンを色反転で見せたい場合は別アセットを差し替え
   }
 }

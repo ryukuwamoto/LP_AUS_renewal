@@ -1,44 +1,44 @@
+// =========================================================
+// sec-top-c
+// =========================================================
 @use "variables" as *;
 
 .sec-top-c{
   background: #fff;
-  padding: 60px 0 80px;     // PC: 左右最低 20px の隙間
+  padding: 60px 0 80px;
   overflow: hidden;
 
   @media (max-width: 768px){
-    padding: 40px 0 60px;       // SP: テーブルが横スクロールするため左右 0
+    padding: 40px 0 60px;
   }
 }
 
-// ---------- 見出し ----------
 .c-head {
   padding-bottom: 35px;
 }
 
-// ---------- 横スクロールラッパー（SP用） ----------
 .plan-table-wrapper {
-  position: relative; // 💡画像をテーブルの中央に配置するための基準線になります
+  position: relative;
   width: 100%;
 
   .scroll-hint-overlay {
-    display: none; // 💡基本（PCやタブレットなど）は非表示
+    display: none;
 
     @media (max-width: 599px) {
-      display: block; // 💡横スクロールが発生する599px以下だけ表示
+      display: block;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 10;
-      pointer-events: none; // 💡【重要】画像の上をスワイプしてもテーブルがスクロールできるようにする
-      transition: opacity 0.5s ease, visibility 0.5s ease; // 消える時のフワッと感
+      pointer-events: none;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
 
       img {
-        width: 76px; // 💡用意した画像のサイズに合わせて自由に調整してください
+        width: 76px;
         height: auto;
       }
 
-      // JSでこのクラスがついたら非表示にする
       &.is-hidden {
         opacity: 0;
         visibility: hidden;
@@ -59,13 +59,13 @@
     max-width: none;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 2px 20px;            // 左右に 20px 余白を入れて終端を見やすく
+    padding: 2px 20px;
   }
 }
 
 // ---------- プラン表 ----------
 .plan-table{
-  width: 700px;                 // PC/SP 共通の固定幅
+  width: 700px;
   border-collapse: collapse;
   background: #fff;
   border: none;
@@ -95,12 +95,10 @@
     border-left: none;
   }
 
-  // 列幅: ラベル 178 / 各プラン 174
   col, th, td{
     &:first-child{ width: 178px; }
   }
 
-  // ラベル列（左端）
   th[scope="row"], thead th.label-cell{
     @include font-gen(bold);
     font-size: 16px;
@@ -112,7 +110,6 @@
     }
   }
 
-  // データセル
   td{
     @include font-gen(500);
     font-size: 16px;
@@ -157,14 +154,12 @@
     }
   }
 
-  // 黄色背景行
   .row-yellow{
     th, td{
-      background: var(--yellow-soft);  // #FFEF99
+      background: var(--yellow-soft);
     }
   }
 
-  // 国際通話 / SMS 行（最終行は少し低め）
   .row-international{
     th, td{ height: 60px; }
 
@@ -203,7 +198,6 @@
     }
   }
 
-  // ヘッダー行のバッジセル
   .plan-table-head{
     
     th:nth-of-type(2) {
