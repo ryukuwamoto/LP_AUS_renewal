@@ -2051,6 +2051,31 @@ ul {
   display: block;
 }
 
+.campaign_header {
+  display: block;
+  margin-bottom: 20px;
+}
+.campaign_header .menubanner_pc {
+  width: 100%;
+  height: auto;
+}
+.campaign_header .menubanner_sp {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .campaign_header {
+    margin-bottom: 16px;
+  }
+  .campaign_header .menubanner_pc {
+    display: none;
+  }
+  .campaign_header .menubanner_sp {
+    display: block;
+  }
+}
+
 .hero {
   background-image: url("../img/hero/back.png");
   background-position: center;
@@ -8106,7 +8131,7 @@ ul {
 }
 @media (max-width: 768px) {
   .top_a .wrap-wide {
-    max-width: 500px;
+    max-width: 540px;
   }
 }
 .top_a__band {
@@ -8703,7 +8728,7 @@ ul {
     margin-top: 60px;
   }
   .top_b .wrap-wide {
-    max-width: 500px;
+    max-width: 540px;
   }
 }
 .top_b {
@@ -8885,7 +8910,7 @@ ul {
     margin-bottom: 80px;
   }
   .top_c .wrap-wide {
-    max-width: 500px;
+    max-width: 540px;
   }
 }
 .top_c {
@@ -9315,6 +9340,76 @@ ul {
   width: 100%;
   max-width: 304px;
   margin: 16px auto 0;
+}
+
+.campaign_delivery {
+  margin: 60px 0 100px;
+}
+.campaign_delivery .title {
+  background-color: var(--teal);
+  border-radius: 10px;
+  text-align: center;
+  padding: 14px;
+}
+.campaign_delivery .title p {
+  font-size: 21px;
+  font-weight: 700;
+  color: #fff;
+}
+.campaign_delivery .campaignplan_pc {
+  margin: 30px 0;
+  width: 100%;
+  height: auto;
+}
+.campaign_delivery .campaignplan_sp {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+.campaign_delivery .campaignfriend {
+  display: block;
+}
+.campaign_delivery .campaignfriend .campaignfriend_pc {
+  width: 100%;
+  height: auto;
+}
+.campaign_delivery .campaignfriend .campaignfriend_sp {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .campaign_delivery {
+    margin: 40px 0 80px;
+  }
+  .campaign_delivery .title {
+    padding: 14px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .campaign_delivery .title p {
+    font-size: 18px;
+  }
+  .campaign_delivery .campaignplan_pc {
+    display: none;
+  }
+  .campaign_delivery .campaignplan_sp {
+    display: block;
+    max-width: 500px;
+    padding: 30px 0px;
+    margin: 0 auto;
+  }
+  .campaign_delivery .campaignfriend {
+    display: block;
+  }
+  .campaign_delivery .campaignfriend .campaignfriend_pc {
+    display: none;
+  }
+  .campaign_delivery .campaignfriend .campaignfriend_sp {
+    display: block;
+    max-width: 500px;
+    margin: 0 auto;
+  }
 }
 
 .a-top_a {
